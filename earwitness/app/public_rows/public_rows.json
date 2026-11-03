@@ -1,0 +1,410 @@
+{
+  "_comment": "Approved public and in-app wording pins (App owns). Exact bytes; node gates and the server read this file. ask_public: PUBLIC-WORDING rows 30-35 + row 50 combined (LEDGER-LEAD2-RENO-PUBWORD-2, PUBWORD-2a, LEDGER-LEAD3-PUB-1). ask_inapp: LEDGER-LEAD3-ASK-1. meaning_alerts: PUBLIC-WORDING rows M1-M12 (LEDGER-LEAD3-RENO-ALERTS-2); M1, M2, M4, M5, M6 rewrite ask_public pins in place, so meaning_alerts holds only the new M3 bytes. methodology_public: PUBLIC-WORDING rows 2-20, 22 (amended), 24, 25, 28, 48-51 for PUB-48 (LEDGER-LEAD3-NEXT-3, QW7-1, QW7-2, PUB-1); rows 21 and 23 are superseded; rows 26-27 are structure checks in tests/frontend_public_methodology.test.cjs. positioning_public: Reno's positioning set POS-1..POS-10 (approved 2026-10-30 via Review and the lead; UX SUMMARY.md de16cced3 recommended set); an empty old is a new line. POS-8 and POS-9 supersede methodology_public rows 3 and 2. Plan A keeps 'Ad intelligence' and 'No full transcripts and no transcript search.' judgepath_public: Review 2026-10-31 judge path (UX walkthrough 9967ee581); JP-1..JP-4, an empty new means the old line is gone from that page; POS-7 amended in place by the same approval. je_public: judge's-eye public lines (UX WORDS.md D46, D47, D49, D51, D52 at d1abf1d4d; lead JE-WORDS 2026-11-01); the earlier pins that held an old line now hold the new one.",
+  "ask_public": [
+    [
+      "access.html",
+      "<li>No agent access: AI agents and API tokens that act for you are refused. Ask and meaning alerts are features of EarWitness itself. They do not let any outside agent or token reach your workspace.</li>"
+    ],
+    [
+      "privacy.html",
+      "<p class=\"lede\">While the pilot runs, we keep your sign-in ID and email, your sessions, the demo content, and what you create in the workspace. It is hosted on Hetzner Cloud in Nuremberg, Germany. Questions you ask, earlier answers in the same chat, meaning-alert sentences, the passages a word search finds for them, and brand names from the collection are also processed by Meta (Meta's Model API), possibly outside the EU, including in the United States. Meta also gets nearby transcript text when the model asks for it, each passage's show, episode, time and whether it is inside an ad, and the question a brand button asks for you. EarWitness sends no name, email or account ID. Do not type personal information into a question. Our deletion limits cover our own servers, not copies Meta keeps.</p>"
+    ],
+    [
+      "privacy.html",
+      "<li>Your Ask questions and answers, with copies of the passages the search found for them. In the app, only you can see your Ask questions and answers. They are deleted with the workspace.</li>"
+    ],
+    [
+      "privacy.html",
+      "<li>A deletion record stays, during the pilot and after it: request records, removed account IDs and emails, and the signed rights records and addenda. It holds no transcript text. It has no set end date.</li>"
+    ],
+    [
+      "privacy.html",
+      "<p>These pages load only their own text, styles, fonts, script and images, all served by EarWitness. Nothing loads from other sites: no outside fonts, scripts, trackers or images. Show cover art and brand logos are copies we host; they belong to their owners and are shown only to name the show or brand. In the pilot, the app contacts one outside service: Meta's Model API, when you use Ask or a meaning alert. No outside program can connect to your workspace.</p>"
+    ],
+    [
+      "terms.html",
+      "<li>Each workspace holds one collection under one signed rights record and, for Ask and meaning alerts, one signed addendum. The app allows only the uses they cover.</li>"
+    ],
+    [
+      "terms.html",
+      "<p>A result shows what was said in a specific episode. It is not proof of ad spend, reach or delivery. A search with no result does not prove an ad never ran. Some campaign checks say \"Not enough data\"; treat those as unknown. Answers from Ask and matches from meaning alerts are written by an AI model and can be wrong. Check each cited passage. Check anything important against the original episode.</p>"
+    ]
+  ],
+  "ask_inapp": [
+    [
+      "app/views.js",
+      "Ask what the shows are saying"
+    ],
+    [
+      "app/views.js",
+      "Type a question. Muse Spark, Meta's AI model, answers from the episodes and cites a passage for every claim."
+    ],
+    [
+      "app/views.js",
+      "Ask a question"
+    ],
+    [
+      "app/views.js",
+      "How this answer was made"
+    ],
+    [
+      "app/views.js",
+      "claims removed because their passage didn't support them"
+    ],
+    [
+      "app/views.js",
+      "1 claim removed because its passage didn't support it"
+    ],
+    [
+      "app/views.js",
+      "No claims removed"
+    ],
+    [
+      "app/views.js",
+      "Cost: pending"
+    ],
+    [
+      "app/views.js",
+      "What podcasts say about "
+    ]
+  ],
+  "meaning_alerts": [
+    [
+      "privacy.html",
+      "<li>Your meaning alerts: the sentence, the search words, and each check's matches, with the passage and the model's one-line reason. Like other alerts, everyone in the workspace can see them. They are deleted with the workspace.</li>"
+    ]
+  ],
+  "methodology_public": [
+    {
+      "row": 2,
+      "file": "methodology.html",
+      "old": "<meta name=\"description\" content=\"Discover, inspect a source-pinned passage, compare observations, save research.\">",
+      "new": "<meta name=\"description\" content=\"How EarWitness finds ads in podcasts, names the brand, and shows the passage behind each one.\">"
+    },
+    {
+      "row": 3,
+      "file": "methodology.html",
+      "old": "<p class=\"lede\">How results are found and what each label means: discover, inspect a source-pinned passage, compare observations, save research.</p>",
+      "new": "<p class=\"lede\">How we find ads, what each label means, and what a result does and doesn&rsquo;t show.</p>"
+    },
+    {
+      "row": 4,
+      "file": "methodology.html",
+      "old": "<h2>The four steps</h2>",
+      "new": "<h2>How we find ads</h2><ol><li>We turn each episode&rsquo;s audio into a transcript with timestamps.</li><li>Software marks the parts that sound like an ad.</li><li>Software names the brand from the words it hears. If it isn&rsquo;t sure, the ad shows as &ldquo;Brand not identified&rdquo;.</li><li>Each ad links to its passage in the transcript. Some ads also keep a short audio clip; we don&rsquo;t keep the full episode audio.</li></ol><p>Start and end times are approximate, and a found ad can be wrong. We can also miss ads, so a count is the ads we found, not every ad that ran. Use &ldquo;Report a mistake&rdquo; on the ad&rsquo;s page.</p><h2>Using EarWitness</h2>"
+    },
+    {
+      "row": 5,
+      "file": "methodology.html",
+      "old": "<li><strong>Discover.</strong> Search the covered collection for spoken passages matching scoped criteria.</li>",
+      "new": "<li><strong>Search.</strong> Search what was said in the shows we cover.</li>"
+    },
+    {
+      "row": 6,
+      "file": "methodology.html",
+      "old": "<li><strong>Inspect a source-pinned passage.</strong> Open the exact source, interval, nearby context, and provenance — not a summary of the market.</li>",
+      "new": "<li><strong>Open the passage.</strong> See the exact words, the episode, the time, the text around it, and where the record came from.</li>"
+    },
+    {
+      "row": 7,
+      "file": "methodology.html",
+      "old": "<li><strong>Compare observations.</strong> Place two pinned passages side by side with their dates. Different wording is an observation, not proof of replacement.</li>",
+      "new": "<li><strong>Compare.</strong> Put two brands side by side.</li>"
+    },
+    {
+      "row": 8,
+      "file": "methodology.html",
+      "old": "<li><strong>Save research.</strong> Keep excerpts, queries, and bookmarks as durable records with their captured revisions.</li>",
+      "new": "<li><strong>Save.</strong> Keep passages, searches and bookmarks. A saved passage keeps the transcript version you saved.</li>"
+    },
+    {
+      "row": 9,
+      "file": "methodology.html",
+      "old": "<li>Product-assisted judgments are working notes, not independent accuracy labels.</li>",
+      "new": "<li>Our own checks on ads are working notes, not accuracy scores.</li>"
+    },
+    {
+      "row": 10,
+      "file": "methodology.html",
+      "old": "<li>A source digest compares bytes; it is not a legal or authenticity seal.</li>",
+      "new": "<li>A file fingerprint shows only that two copies match. It is not a legal or authenticity seal.</li>"
+    },
+    {
+      "row": 11,
+      "file": "methodology.html",
+      "old": "<p>Where audio, timing or requirements are missing, we say so. A matching passage is an observation from the covered collection — see <a href=\"/coverage/\">Coverage</a>.</p>",
+      "new": "<p>Where audio, timing or requirements are missing, we say so. A match is something heard in the shows we cover, nothing more — see <a href=\"/coverage/\">Coverage</a>.</p>"
+    },
+    {
+      "row": 12,
+      "file": "coverage.html",
+      "old": "<p class=\"lede\">What we cover, how deeply, and what we don&rsquo;t claim. Counts inside the app describe stored sources, not the entire podcast market.</p>",
+      "new": "<p class=\"lede\">What we cover, how deeply, and what we don&rsquo;t claim. Every count in the app is about the shows we cover, not all podcasts.</p>"
+    },
+    {
+      "row": 13,
+      "file": "coverage.html",
+      "old": "<p>Some episodes are not screened yet, some stopped partway at a named step, and some have only their title and date. Each is labelled on its page.</p>",
+      "new": "<p>Some episodes are not screened yet, some were only partly processed, and some have only their title and date. Each is labelled on its page.</p>"
+    },
+    {
+      "row": 14,
+      "file": "coverage.html",
+      "old": "<h2>Stored sources, not the market</h2>",
+      "new": "<h2>Counts cover our shows only</h2>"
+    },
+    {
+      "row": 15,
+      "file": "coverage.html",
+      "old": "<p>Every count in the workspace counts records the collection holds: episodes, passages, and observations from fetched sources. These numbers say nothing about podcasts outside the collection.</p>",
+      "new": "<p>Every count in the app counts what we hold: episodes, passages and ads from the shows we cover. It says nothing about other podcasts.</p>"
+    },
+    {
+      "row": 16,
+      "file": "coverage.html",
+      "old": "<p>A search with no matches establishes only that nothing matching was found in the covered collection. It does not establish that no brand mention exists anywhere.</p>",
+      "new": "<p>A search with no matches means nothing matched in the shows we cover. It does not mean the brand was never mentioned anywhere.</p>"
+    },
+    {
+      "row": 17,
+      "file": "coverage.html",
+      "old": "<p>Sources without a known publication date are labeled with their unknown date whenever no date restriction is active. They are not silently dropped and not silently grouped with dated results.</p>",
+      "new": "<p>Episodes with no known publish date are marked &ldquo;Date unknown&rdquo;. When no date filter is on, they still show, with that label.</p>"
+    },
+    {
+      "row": 18,
+      "file": "coverage.html",
+      "old": "<p>Dynamic insertion can change later recordings: a source fetched again later may carry different bytes and a new revision. Saved pins keep their captured revision; the current transcript may differ.</p>",
+      "new": "<p>Some ads are inserted when an episode is downloaded, so a later download can hold different ads. A saved passage keeps the transcript version you saved; the current transcript may differ.</p>"
+    },
+    {
+      "row": 19,
+      "file": "coverage.html",
+      "old": "<h2>No fixture counts quoted</h2>",
+      "new": "<h2>No accuracy numbers</h2>"
+    },
+    {
+      "row": 20,
+      "file": "coverage.html",
+      "old": "<p>Historical fixture or evaluation counts are not current quality claims and are not quoted here. Treat any number you see in the workspace as a stored-collection count with its displayed scope and revision.</p>",
+      "new": "<p>We don&rsquo;t quote test or accuracy numbers here; past test results are not quality claims. A number in the app counts what we hold, for the filters shown.</p>"
+    },
+    {
+      "row": 22,
+      "file": "index.html",
+      "old": "<p>Excerpts, queries and bookmarks stay as durable research with their captured revisions. A frozen report downloads as the same bytes every time.</p>",
+      "new": "<p>Save passages, searches and bookmarks. A saved passage keeps the transcript version you saved. A final report downloads exactly the same every time.</p>",
+      "note": "amended 2026-10-27, lead LEDGER-LEAD3-PUB-1 (b): 'report snapshot' -> 'final report' (matches QW7-2 'Save a final report')"
+    },
+    {
+      "row": 24,
+      "file": "pricing.html",
+      "old": "<p class=\"lede\">Paid early access, once it opens, runs until the pilot ends. Each plan is one private workspace.<!--pricing-unless-on:plan_a--> Plan A is offered only if it passes our review.<!--/pricing-unless-on:plan_a--></p>",
+      "new": "<p class=\"lede\">Paid early access, once it opens, runs until the pilot ends. Each plan is one private workspace. The free judges&rsquo; pilot plays short audio clips for some ads; paid plans don&rsquo;t include clips.<!--pricing-unless-on:plan_a--> Plan A goes on sale only if it is ready before the pilot ends.<!--/pricing-unless-on:plan_a--></p>"
+    },
+    {
+      "row": 25,
+      "file": "pricing.html",
+      "old": "<p class=\"plan-tag\">If it passes review</p>",
+      "new": "<p class=\"plan-tag\">If ready in time</p>"
+    },
+    {
+      "row": 28,
+      "file": "access.html",
+      "old": "<h1>Access</h1>",
+      "new": "<h1>Judges&rsquo; access</h1>"
+    },
+    {
+      "row": 49,
+      "file": "methodology.html",
+      "old": "<p>Members can report a problem on any ad. Only the review team changes what is shown; a frozen report never changes.</p>",
+      "new": "<p>Members can report a mistake on any ad. Reports go to the EarWitness team. Only the review team changes what is shown, and a frozen report never changes.</p>"
+    },
+    {
+      "row": 50,
+      "file": "terms.html",
+      "old": "Results marked uncertain are uncertain.",
+      "new": "Some campaign checks say \"Not enough data\"; treat those as unknown.",
+      "note": "the swapped sentence only (LEDGER-LEAD3-PUB-1); the paragraph is pinned in full by ask_public / meaning_alerts (M6), which arrived with lr-meta-ask"
+    },
+    {
+      "row": 51,
+      "file": "index.html",
+      "old": "<h2 id=\"keep-heading\">Save what matters. Freeze a report that won&rsquo;t change.</h2>",
+      "new": "<h2 id=\"keep-heading\">Save what matters. Save a final report that won&rsquo;t change.</h2>"
+    },
+    {
+      "row": 48,
+      "file": "methodology.html",
+      "old": "When we are sure of the brand, we show its name.",
+      "new": "When we can match an ad to a brand, we show its name."
+    },
+    {
+      "row": 52,
+      "file": "index.html",
+      "old": "<p>A matching passage is an observation from the covered collection. Where audio, timing or requirements are missing, we say so.</p>",
+      "new": "<p>A match is something heard in the shows we cover, nothing more. Where audio, timing or requirements are missing, we say so.</p>"
+    },
+    {
+      "row": 53,
+      "file": "index.html",
+      "old": "<figcaption><strong>Earlier passage</strong> &middot; Publication date unknown &middot; Illustrative revision r1</figcaption>",
+      "new": "<figcaption><strong>Earlier passage</strong> &middot; Date unknown &middot; Illustrative revision r1</figcaption>"
+    },
+    {
+      "row": 53,
+      "file": "index.html",
+      "old": "<figcaption><strong>Later passage</strong> &middot; Publication date unknown &middot; Illustrative revision r2</figcaption>",
+      "new": "<figcaption><strong>Later passage</strong> &middot; Date unknown &middot; Illustrative revision r2</figcaption>"
+    },
+    {
+      "row": 54,
+      "file": "coverage.html",
+      "old": "<meta name=\"description\" content=\"Counts inside the app describe stored sources, not the entire podcast market.\">",
+      "new": "<meta name=\"description\" content=\"What EarWitness covers, how deeply, and what it doesn't claim.\">"
+    }
+  ],
+  "positioning_public": [
+    {
+      "row": "POS-1",
+      "file": "index.html",
+      "old": "<title>EarWitness — Your podcast ads, found and quoted to the second</title>",
+      "new": "<title>EarWitness — Podcast ads and mentions, quoted to the second</title>"
+    },
+    {
+      "row": "POS-2",
+      "file": "index.html",
+      "old": "<meta name=\"description\" content=\"EarWitness finds podcast ads in the shows it covers and shows the words and the time each one was said. For brands and agencies that buy podcast ads.\">",
+      "new": "<meta name=\"description\" content=\"EarWitness finds podcast ads and mentions in the shows it covers, with the words and the time each one was said. Compare brands and get alerts. For brands and agencies that buy podcast ads.\">"
+    },
+    {
+      "row": "POS-3",
+      "file": "index.html",
+      "old": "<h1 id=\"hero-heading\">Your podcast ads, found and quoted to the second.</h1>",
+      "new": "<h1 id=\"hero-heading\">Podcast ads and mentions, quoted to the second.</h1>"
+    },
+    {
+      "row": "POS-4",
+      "file": "index.html",
+      "old": "<p class=\"lede\">We transcribe episodes from 796 shows. Search your brand, see what the host said and when, and check it against what you bought.</p>",
+      "new": "<p class=\"lede\">Search your brand, a competitor or any phrase in 2,907 episodes from 913 shows, as of Nov 3. Compare brands side by side, get an alert when a word or brand comes up, and check ads against what you bought.</p>"
+    },
+    {
+      "row": "POS-5",
+      "file": "index.html",
+      "old": "<h3>Search any brand</h3><p>Type a brand. See the ads and mentions we heard for it, newest first, with the show, the episode and the time.</p>",
+      "new": "<h3>Search any brand or phrase</h3><p>Type a brand, a competitor or any phrase. See the ads and mentions we heard, newest first, with the show, the episode and the time.</p>"
+    },
+    {
+      "row": "POS-6",
+      "file": "index.html",
+      "old": "",
+      "new": "<h3>Compare and follow</h3><p>Put two brands side by side, and get an alert when a word or brand comes up in a new episode.</p>"
+    },
+    {
+      "row": "POS-7",
+      "file": "access.html",
+      "old": "<p>Try these first: search a brand, a competitor or any phrase; compare two brands; set an alert for a word or brand.</p>",
+      "new": "<p>Try these first: play the real ad on your Overview, or search a brand; compare two brands; set an alert for a word or brand.</p>",
+      "note": "Opening line of the Judges' access \"Where to start\" section (row 60); the heading and the order are checked in tests/frontend_public_positioning.test.cjs. First step amended by Review 2026-10-31 judge path (UX walkthrough 9967ee581): the demo line \"Play the real ad on your Overview, or search a brand.\""
+    },
+    {
+      "row": "POS-8",
+      "file": "methodology.html",
+      "old": "<p class=\"lede\">How we find ads, what each label means, and what a result does and doesn&rsquo;t show.</p>",
+      "new": "<p class=\"lede\">How we transcribe episodes, find ads and mentions, what each label means, and what a result does and doesn&rsquo;t show.</p>"
+    },
+    {
+      "row": "POS-9",
+      "file": "methodology.html",
+      "old": "<meta name=\"description\" content=\"How EarWitness finds ads in podcasts, names the brand, and shows the passage behind each one.\">",
+      "new": "<meta name=\"description\" content=\"How EarWitness transcribes podcasts, finds ads and mentions, names the brand, and shows the passage behind each one.\">"
+    },
+    {
+      "row": "POS-10",
+      "file": "pricing.html",
+      "old": "<p class=\"plan-key\">Full transcripts and transcript search.</p>",
+      "new": "<p class=\"plan-key\">Ads, plus full transcripts: search any word or phrase.</p>"
+    }
+  ],
+  "judgepath_public": [
+    {
+      "row": "JP-1",
+      "file": "index.html",
+      "old": "<div class=\"cta-row\"><a class=\"cta\" href=\"#how\">See how it works</a><a class=\"cta cta-secondary\" href=\"mailto:support@getearwitness.com?subject=EarWitness%20access\">Request access</a></div>",
+      "new": "<div class=\"cta-row\"><a class=\"cta\" href=\"/access/\">Judges: start here</a><a class=\"cta cta-secondary\" href=\"#how\">See how it works</a><a class=\"cta cta-secondary\" href=\"mailto:support@getearwitness.com?subject=EarWitness%20access\">Request access</a></div>",
+      "note": "Hero: one primary button, 'Judges: start here' to /access/; the other two are secondary."
+    },
+    {
+      "row": "JP-2",
+      "file": "index.html",
+      "old": "<p class=\"hero-note\">Invite-only pilot. Have a login? <a href=\"/app/\">Sign in</a> &middot; <a href=\"/access/\">Judges: where to start</a></p>",
+      "new": "<p class=\"hero-note\">Invite-only pilot.</p>",
+      "note": "Hero note: the second 'Sign in' and the judges' link (now the hero button) are gone; the nav keeps one 'Sign in'."
+    },
+    {
+      "row": "JP-3",
+      "file": "index.html",
+      "old": "<li><a href=\"/app/\">Open workspace</a></li>",
+      "new": "",
+      "note": "Home is a signed-out page: no 'Open workspace' link (it was static footer markup)."
+    },
+    {
+      "row": "JP-4",
+      "file": "access.html",
+      "old": "",
+      "new": "<h2>Sign in with your login</h2>\n<p><a class=\"cta\" href=\"/app/\">Sign in</a></p>\n<p>Use the judge login from your submission.</p>\n<p>Sign in with the email address and password from the login the EarWitness team sends you. You can change your password on the Settings page. Forgot your password? Ask <a href=\"mailto:support@getearwitness.com\">support@getearwitness.com</a> for a new one.</p>",
+      "note": "The whole Judges' access sign-in section, exact bytes: heading, Sign in button, the judge-login line, and the unchanged sign-in paragraph; any added text fails (Review and UX binding: never a password on /access/; tests/frontend_public_judgepath.test.cjs)."
+    }
+  ],
+  "je_public": [
+    {
+      "row": "JE-D46a",
+      "file": "index.html",
+      "old": "any phrase in episodes from 796 shows we transcribe.",
+      "new": "any phrase in 2,907 episodes from 913 shows, as of Nov 3."
+    },
+    {
+      "row": "JE-D46b",
+      "file": "index.html",
+      "old": "<p class=\"section-lede\">796 shows. EarWitness covers",
+      "new": "<p class=\"section-lede\">2,907 episodes from 913 shows, as of Nov 3. EarWitness covers"
+    },
+    {
+      "row": "JE-D47",
+      "file": "index.html",
+      "old": "every quote against its passage and removes any claim it can&rsquo;t support.</p>",
+      "new": "every quote against its passage and removes the claims that fail those checks.</p>"
+    },
+    {
+      "row": "JE-D49",
+      "file": "methodology.html",
+      "old": "Start and end times are approximate, and a found ad can be wrong. Use",
+      "new": "Start and end times are approximate, and a found ad can be wrong. We can also miss ads, so a count is the ads we found, not every ad that ran. Use"
+    },
+    {
+      "row": "JE-D51",
+      "file": "methodology.html",
+      "old": "<li><strong>Compare.</strong> Put two passages side by side with their dates. Different wording does not prove one ad replaced another.</li>",
+      "new": "<li><strong>Compare.</strong> Put two brands side by side.</li>"
+    },
+    {
+      "row": "JE-D52",
+      "file": "pricing.html",
+      "old": "Plan A goes on sale only if it is ready in time.",
+      "new": "Plan A goes on sale only if it is ready before the pilot ends."
+    },
+    {
+      "row": "JE-SHOT-S",
+      "file": "index.html",
+      "old": "<img src=\"/public/img/shot-search.jpg\" alt=\"Search for quince: 113 ads, oldest first. A Quince ad on So True with Caleb Hearon from 39:53 to 40:43, with its quote.\"",
+      "new": "<img src=\"/public/img/shot-search.jpg\" alt=\"Search for quince: 99 Quince ads in 95 episodes across 73 shows, counted by week up to Oct 21, newest first.\""
+    },
+    {
+      "row": "JE-SHOT-E",
+      "file": "index.html",
+      "old": "<img src=\"/public/img/shot-evidence.jpg\" alt=\"The evidence page for a Quince ad on Game Scoop! episode 871, from 0:18 to 1:00, with the words that were said.\"",
+      "new": "<img src=\"/public/img/shot-evidence.jpg\" alt=\"The page for a Quince ad on Two Judgey Girls: a play button, Quince first heard 22:03 into the episode, and the words the host said.\""
+    }
+  ]
+}

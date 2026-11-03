@@ -1,0 +1,8 @@
+# Pinned runtime for the EarWitness T-042 measurement harness (macOS/Apple Silicon).
+# CPU-only. No paid APIs, credentials, or service dependencies.
+# Validated 2026-09-21 on macOS 26.3.1 arm64, Python 3.14.7 (python3 -m venv).
+# Install: python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt
+# Full lock record: requirements.lock (pip freeze from the validated install).
+faster-whisper==1.2.1
+feedparser==6.0.14
+requests==2.34.2

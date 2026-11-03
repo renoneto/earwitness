@@ -1,0 +1,472 @@
+{
+  "format": "earwitness-corrections/3",
+  "exported_at": "2026-10-12T06:52:55+00:00",
+  "brand_aliases": [
+    {
+      "raw": "linkin",
+      "canonical": "linkedin",
+      "display": "LinkedIn",
+      "created_at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "from_read": "named:ep_0.named.180000-240000"
+    }
+  ],
+  "stoplist": [
+    {
+      "word": "insurance",
+      "created_at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "from_read": "named:ep_0.named.60000-120000"
+    }
+  ],
+  "self_promo": [
+    {
+      "brand": "ask ramsey",
+      "network": "Ramsey",
+      "exact_show": false,
+      "created_at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "from_read": "named:ep_0.named.420000-480000"
+    },
+    {
+      "brand": "quillow",
+      "network": "The Ramsey Show",
+      "exact_show": true,
+      "created_at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "from_read": "named:ep_0.named.660000-720000"
+    },
+    {
+      "brand": "chm",
+      "network": "Ramsey",
+      "exact_show": false,
+      "created_at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "from_read": "named:ep_0.named.60000-120000.b-chm"
+    }
+  ],
+  "not_ads": [
+    {
+      "record_key": "named:ep_1.named.180000-240000",
+      "evidence_id": "named:5f09f97be435ef9cc1188a287d5196aae333dac9a128faf77b39011fe6bf6e13",
+      "episode_id": "ep_1",
+      "show_title": "The Ramsey Show",
+      "start_s": 180.0,
+      "end_s": 240.0,
+      "brand": null,
+      "created_at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner"
+    }
+  ],
+  "new_brands": [
+    {
+      "brand": "capella university",
+      "display": "Capella University",
+      "created_at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "from_read": "named:ep_0.named.300000-360000"
+    },
+    {
+      "brand": "linkedin",
+      "display": "LinkedIn",
+      "created_at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "from_read": "named:ep_0.named.180000-240000"
+    }
+  ],
+  "superseded": [
+    {
+      "kind": "not_ad",
+      "key": "named:ep_1.named.60000-120000",
+      "value": {
+        "brand": "betterhelp",
+        "end_s": 120.0,
+        "episode_id": "ep_1",
+        "evidence_id": "named:eed0beb5ceca262f7a3ac7018f1cd10fef338682a74d9058f214299e643434fc",
+        "show_title": "The Ramsey Show",
+        "start_s": 60.0
+      },
+      "created_at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "removed_at": "2026-10-12T06:52:54+00:00",
+      "removed_by": "owner",
+      "reason": "replaced"
+    },
+    {
+      "kind": "stoplist",
+      "key": "therapy",
+      "value": {
+        "from_read": "named:ep_1.named.300000-360000"
+      },
+      "created_at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "removed_at": "2026-10-12T06:52:54+00:00",
+      "removed_by": "owner",
+      "reason": "removed"
+    }
+  ],
+  "labels": [
+    {
+      "record_key": "named:ep_0.named.60000-120000",
+      "evidence_id": "named:8c864a8e0b77300cbc9f8ecdaea157cc0ddc587a934122e69839cf72ec5b9cd6",
+      "episode_id": "ep_0",
+      "show_title": "The Ramsey Show",
+      "start_s": 60.0,
+      "end_s": 120.0,
+      "action": "generic",
+      "answer": {
+        "word": "insurance"
+      },
+      "raw_brand": "insurance",
+      "transcript": "go to insurance dot com, insurance dot com, or visit chm dot org",
+      "at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "rules": [
+        {
+          "kind": "stoplist",
+          "key": "insurance"
+        }
+      ],
+      "superseded": false,
+      "superseded_reason": null
+    },
+    {
+      "record_key": "named:ep_0.named.180000-240000",
+      "evidence_id": "named:8ac4d327f7062cbd451ea263d79b5c756516e4c850de9b6e246772616a81c47f",
+      "episode_id": "ep_0",
+      "show_title": "The Ramsey Show",
+      "start_s": 180.0,
+      "end_s": 240.0,
+      "action": "type",
+      "answer": {
+        "brand": "linkedin"
+      },
+      "raw_brand": "linkin",
+      "transcript": "this episode is brought to you by linkin. go to linkin dot com slash business, linkin dot com",
+      "at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "rules": [
+        {
+          "kind": "brand",
+          "key": "linkedin"
+        },
+        {
+          "kind": "alias",
+          "key": "linkin"
+        }
+      ],
+      "superseded": false,
+      "superseded_reason": null
+    },
+    {
+      "record_key": "named:ep_0.named.300000-360000",
+      "evidence_id": "named:13be7744bfcbafd17f86f18c77dcfb44622896ae91f777a43ccd0f4bdb506c1f",
+      "episode_id": "ep_0",
+      "show_title": "The Ramsey Show",
+      "start_s": 300.0,
+      "end_s": 360.0,
+      "action": "type",
+      "answer": {
+        "brand": "capella university"
+      },
+      "raw_brand": "capela university",
+      "transcript": "go to capela university dot com, capela university dot com for your degree",
+      "at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "rules": [
+        {
+          "kind": "brand",
+          "key": "capella university"
+        }
+      ],
+      "superseded": false,
+      "superseded_reason": null
+    },
+    {
+      "record_key": "named:ep_0.named.420000-480000",
+      "evidence_id": "named:c79c544c23444f5e724349e59cc6cd17d5eb8a7d396a3213e3308f29178e4e2c",
+      "episode_id": "ep_0",
+      "show_title": "The Ramsey Show",
+      "start_s": 420.0,
+      "end_s": 480.0,
+      "action": "self_promo",
+      "answer": {
+        "brand": "ask ramsey",
+        "exact": false,
+        "network": "Ramsey"
+      },
+      "raw_brand": "ask ramsey",
+      "transcript": "ask ramsey is here to help. go to ask ramsey dot com, that is ask ramsey dot com",
+      "at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "rules": [
+        {
+          "kind": "self_promo",
+          "key": "ask ramsey\t~ramsey"
+        }
+      ],
+      "superseded": false,
+      "superseded_reason": null
+    },
+    {
+      "record_key": "named:ep_0.named.660000-720000",
+      "evidence_id": "named:259c6143bafadc2f784b8afd273da9faec762f7042fc5a9f38786fa1c71a5708",
+      "episode_id": "ep_0",
+      "show_title": "The Ramsey Show",
+      "start_s": 660.0,
+      "end_s": 720.0,
+      "action": "self_promo",
+      "answer": {
+        "brand": "quillow",
+        "exact": true,
+        "network": "The Ramsey Show"
+      },
+      "raw_brand": "quillow",
+      "transcript": "brought to you by quillow. go to quillow dot com, also wayfair dot com, wayfair dot com",
+      "at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "rules": [
+        {
+          "kind": "self_promo",
+          "key": "quillow\t=the ramsey show"
+        }
+      ],
+      "superseded": false,
+      "superseded_reason": null
+    },
+    {
+      "record_key": "named:ep_0.named.540000-660000",
+      "evidence_id": "named:8e133de014ce4b84572301394197687d6017252ee1a6617f5020ced6c5cee26d",
+      "episode_id": "ep_0",
+      "show_title": "The Ramsey Show",
+      "start_s": 540.0,
+      "end_s": 660.0,
+      "action": "confirm",
+      "answer": {
+        "brand": "betterhelp"
+      },
+      "raw_brand": "betterhelp",
+      "transcript": "thinking about therapy? check out therapy visit betterhelp dot com slash pod today",
+      "at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "rules": [],
+      "superseded": false,
+      "superseded_reason": null
+    },
+    {
+      "record_key": "named:ep_1.named.60000-120000",
+      "evidence_id": "named:eed0beb5ceca262f7a3ac7018f1cd10fef338682a74d9058f214299e643434fc",
+      "episode_id": "ep_1",
+      "show_title": "The Ramsey Show",
+      "start_s": 60.0,
+      "end_s": 120.0,
+      "action": "not_ad",
+      "answer": {},
+      "raw_brand": "betterhelp",
+      "transcript": "visit betterhelp dot com slash pod today",
+      "at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "rules": [
+        {
+          "kind": "not_ad",
+          "key": "named:ep_1.named.60000-120000"
+        }
+      ],
+      "superseded": true,
+      "superseded_reason": "replaced"
+    },
+    {
+      "record_key": "named:ep_1.named.60000-120000",
+      "evidence_id": "named:eed0beb5ceca262f7a3ac7018f1cd10fef338682a74d9058f214299e643434fc",
+      "episode_id": "ep_1",
+      "show_title": "The Ramsey Show",
+      "start_s": 60.0,
+      "end_s": 120.0,
+      "action": "confirm",
+      "answer": {
+        "brand": "betterhelp"
+      },
+      "raw_brand": "betterhelp",
+      "transcript": "visit betterhelp dot com slash pod today",
+      "at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "rules": [],
+      "superseded": false,
+      "superseded_reason": null
+    },
+    {
+      "record_key": "named:ep_1.named.180000-240000",
+      "evidence_id": "named:5f09f97be435ef9cc1188a287d5196aae333dac9a128faf77b39011fe6bf6e13",
+      "episode_id": "ep_1",
+      "show_title": "The Ramsey Show",
+      "start_s": 180.0,
+      "end_s": 240.0,
+      "action": "not_ad",
+      "answer": {},
+      "raw_brand": null,
+      "transcript": "ordinary talk about the news",
+      "at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "rules": [
+        {
+          "kind": "not_ad",
+          "key": "named:ep_1.named.180000-240000"
+        }
+      ],
+      "superseded": false,
+      "superseded_reason": null
+    },
+    {
+      "record_key": "named:ep_1.named.300000-360000",
+      "evidence_id": "named:83ce34beb847b693b5a76607a966749fa33ed3db910befc9a80bb6edb1d3399e",
+      "episode_id": "ep_1",
+      "show_title": "The Ramsey Show",
+      "start_s": 300.0,
+      "end_s": 360.0,
+      "action": "generic",
+      "answer": {
+        "word": "therapy"
+      },
+      "raw_brand": null,
+      "transcript": "ordinary talk about the news",
+      "at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "rules": [
+        {
+          "kind": "stoplist",
+          "key": "therapy"
+        }
+      ],
+      "superseded": true,
+      "superseded_reason": "removed"
+    },
+    {
+      "record_key": "named:ep_0.named.60000-120000.b-chm",
+      "evidence_id": "named:9812518ebd175cd92de6dfc9c83451301b9a76e55175c8ee167f2422ef66da45",
+      "episode_id": "ep_0",
+      "show_title": "The Ramsey Show",
+      "start_s": 60.0,
+      "end_s": 120.0,
+      "action": "self_promo",
+      "answer": {
+        "brand": "chm",
+        "exact": false,
+        "network": "Ramsey"
+      },
+      "raw_brand": "chm",
+      "transcript": "go to insurance dot com, insurance dot com, or visit chm dot org",
+      "at": "2026-10-12T06:52:54+00:00",
+      "actor": "owner",
+      "rules": [
+        {
+          "kind": "self_promo",
+          "key": "chm\t~ramsey"
+        }
+      ],
+      "superseded": false,
+      "superseded_reason": null
+    }
+  ],
+  "reviewed_reads": [
+    {
+      "record_key": "named:ep_0.named.180000-240000",
+      "evidence_id": "named:8ac4d327f7062cbd451ea263d79b5c756516e4c850de9b6e246772616a81c47f",
+      "episode_id": "ep_0",
+      "show_title": "The Ramsey Show",
+      "start_s": 180.0,
+      "end_s": 240.0,
+      "judgment": "ad",
+      "brands": [
+        "linkedin"
+      ],
+      "reviewed_at": "2026-10-12T06:52:54+00:00"
+    },
+    {
+      "record_key": "named:ep_0.named.300000-360000",
+      "evidence_id": "named:13be7744bfcbafd17f86f18c77dcfb44622896ae91f777a43ccd0f4bdb506c1f",
+      "episode_id": "ep_0",
+      "show_title": "The Ramsey Show",
+      "start_s": 300.0,
+      "end_s": 360.0,
+      "judgment": "ad",
+      "brands": [
+        "capella university"
+      ],
+      "reviewed_at": "2026-10-12T06:52:54+00:00"
+    },
+    {
+      "record_key": "named:ep_0.named.540000-660000",
+      "evidence_id": "named:8e133de014ce4b84572301394197687d6017252ee1a6617f5020ced6c5cee26d",
+      "episode_id": "ep_0",
+      "show_title": "The Ramsey Show",
+      "start_s": 540.0,
+      "end_s": 660.0,
+      "judgment": "ad",
+      "brands": [
+        "betterhelp"
+      ],
+      "reviewed_at": "2026-10-12T06:52:54+00:00"
+    },
+    {
+      "record_key": "named:ep_0.named.660000-720000.b-wayfair",
+      "evidence_id": "named:11e803b2df2d410dd57accdfb33c14cd91a4ecc8ef71ec152a8989e6944a1646",
+      "episode_id": "ep_0",
+      "show_title": "The Ramsey Show",
+      "start_s": 660.0,
+      "end_s": 720.0,
+      "judgment": null,
+      "brands": [
+        "wayfair"
+      ],
+      "reviewed_at": "2026-10-12T06:52:54+00:00"
+    },
+    {
+      "record_key": "named:ep_1.named.60000-120000",
+      "evidence_id": "named:eed0beb5ceca262f7a3ac7018f1cd10fef338682a74d9058f214299e643434fc",
+      "episode_id": "ep_1",
+      "show_title": "The Ramsey Show",
+      "start_s": 60.0,
+      "end_s": 120.0,
+      "judgment": "ad",
+      "brands": [
+        "betterhelp"
+      ],
+      "reviewed_at": "2026-10-12T06:52:54+00:00"
+    },
+    {
+      "record_key": "named:ep_1.named.180000-240000",
+      "evidence_id": "named:5f09f97be435ef9cc1188a287d5196aae333dac9a128faf77b39011fe6bf6e13",
+      "episode_id": "ep_1",
+      "show_title": "The Ramsey Show",
+      "start_s": 180.0,
+      "end_s": 240.0,
+      "judgment": "not_ad",
+      "brands": [],
+      "reviewed_at": "2026-10-12T06:52:54+00:00"
+    },
+    {
+      "record_key": "named:ep_1.named.420000-480000",
+      "evidence_id": "named:7ff3626110c31ea7a8b53c798533921347176f5aa975260d76d2cb81ee1acb72",
+      "episode_id": "ep_1",
+      "show_title": "The Ramsey Show",
+      "start_s": 420.0,
+      "end_s": 480.0,
+      "judgment": "not_ad",
+      "brands": [],
+      "reviewed_at": "2026-10-12T06:52:54+00:00"
+    },
+    {
+      "record_key": "named:ep_1.named.540000-720000.b-chm",
+      "evidence_id": "named:17824871a7897864941be0bf7372110b2b56f07f4029ffdebafffb3465c33d0d",
+      "episode_id": "ep_1",
+      "show_title": "The Ramsey Show",
+      "start_s": 600.0,
+      "end_s": 660.0,
+      "judgment": "ad",
+      "brands": [
+        "chm"
+      ],
+      "reviewed_at": "2026-10-12T06:52:54+00:00"
+    }
+  ]
+}

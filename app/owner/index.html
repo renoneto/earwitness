@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" class="ew-operator">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EarWitness — Ad review</title>
+<link rel="stylesheet" href="/app/fonts/plex.css">
+<link rel="stylesheet" href="/app/tokens.css">
+<link rel="stylesheet" href="/app/operator/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <span class="op-wordmark">EarWitness</span>
+  <span class="op-tag">Ad review · workspace owner</span>
+  <a href="/app/">Back to the app</a>
+</header>
+<div class="shell">
+  <main id="main" class="content" tabindex="-1">
+    <div class="ar-head"><h1>Ad review</h1><p class="ar-queue" id="ar-position" role="status"></p></div>
+    <p class="meta">Only you, the workspace owner, can use this page. Each save is recorded with your sign-in and judges see it at once.</p>
+    <form id="ar-open" class="filters ar-filters">
+      <label class="field" for="ar-id"><span>Record id</span><input id="ar-id" type="text" autocomplete="off" placeholder="named:…"></label>
+      <button type="submit">Open</button>
+    </form>
+    <div id="ar-read"></div>
+    <p class="ar-last" id="ar-status" role="status" aria-live="polite"></p>
+    <section class="ar-box">
+      <h2>Waiting for review</h2>
+      <div id="ar-queue"><p class="meta">Loading…</p></div>
+    </section>
+  </main>
+</div>
+<script src="/app/owner/review.js"></script>
+</body>
+</html>

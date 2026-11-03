@@ -1,0 +1,306 @@
+/* EarWitness design v3 (Exhibit) · evidence.css
+   Evidence and Episode pages (clip player, ledger, transcript, ad rows, pod bar).
+   Page workers own this file. Use the --ew-* tokens (tokens.css) and the
+   shared components in styles.css; no inline styles (CSP style-src 'self'). */
+
+/* -- Reader frame: head, bands, two-column body (one column below 1024). -- */
+.ew-reader { display: flex; flex-direction: column; gap: var(--ew-s5); min-width: 0; }
+.ew-reader-head { display: flex; flex-direction: column; gap: 14px; margin-top: calc(-1 * var(--ew-s3)); }
+.ew-reader-headrow { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--ew-s4); flex-wrap: wrap; }
+.ew-reader-titles { display: flex; flex-direction: column; gap: var(--ew-s2); min-width: 0; flex: 1 1 320px; }
+.ew-reader-h1row { display: flex; gap: var(--ew-s3); align-items: center; flex-wrap: wrap; }
+.ew-reader-h1 { font: var(--ew-t-display); letter-spacing: -0.01em; overflow-wrap: anywhere; }
+.ew-h1-product { font-weight: 400; color: var(--ew-text-2); }
+.ew-h1-review .ew-tag { min-height: 44px; gap: 10px; padding: 0 14px; border-radius: var(--ew-r-control); font: 600 22px/28px var(--ew-sans); }
+.ew-h1-review .ew-tag svg { width: 16px; height: 16px; }
+.ew-reader-h1row > .ew-tag, .ew-reader-h1row > .tag { min-height: 26px; padding: 0 10px; font-size: 13px; }
+.ew-reader-src { font: var(--ew-t-body); color: var(--ew-text-2); overflow-wrap: anywhere; }
+/* The heard spelling and the not-confirmed caveat sit before the actions (R2-02, R2-12). */
+.ew-reader-heard, .ew-reader-caveat, .ew-reader-named { font: var(--ew-t-ui); color: var(--ew-uncertain); overflow-wrap: anywhere; }
+/* Inside the line the control is inline text (as .section-note .text-link). */
+.ew-reader-caveat .text-link { display: inline; min-height: 0; padding: 0; }
+.ew-reader-actions { flex: none; }
+.ew-reader-pin { margin: 0; }
+.ew-reader > .notice { margin: 0; }
+.ew-reader-grid { display: grid; grid-template-columns: minmax(0, 1fr) 440px; gap: var(--ew-s6); align-items: start; }
+.ew-episode-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: var(--ew-s6); align-items: start; }
+.ew-reader-side { display: flex; flex-direction: column; gap: var(--ew-s4); min-width: 0; }
+/* Evidence: the facts card is its own grid item; on phone it comes
+   right after the player, before the words (UX-13). */
+.ew-reader-grid.has-facts { grid-template-areas: "said facts" "said side"; grid-template-rows: auto 1fr; row-gap: var(--ew-s4); }
+.ew-reader-grid.has-facts > .ew-said { grid-area: said; }
+.ew-reader-grid.has-facts > .ew-facts-card { grid-area: facts; }
+.ew-reader-grid.has-facts > .ew-reader-side { grid-area: side; }
+/* A pod spans the top on desktop; on phone it follows the words (Astra UX-04). */
+.ew-reader-grid > .ew-pod-card { grid-area: pod; }
+.ew-reader-grid.has-facts.has-pod { grid-template-areas: "pod pod" "said facts" "said side"; grid-template-rows: auto auto 1fr; }
+.ew-facts-jump { border-top: 1px solid var(--ew-border); }
+.ew-reader .ew-card { min-width: 0; }
+.ew-card-title { font: 600 19px/26px var(--ew-serif); padding: var(--ew-s4) var(--ew-s5); border-bottom: 1px solid var(--ew-border); }
+.ew-spacer { flex: 1; }
+@media (max-width: 1023px) {
+  .ew-reader-grid, .ew-episode-grid { grid-template-columns: minmax(0, 1fr); }
+  /* Six head actions do not fit beside the title: they take the full row and wrap (F-04). */
+  .ew-reader-actions { width: 100%; flex-wrap: wrap; }
+  .ew-reader-grid.has-facts { grid-template-areas: "facts" "said" "side"; grid-template-rows: none; }
+  .ew-reader-grid.has-facts.has-pod { grid-template-areas: "facts" "said" "pod" "side"; grid-template-rows: none; }
+}
+@media (max-width: 599px) {
+  .ew-reader { gap: var(--ew-s4); }
+  .ew-reader-head { margin-top: 0; }
+  .ew-reader-h1 { font-size: 30px; line-height: 36px; }
+  .ew-h1-review .ew-tag { font-size: 18px; min-height: 40px; }
+  .ew-reader-actions { width: 100%; }
+  .ew-reader-actions .button.primary { flex: 1 1 100%; }
+}
+
+/* -- Loading frame and page error. -- */
+.ew-reader-loading { gap: var(--ew-s4); }
+.ew-skel-eyebrow { width: 180px; height: 14px; }
+.ew-skel-title { width: 240px; max-width: 70%; height: 40px; }
+.ew-skel-card { height: 180px; }
+.ew-skel-tall { height: 240px; }
+.ew-reader-error { max-width: 720px; }
+.ew-reader-error .ew-state-kind { font: 600 13px/18px var(--ew-sans); }
+.ew-reader-error h1 { font: 600 26px/32px var(--ew-serif); }
+
+/* -- Clip player: 64 px mono counter, play, ±5 s, speed, progress. -- */
+.ew-player { padding: var(--ew-s6) 28px; display: flex; flex-direction: column; gap: var(--ew-s4); }
+/* VIS-NOV1 #14: while its clip loads or plays, the evidence player stays on
+   screen as the page (or the playing line) scrolls, so Pause is in reach.
+   VN1-R3-01: only on a screen tall enough to leave 2 transcript lines and a
+   focus ring below it (the player is up to 394 px tall; 618 px needed at
+   320 wide). In phone landscape it scrolls away. */
+@media (min-height: 620px) {
+  .ew-reader > .ew-player.ew-clip.is-loading, .ew-reader > .ew-player.ew-clip.is-playing { position: sticky; top: 0; z-index: 2; }
+}
+.ew-player-row { display: flex; align-items: center; gap: var(--ew-s6); flex-wrap: wrap; }
+.ew-player-times { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; min-width: 0; }
+.ew-player-end { font: 500 24px/28px var(--ew-mono); color: var(--ew-text-2); font-variant-numeric: tabular-nums; }
+.ew-player-controls { display: flex; gap: var(--ew-s2); align-items: center; flex-wrap: wrap; }
+.ew-player-skip { padding: 0 var(--ew-s3); font: 500 13px/18px var(--ew-mono); }
+.ew-player-speed { display: flex; gap: 6px; align-items: center; font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-player-speed select { width: auto; min-width: 72px; font: 500 13px/18px var(--ew-mono); }
+.ew-player-progress { display: flex; align-items: center; gap: var(--ew-s3); }
+.ew-player-progress .ew-time { font: 400 13px/18px var(--ew-mono); color: var(--ew-text-2); }
+.ew-player-progress input[type=range] { flex: 1; min-width: 60px; min-height: 44px; margin: 0; cursor: pointer; -webkit-appearance: none; appearance: none; background: transparent; }
+/* The clip seek bar (CLIP-PLAYER-FIX2, screen R1-02/03): a 44 px touch target, and one look in
+   every engine (WebKit ignores accent-color on a range): a 4 px track, the played part blue
+   (--ew-seek, set by the player), a blue 16 px thumb ringed in the sheet colour. */
+.ew-player-progress input[type=range]::-webkit-slider-runnable-track { height: 4px; border-radius: 2px; background: linear-gradient(var(--ew-action), var(--ew-action)) 0 / var(--ew-seek, 0%) 100% no-repeat, var(--ew-control); }
+.ew-player-progress input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; box-sizing: border-box; width: 16px; height: 16px; margin-top: -6px; border-radius: 50%; background: var(--ew-action); border: 2px solid var(--ew-sheet); box-shadow: 0 0 0 1px var(--ew-action); }
+.ew-player-progress input[type=range]::-moz-range-track { height: 4px; border-radius: 2px; background: var(--ew-control); }
+.ew-player-progress input[type=range]::-moz-range-progress { height: 4px; border-radius: 2px; background: var(--ew-action); }
+.ew-player-progress input[type=range]::-moz-range-thumb { box-sizing: border-box; width: 16px; height: 16px; border-radius: 50%; background: var(--ew-action); border: 2px solid var(--ew-sheet); box-shadow: 0 0 0 1px var(--ew-action); }
+.ew-player-note { font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-audio-note { display: flex; flex-direction: column; gap: 2px; max-width: 520px; font: var(--ew-t-ui); color: var(--ew-text-2); }
+.ew-audio-note strong { color: var(--ew-text); font-weight: 600; }
+.ew-clip-error { display: flex; gap: var(--ew-s3); align-items: center; flex-wrap: wrap; font: var(--ew-t-ui); }
+.ew-clip-error b { color: var(--ew-gap); }
+.ew-clip.is-error .ew-player-progress, .ew-clip.is-error .ew-player-controls { opacity: .5; }
+/* Failed (Sol R2-02): the error line and Retry are the only playback status. */
+.ew-clip.is-error .ew-audio-note, .ew-clip.is-error .ew-clip-hint { display: none; }
+/* Loading (Sol R1-01): the live status shows its text; empty, it stays in the tree but takes no space. */
+.ew-clip-status { font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-clip-status:empty { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+/* The evidence player shows "Loading clip…" in the place of "Clip available" (CLIP-PLAYER-FIX3,
+   screen R2-02): one 20 px line with no top margin either way, so the card neither moves nor keeps an empty band. */
+.ew-player .ew-clip-status { line-height: 20px; margin-top: 0; } /* not the p + p 12 px: "Clip available" has none */
+.ew-player.ew-clip.is-loading .ew-audio-note { display: none; }
+.ew-ad-row > .ew-clip-status { grid-column: 1 / -1; }
+/* A pending play (Sol R3-01): the control keeps Play but is unavailable until playing. */
+.ew-play[aria-disabled=true] { cursor: progress; opacity: .6; }
+@media (max-width: 599px) {
+  .ew-player { padding: var(--ew-s4); }
+  .ew-player-row { gap: 14px; }
+  .ew-player .ew-play-lg { width: 52px; height: 52px; }
+  .ew-player-end { font-size: 18px; line-height: 22px; }
+  .ew-player-row > .ew-spacer { display: none; }
+  /* Design 6.3: row 1 play and times; row 2 −5s, +5s and Speed; the progress bar below. */
+  .ew-clip .ew-player-row { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; }
+  .ew-clip .ew-player-controls { grid-column: 1 / -1; }
+}
+
+/* -- Position strip: where a read (or each ad) sat in the episode. -- */
+.ew-strip { display: flex; flex-direction: column; gap: 6px; }
+.ew-strip-label { font: 600 12px/16px var(--ew-sans); color: var(--ew-text-2); }
+.ew-strip-bar { display: block; width: 100%; height: 16px; background: var(--ew-sunken); border: 1px solid var(--ew-border); border-radius: 2px; }
+.ew-ads .ew-strip-bar { height: 24px; }
+.ew-strip-bar rect { fill: var(--ew-inverse); transform: scaleY(.75); transform-origin: center; transform-box: fill-box; }
+.ew-strip-bar rect.is-pod { fill: var(--ew-action); }
+.ew-strip-bar rect.is-promo { fill: var(--ew-control); }
+.ew-strip-ends { display: flex; justify-content: space-between; font: 400 12px/16px var(--ew-mono); color: var(--ew-text-3); }
+
+/* -- Ad pod: card on Evidence, inset box on Episode; rows below the bar. -- */
+.ew-pod-card { padding: var(--ew-s6) 28px; }
+.ew-pod-head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--ew-s2); flex-wrap: wrap; }
+.ew-pod-head h2, .ew-pod-head h3 { font: 600 18px/24px var(--ew-serif); }
+.ew-pod-head .ew-time { font: 500 15px/20px var(--ew-mono); }
+.ew-pod-card .ew-pod-bar { height: 64px; }
+.ew-pod-spot[aria-current=true] { background: var(--ew-inverse); color: var(--ew-text-inverse); }
+.ew-pod-spot[aria-current=true] .ew-time { color: var(--ew-border); }
+.ew-pod-spot[aria-current=true]:focus-visible { outline-color: var(--ew-focus-inverse); }
+.ew-pod-rows { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.ew-pod-card .ew-pod-rows > li { display: flex; gap: var(--ew-s2) var(--ew-s3); align-items: center; flex-wrap: wrap; min-height: 44px; border-top: 1px solid var(--ew-rule); font: var(--ew-t-ui); }
+.ew-pod-n { width: 16px; flex: none; text-align: center; font: 600 12px/16px var(--ew-mono); color: var(--ew-text-2); }
+.ew-pod-card .ew-pod-rows .ew-time { width: 104px; flex: none; }
+.ew-pod-name { display: inline-flex; gap: var(--ew-s2); align-items: center; flex-wrap: wrap; }
+.ew-pod-this { font: 600 13px/18px var(--ew-sans); color: var(--ew-action); }
+.ew-pod-rows .report-problem, .ew-ad-actions .report-problem { margin: 0; }
+.ew-pod-rows .report-problem[open], .ew-ad-actions .report-problem[open] { flex-basis: 100%; }
+.ew-pod-box { border: 1px solid var(--ew-border); border-radius: var(--ew-r-card); padding: 18px; background: var(--ew-hover); }
+.ew-pod-box .ew-pod-bar { background: var(--ew-sheet); }
+@media (max-width: 599px) {
+  .ew-pod-card { padding: var(--ew-s4); }
+  .ew-pod-card .ew-pod-bar { height: 44px; }
+  .ew-pod-box { padding: var(--ew-s3); }
+  .ew-pod-card .ew-pod-rows .ew-time { width: auto; }
+}
+
+/* -- "What was said": transcript lines; the read itself set larger. -- */
+.ew-said, .ew-transcript { padding: var(--ew-s6) 28px; display: flex; flex-direction: column; gap: 14px; }
+.ew-said > h2 { font: var(--ew-t-section); }
+.ew-said > .text-link, .ew-transcript .text-link { align-self: flex-start; }
+.ew-reader .transcript { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.ew-reader .transcript li { display: grid; grid-template-columns: minmax(64px, max-content) minmax(0, 1fr); gap: var(--ew-s1) var(--ew-s4); padding: 0 14px; margin: 0; border: 0; border-radius: var(--ew-r-card); background: transparent; }
+.ew-reader .transcript li > .mono { font: 400 13px/27px var(--ew-mono); color: var(--ew-text-3); white-space: nowrap; }
+.ew-reader .transcript p { margin: 0; font: var(--ew-t-quote); color: var(--ew-text-2); text-wrap: pretty; overflow-wrap: anywhere; }
+.ew-said .transcript li.is-hit { padding: var(--ew-s3) 14px; background: var(--ew-page); }
+.ew-said .transcript li.is-hit > .mono { font: 600 13px/33px var(--ew-mono); color: var(--ew-action); }
+.ew-said .transcript li.is-hit p { font: var(--ew-t-quote-l); color: var(--ew-text); }
+.ew-said .transcript li.is-hit + li.is-hit { margin-top: -2px; border-top-left-radius: 0; border-top-right-radius: 0; }
+.ew-said .transcript[data-all-read] p { color: var(--ew-text); }
+/* (2b) An in-clip line's time is a "Play from" button: the time label's
+   look, underlined as a control. */
+.ew-said .transcript .ew-line-play { appearance: none; background: none; border: 0; margin: 0; padding: 0; justify-self: start; align-self: start; text-align: left; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; border-radius: 2px; }
+.ew-said .transcript .ew-line-play:hover { color: var(--ew-action); }
+/* (2b FIX1) Hover and the playing line thicken the underline: a cue that is not colour (read-line times are already blue). */
+.ew-said .transcript .ew-line-play:hover,
+.ew-said .transcript li.is-now > .ew-line-play { text-decoration-thickness: 2px; }
+/* (2b) The playing line: a 3 px bar on its left and its time bold in the
+   action colour (not colour alone); no transition. */
+.ew-said .transcript li.is-now { box-shadow: inset 3px 0 0 var(--ew-action); }
+.ew-said .transcript li.is-now > .mono { color: var(--ew-action); font-weight: 600; }
+.ew-said-code { font: 600 0.85em var(--ew-mono); background: var(--ew-code-bg); color: var(--ew-code); padding: 0 3px; }
+.ew-said-url { font: 400 0.85em var(--ew-mono); color: var(--ew-text-2); }
+.ew-reader .window-text { display: flex; flex-direction: column; gap: var(--ew-s3); }
+.ew-reader .window-text > .small.muted { color: var(--ew-text-3); }
+@media (max-width: 599px) {
+  .ew-said, .ew-transcript { padding: var(--ew-s4); }
+  .ew-said .transcript li { grid-template-columns: minmax(0, 1fr); padding: 0 10px; }
+  .ew-said .transcript li.is-hit { padding: 10px; }
+  .ew-said .transcript p { font: var(--ew-t-quote-s); }
+  .ew-said .transcript li.is-hit p { font: 400 18px/29px var(--ew-serif); }
+  /* (2b FIX1) Play from: a 44 px tall hit area on touch screens, same look; the line's text sits below its time, so lines' hit areas never meet. */
+  .ew-said .transcript .ew-line-play { position: relative; }
+  .ew-said .transcript .ew-line-play::after { content: ""; position: absolute; inset: -9px -8px; }
+}
+
+/* -- Fact ledger card, shown/not-shown block, report, about. -- */
+.ew-facts-card .ew-ledger th { width: 44%; padding-right: var(--ew-s3); }
+.ew-facts-card .ew-ledger td { font-weight: 600; }
+.ew-facts-card .ew-ledger td.ew-ledger-missing { font-weight: 400; }
+.ew-facts-card .ew-ledger-source, .ew-facts-card .ew-ledger-note { font-weight: 400; margin-top: 2px; }
+.ew-facts-card .ew-ledger-note { color: var(--ew-uncertain); }
+@media (max-width: 599px) {
+  /* The reference keeps label and value side by side at 390. */
+  .ew-facts-card .ew-ledger th, .ew-facts-card .ew-ledger td { display: table-cell; padding: var(--ew-s3) var(--ew-s3) var(--ew-s3) var(--ew-s4); }
+  .ew-facts-card .ew-ledger th { width: 42%; }
+  .ew-facts-card .ew-ledger td { padding-left: 0; }
+}
+.ew-facts-card .ew-card-body .text-link { padding: 0; }
+.ew-shows { background: var(--ew-sunken); border-radius: var(--ew-r-card); padding: var(--ew-s4) var(--ew-s5); display: flex; flex-direction: column; gap: 6px; font: 400 14px/21px var(--ew-sans); }
+.ew-shows h2 { font: 600 16px/22px var(--ew-serif); }
+.ew-shows h2 + p + h2, .ew-shows p + h2 { margin-top: var(--ew-s2); }
+.ew-shows p { color: var(--ew-text-2); margin: 0; }
+.ew-reader-side > .report-problem { margin: 0; background: var(--ew-sheet); border: 1px solid var(--ew-border); border-radius: var(--ew-r-card); }
+.ew-reader-side > .report-problem > summary { padding: 0 var(--ew-s4); font: 600 14px/20px var(--ew-sans); color: var(--ew-text); }
+.ew-reader-side > .report-thanks { background: var(--ew-sheet); border: 1px solid var(--ew-border); border-radius: var(--ew-r-card); padding: var(--ew-s3) var(--ew-s4) var(--ew-s4); }
+.report-thanks { display: flex; flex-direction: column; gap: var(--ew-s1); font: var(--ew-t-ui); }
+.report-thanks > b { color: var(--ew-confirmed); }
+.report-thanks > span { color: var(--ew-text); font-weight: 400; }
+.report-optional { font-weight: 400; color: var(--ew-text-2); }
+.report-hint { font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-about .ew-card-title { font-size: 16px; line-height: 22px; padding: 14px 18px; }
+.ew-about .ew-card-body { padding: var(--ew-s3) 18px var(--ew-s2); }
+.ew-about .ew-facts { font: var(--ew-t-ui); gap: 6px var(--ew-s3); }
+.ew-about .tech-details { margin-top: var(--ew-s1); }
+
+/* -- Episode: status line, ads card, ad rows, own promotions. -- */
+.ew-episode-h1 { font: 600 36px/42px var(--ew-serif); overflow-wrap: anywhere; }
+.ew-episode-status { display: flex; gap: var(--ew-s2) 10px; align-items: center; flex-wrap: wrap; font: var(--ew-t-ui); color: var(--ew-text-2); }
+.ew-episode-tier { margin: 0; }
+.ew-ads { padding: var(--ew-s6) 28px; display: flex; flex-direction: column; gap: 18px; }
+.ew-ads-head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--ew-s2); flex-wrap: wrap; }
+.ew-ads-head h2 { font: 600 24px/30px var(--ew-serif); }
+.ew-ads-count { font: var(--ew-t-ui); color: var(--ew-text-2); }
+.ew-ads-state { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font: var(--ew-t-body-l); max-width: 760px; }
+.ew-ads-note { font: var(--ew-t-ui); color: var(--ew-text-2); }
+.ew-ads > .ew-notice { flex-direction: column; align-items: flex-start; }
+.ew-notice-stopped > b:first-child { color: var(--ew-gap); }
+.ew-ads > .ew-notice > p { flex: none; }
+.ew-ad-rows { list-style: none; margin: 0; padding: 0; }
+.ew-ad-row { display: grid; grid-template-columns: 40px 132px minmax(0, 1fr) auto; gap: 6px var(--ew-s3); align-items: center; padding: var(--ew-s2) 0; border-top: 1px solid var(--ew-rule); }
+.ew-ad-row > .ew-play-none, .ew-ad-row > .ew-pod-n { width: 40px; }
+.ew-ad-time .ew-time { font: var(--ew-t-time); }
+.ew-ad-label { display: flex; gap: 6px var(--ew-s2); align-items: center; flex-wrap: wrap; min-width: 0; }
+.ew-ad-brand { font: 600 15px/22px var(--ew-sans); }
+.ew-ad-reason { font: var(--ew-t-ui); color: var(--ew-text-2); }
+.ew-ad-actions { display: flex; gap: 2px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+.ew-ad-actions .text-link { padding: 0 var(--ew-s2); }
+.ew-ad-actions .report-problem > summary { padding: 0 var(--ew-s2); }
+.ew-ad-note, .ew-ad-row > .ew-clip-error { grid-column: 1 / -1; font: var(--ew-t-meta); color: var(--ew-text-2); }
+/* Plan A excerpt row (Sol r1 FIX-1): the excerpt, then the actions, each on its own full-width row. */
+.ew-ad-row-excerpt > .ew-ad-excerpt, .ew-ad-row-excerpt > .ew-ad-actions { grid-column: 1 / -1; min-width: 0; }
+.ew-ad-row-excerpt > .ew-ad-actions { justify-content: flex-start; }
+.ew-ad-row-excerpt > .ew-ad-actions .text-link:first-child { padding-left: 0; }
+.ew-pod-box { display: flex; flex-direction: column; gap: var(--ew-s3); }
+.ew-pod-box .ew-ad-row:first-child { border-top: 1px solid var(--ew-rule); }
+.ew-promos, .ew-earlier, .ew-unplaced { background: var(--ew-sunken); border-radius: var(--ew-r-card); padding: 14px var(--ew-s4); display: flex; flex-direction: column; gap: var(--ew-s2); }
+.ew-promos h3, .ew-earlier h3 { font: 600 16px/22px var(--ew-serif); }
+.ew-promos h3 > span { font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-promos .ew-ad-row, .ew-earlier .ew-ad-row, .ew-unplaced .ew-ad-row { border-top: 0; }
+.ew-promos .ew-ad-row + .ew-ad-row, .ew-earlier .ew-ad-row + .ew-ad-row, .ew-unplaced .ew-ad-row + .ew-ad-row { border-top: 1px solid var(--ew-border); }
+/* A pod spot that starts inside an earlier one (B-2). */
+.ew-pod-spot.is-overlap { border-left: 3px dashed var(--ew-text-2); }
+@media (max-width: 599px) {
+  .ew-episode-h1 { font-size: 28px; line-height: 34px; }
+  .ew-ads { padding: var(--ew-s4); }
+  .ew-ad-row { grid-template-columns: 44px minmax(0, 1fr); }
+  .ew-ad-row > .ew-play { width: 44px; height: 44px; }
+  .ew-ad-label, .ew-ad-actions { grid-column: 1 / -1; }
+  .ew-ad-actions { justify-content: flex-start; }
+  .ew-ad-actions .text-link:first-child { padding-left: 0; }
+}
+
+/* -- Episode transcript: recording bar, ad lines with their label. -- */
+.ew-transcript > h2 { font: 600 24px/30px var(--ew-serif); }
+.ew-transcript-head { display: flex; align-items: center; justify-content: space-between; gap: var(--ew-s4); flex-wrap: wrap; }
+.ew-transcript-head .ew-find { width: min(320px, 100%); }
+.ew-find-status { margin: 0; }
+.ew-find-status:empty { display: none; }
+.ew-find-scope { margin: 0; }
+.ew-find-more { margin: 0; }
+.ew-transcript-jump { display: flex; flex-direction: column; gap: var(--ew-s2); max-width: 360px; }
+.ew-transcript .transcript li[hidden] { display: none; }
+.ew-episode-audio { display: flex; flex-direction: column; gap: var(--ew-s2); padding: 10px var(--ew-s3); background: var(--ew-sunken); border-radius: var(--ew-r-card); }
+.ew-episode-audio-row { display: flex; align-items: center; gap: var(--ew-s3); }
+.ew-episode-audio-row .ew-time { font: var(--ew-t-time); white-space: nowrap; }
+.ew-episode-audio-row input[type=range] { flex: 1; min-width: 60px; }
+.ew-transcript .transcript li { padding: var(--ew-s2) 10px; gap: 2px var(--ew-s4); }
+.ew-transcript .transcript li > .mono { font: 500 13px/26px var(--ew-mono); }
+.ew-transcript .transcript p { font: 400 16px/26px var(--ew-serif); color: var(--ew-text); }
+.ew-transcript .transcript li.active { background: var(--ew-page); }
+.ew-transcript .transcript li.active > .mono { color: var(--ew-action); }
+.ew-transcript .transcript li[data-jump-target] { box-shadow: inset 3px 0 0 var(--ew-action); }
+.ew-line-tag { display: block; font: 600 12px/16px var(--ew-sans); color: var(--ew-text-2); }
+.ew-cover { background: var(--ew-sunken); border-radius: var(--ew-r-card); padding: var(--ew-s4) 18px; display: flex; flex-direction: column; gap: 6px; font: 400 14px/21px var(--ew-sans); }
+.ew-cover h2 { font: 600 14px/21px var(--ew-sans); }
+.ew-cover p { margin: 0; }
+@media (max-width: 599px) {
+  .ew-transcript .transcript li { grid-template-columns: minmax(56px, max-content) minmax(0, 1fr); }
+}
+/* Row 1: "Ad break · range · N ads" labels 2+ ads of one overlap group. */
+.ew-adbreak { display: flex; flex-direction: column; gap: var(--ew-s3); padding-left: var(--ew-s3); border-left: 3px solid var(--ew-border); min-width: 0; }
+.ew-adbreak-h { font: 600 16px/22px var(--ew-serif); }
+.ew-adbreak-h .ew-time { font: 500 15px/20px var(--ew-mono); }

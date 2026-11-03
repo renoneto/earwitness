@@ -1,0 +1,319 @@
+/* EarWitness design v3 (Exhibit) · work.css
+   Alerts, Campaigns, targets, placements and reports.
+   Page workers own this file. Use the --ew-* tokens (tokens.css) and the
+   shared components in styles.css; no inline styles (CSP style-src 'self'). */
+
+/* -- Page frame: one column, even rhythm. -- */
+.ew-work-page { display: flex; flex-direction: column; gap: var(--ew-s6); min-width: 0; }
+.ew-work-page > * { margin: 0; min-width: 0; }
+.ew-work-page > .breadcrumb { margin: 0 0 calc(-1 * var(--ew-s3)); }
+.ew-work-page > .page-head { margin-bottom: 0; }
+.ew-work-page .ew-back { color: var(--ew-action); text-decoration: underline; text-underline-offset: 3px; }
+.ew-work-title { font: var(--ew-t-card); font-size: 16px; color: var(--ew-text); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.ew-work-title:hover { color: var(--ew-action); }
+.ew-work-meta { font: var(--ew-t-meta); color: var(--ew-text-2); overflow-wrap: anywhere; }
+.ew-work-label { font: 600 13px/18px var(--ew-sans); color: var(--ew-text); }
+.ew-work-tags { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.ew-work-state { white-space: nowrap; }
+.ew-work-glyph { font-size: 11px; line-height: 1; }
+.ew-work-foot { font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-work-card > .ew-card-head > .ew-work-meta { max-width: 60ch; text-align: right; }
+.ew-work-section { display: flex; flex-direction: column; gap: var(--ew-s3); min-width: 0; }
+.ew-work-section > .ew-section-head { margin-bottom: 0; align-items: center; }
+.ew-work-note > p { flex: 1 1 auto; }
+
+/* -- Alerts hub: tabs + one framed list, four columns at width. -- */
+.ew-work-tabs { margin-bottom: calc(-1 * var(--ew-s2)); gap: var(--ew-s6); border-bottom: 1px solid var(--ew-border); }
+/* Underline tabs, the same look as the Saved tabs (aria-pressed draws the line). */
+.ew-work-tabs .ew-work-filter { min-height: 44px; padding: 0 2px; border: 0; border-radius: 0; background: transparent; color: var(--ew-text-2); font: 400 15px/22px var(--ew-sans); white-space: nowrap; }
+.ew-work-tabs .ew-work-filter:hover { background: transparent; color: var(--ew-text); box-shadow: inset 0 -3px 0 var(--ew-border-strong); }
+.ew-work-tabs .ew-work-filter[aria-pressed=true] { background: transparent; color: var(--ew-text); box-shadow: inset 0 -3px 0 var(--ew-text); font-weight: 600; }
+.ew-work-tabs .ew-work-filter:focus-visible { outline-offset: -2px; }
+/* VL-36: the rows share one column grid (subgrid), so a wider Resume or
+   Check again never shifts one row's state and actions off the column. */
+.ew-work-alerts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr) 170px 240px auto; column-gap: var(--ew-s4); }
+.ew-work-alert { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; gap: 6px var(--ew-s4); align-items: center;
+  padding: 14px 18px; border-top: 1px solid var(--ew-rule); transition: background-color var(--ew-fast) var(--ew-ease); }
+.ew-work-alert:first-child { border-top: 0; }
+.ew-work-alert:hover { background: var(--ew-hover); }
+.ew-work-alert[hidden] { display: none; }
+.ew-work-alert-main { display: flex; flex-direction: column; gap: var(--ew-s1); min-width: 0; }
+.ew-work-alert-name { display: flex; flex-wrap: wrap; gap: var(--ew-s2); align-items: center; }
+.ew-work-alert-main details { font: var(--ew-t-meta); }
+.ew-work-def { font: 400 13px/20px var(--ew-mono); color: var(--ew-text-2); overflow-wrap: anywhere; }
+.ew-work-alert-state { justify-self: start; }
+.ew-work-last { font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-work-last.is-failed { color: var(--ew-gap); }
+.ew-work-alert-actions { justify-content: flex-end; flex-wrap: nowrap; gap: var(--ew-s1); }
+
+/* -- One alert: changes list + side cards. -- */
+.ew-work-split { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: var(--ew-s6); align-items: start; }
+.ew-work-split > * { min-width: 0; }
+/* UX-04: the alert page puts current state (aside) first in the DOM, so
+   phone reading and focus order match the stacked order; desktop keeps
+   the history on the left. */
+.ew-alert-split { grid-template-areas: "main aside"; }
+.ew-alert-split > .ew-work-aside { grid-area: aside; }
+.ew-alert-split > section { grid-area: main; }
+.ew-work-aside { display: flex; flex-direction: column; gap: var(--ew-s4); }
+.ew-work-aside > section { padding: var(--ew-s5); }
+.ew-work-aside h2 { font: 600 20px/26px var(--ew-serif); margin-bottom: var(--ew-s2); }
+.ew-work-aside h3 { margin-bottom: var(--ew-s2); }
+.ew-work-aside .button { margin-top: var(--ew-s1); }
+.ew-work-aside details { margin-top: var(--ew-s3); }
+.ew-work-big { font: 600 32px/38px var(--ew-serif); color: var(--ew-text); }
+.ew-work-events > li.ew-work-event { padding: var(--ew-s3) var(--ew-s5); border-top: 0; }
+.ew-work-event-head { display: flex; flex-wrap: wrap; gap: var(--ew-s2) var(--ew-s3); align-items: center; }
+.ew-work-event-head > .ew-spacer { flex: 1; }
+.ew-work-event-head .text-link { min-height: var(--ew-target); display: inline-flex; align-items: center; }
+/* UX-03: readable change rows, grouped by episode. */
+.ew-work-event-main { display: flex; flex-direction: column; gap: var(--ew-s1); min-width: 0; }
+.ew-work-event-head > strong { overflow-wrap: anywhere; min-width: 0; }
+.ew-work-excerpt { font: var(--ew-t-quote-s); color: var(--ew-text); overflow-wrap: anywhere; }
+.ew-work-events > li.ew-work-event-group { padding: 0; border-top: 0; }
+.ew-work-group-head { padding: var(--ew-s3) var(--ew-s5) var(--ew-s1); font: var(--ew-t-meta); color: var(--ew-text-2); border-top: 1px solid var(--ew-rule); overflow-wrap: anywhere; }
+.ew-work-group-where { color: var(--ew-text); }
+.ew-work-group-list { list-style: none; margin: 0; padding: 0; }
+.ew-work-group-list > li.ew-work-event { padding: var(--ew-s2) var(--ew-s5) var(--ew-s3); }
+.ew-work-also { font: var(--ew-t-meta); color: var(--ew-text-2); padding-left: var(--ew-s4); border-left: 2px solid var(--ew-border); overflow-wrap: anywhere; }
+.ew-work-also .text-link { min-height: var(--ew-target); display: inline-flex; align-items: center; }
+.ew-work-import { padding: 0 var(--ew-s5); }
+/* UX-03: latest check / earlier changes / earlier settings sub-heads. */
+.ew-alert-subhead { padding: var(--ew-s4) var(--ew-s5) var(--ew-s1); font: var(--ew-t-label); letter-spacing: .06em; text-transform: uppercase; color: var(--ew-text-2); border-top: 1px solid var(--ew-rule); }
+.ew-card-head + .ew-alert-subhead { border-top: 0; }
+.ew-work-kind-value { font: var(--ew-t-meta); color: var(--ew-text-2); overflow-wrap: anywhere; }
+.ew-work-split .ew-card-head > [data-action=mark-read] { margin-left: auto; }
+.ew-work-split .ew-card-body > .empty { border: 0; padding: 0; }
+.ew-work-delivery { margin-top: calc(-1 * var(--ew-s3)); }
+
+/* -- Campaigns directory: one framed list, name | scope | state. -- */
+.ew-work-rows { list-style: none; margin: 0; padding: 0; }
+.ew-work-camp { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 360px) 200px; gap: var(--ew-s2) var(--ew-s6); align-items: center;
+  padding: var(--ew-s4) 18px; border-top: 1px solid var(--ew-rule); transition: background-color var(--ew-fast) var(--ew-ease); }
+.ew-work-camp:first-child { border-top: 0; }
+.ew-work-camp:hover { background: var(--ew-hover); }
+.ew-work-camp-name { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.ew-work-camp-scope { font: var(--ew-t-ui); color: var(--ew-text); }
+
+/* -- Campaign: brief card, placement filters and three-column rows. -- */
+.ew-work-brief-card .ew-card-body { display: flex; flex-direction: column; gap: var(--ew-s3); }
+.ew-work-brief-card .section-note { margin-top: 0; }
+.ew-work-brief { margin: 0; padding-left: var(--ew-s4); border-left: 3px solid var(--ew-border-strong); font: var(--ew-t-quote); color: var(--ew-text); max-width: 70ch; overflow-wrap: anywhere; }
+.ew-work-filters { display: flex; flex-wrap: wrap; gap: var(--ew-s2); }
+.ew-work-filter { min-height: var(--ew-target); padding: 0 14px; border: 1px solid var(--ew-control); border-radius: var(--ew-r-round); background: var(--ew-sheet);
+  color: var(--ew-text); font: var(--ew-t-ui); cursor: pointer; transition: background-color var(--ew-fast) var(--ew-ease); }
+.ew-work-filter:hover { background: var(--ew-hover); border-color: var(--ew-text); }
+.ew-work-filter[aria-pressed=true] { background: var(--ew-selected); border-color: var(--ew-action); font-weight: 600; }
+.ew-work-placements { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--ew-s3); }
+.ew-work-placement { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr) minmax(0, 4fr); gap: var(--ew-s3) var(--ew-s8);
+  padding: 18px var(--ew-s5); background: var(--ew-sheet); border: 1px solid var(--ew-border); border-radius: var(--ew-r-card); }
+.ew-work-pl-where, .ew-work-pl-out, .ew-work-pl-act { display: flex; flex-direction: column; gap: var(--ew-s2); align-items: flex-start; min-width: 0; }
+.ew-work-pl-where .placement-head { margin: 0; font: inherit; }
+.ew-work-pl-out .section-note { margin-top: 0; }
+.ew-work-pl-act .text-link { min-height: var(--ew-target); display: inline-flex; align-items: center; padding: 0; }
+.ew-work-reason { font: var(--ew-t-ui); color: var(--ew-text); }
+.ew-work-verdict { margin: 0 0 var(--ew-s3); font: var(--ew-t-ui); font-weight: 600; color: var(--ew-text); }
+/* All-Unknown requirements: one line, then the table under Field by field. */
+.ew-card-body + .ew-work-req { padding-top: 0; }
+.ew-work-req .section-note { margin-top: 0; }
+.ew-work-reasons { margin: 0; padding-left: 18px; font: var(--ew-t-ui); color: var(--ew-text-2); display: flex; flex-direction: column; gap: 2px; }
+.ew-work-reports .ew-card-list > li, .ew-work-report { flex-direction: row; flex-wrap: wrap; align-items: center; gap: var(--ew-s2) var(--ew-s4); }
+.ew-work-report-name a { font-weight: 600; }
+/* A stale tag lists what changed and can be long: let it wrap (B-9). */
+.ew-work-report .tag { white-space: normal; min-width: 0; max-width: 100%; }
+/* The episode summary has long tails: let it wrap at 390 (F2-SCR-R3-01). */
+[data-part="tag"] .tag { white-space: normal; min-width: 0; max-width: 100%; }
+.campaign-timeline { background: var(--ew-sheet); border: 1px solid var(--ew-border); border-radius: var(--ew-r-card); padding: var(--ew-s5); }
+.campaign-timeline h3 { margin-bottom: var(--ew-s3); }
+.campaign-timeline .chart-svg { max-width: 720px; }
+
+/* -- Research: observations beside targets, coverage and notes. -- */
+.ew-work-planned { display: inline-flex; gap: var(--ew-s2); align-items: center; }
+.ew-work-planned-btn:disabled { border-style: dashed; border-color: var(--ew-control); background: transparent; color: var(--ew-text-2); }
+.ew-work-obs { list-style: none; margin: 0; padding: 0; }
+.ew-work-obs > li { border-top: 1px solid var(--ew-rule); }
+.ew-work-obs > li:first-child { border-top: 0; }
+.ew-work-obs-link { display: flex; align-items: center; min-height: 52px; padding: 0 var(--ew-s5); color: var(--ew-text); font: var(--ew-t-ui); }
+.ew-work-obs-link::after { content: "›"; margin-left: auto; color: var(--ew-action); font-weight: 600; }
+.ew-work-obs-link:hover { background: var(--ew-hover); }
+/* G2-01: Remove from campaign sits at the end of each observation row. */
+.ew-work-obs > li:has(.ew-obs-remove) { display: flex; flex-wrap: wrap; align-items: center; }
+.ew-work-obs > li > .ew-work-obs-link { flex: 1 1 220px; min-width: 0; }
+.ew-work-obs > li > .ew-obs-remove { flex: none; margin: var(--ew-s1) var(--ew-s4) var(--ew-s1) auto; }
+.radio-group > .ew-obs-remove { justify-self: start; margin: 0 0 var(--ew-s2) 30px; }
+.ew-work-targets { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.ew-work-targets > li { display: flex; flex-direction: column; gap: var(--ew-s1); padding: 10px 0; border-top: 1px solid var(--ew-rule); }
+.ew-work-targets > li:first-child { border-top: 0; padding-top: 0; }
+.ew-work-targets .ew-work-title { font-size: 15px; }
+.ew-work-note-text { font: var(--ew-t-quote); }
+
+/* -- Target and placement pages. -- */
+.ew-work-facts { display: flex; flex-direction: column; gap: var(--ew-s3); }
+.ew-work-facts .ew-facts { font: var(--ew-t-ui); gap: var(--ew-s2) var(--ew-s5); }
+.ew-work-facts .section-note { margin-top: 0; }
+.ew-work-status { display: flex; flex-wrap: wrap; gap: var(--ew-s2) var(--ew-s3); align-items: center; }
+.ew-work-page > .ew-work-status + .section-note { margin-top: calc(-1 * var(--ew-s3)); }
+/* FUNC-2: per-episode verdicts (placement page list; reads to review on the campaign row). */
+.ew-episodes { display: flex; flex-direction: column; gap: var(--ew-s2); min-width: 0; }
+.ew-ep-summary { margin: 0; font: var(--ew-t-ui); font-weight: 600; color: var(--ew-text); }
+.ew-ep-list { list-style: none; margin: 0; padding: 0; background: var(--ew-sheet); border: 1px solid var(--ew-border); border-radius: var(--ew-r-card); }
+.ew-ep { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr) minmax(0, 1.2fr) auto; gap: var(--ew-s1) var(--ew-s4); align-items: center;
+  padding: 10px var(--ew-s5); border-top: 1px solid var(--ew-rule); font: var(--ew-t-ui); color: var(--ew-text); min-width: 0; }
+.ew-ep:first-child { border-top: 0; }
+.ew-ep-date { font: var(--ew-t-meta); color: var(--ew-text-2); white-space: nowrap; }
+.ew-ep-where, .ew-ep-verdict { overflow-wrap: anywhere; min-width: 0; }
+.ew-ep-verdict { font-weight: 600; }
+.ew-ep-act { display: inline-flex; flex-wrap: wrap; gap: var(--ew-s2); align-items: center; justify-self: end; }
+.ew-ep-reads { grid-column: 1 / -1; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--ew-s1); }
+.ew-ep-read { display: flex; flex-wrap: wrap; gap: var(--ew-s1) var(--ew-s3); align-items: center; min-width: 0; }
+.ew-ep-read-line { font: var(--ew-t-meta); color: var(--ew-text-2); overflow-wrap: anywhere; }
+.ew-ep-read-name { display: inline-flex; flex-wrap: wrap; gap: var(--ew-s2); align-items: baseline; font: var(--ew-t-meta); }
+.ew-ep-read-brand { font-weight: 600; overflow-wrap: anywhere; }
+.ew-ep-review { display: inline-flex; flex-wrap: wrap; gap: var(--ew-s1) var(--ew-s2); align-items: center; }
+.ew-ep-code { display: inline-flex; gap: var(--ew-s2); align-items: center; font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-ep-code input { width: 10rem; }
+/* WIN1-APP: Muse Spark's brief check, a full-width box under its read's controls (a suggestion, so the uncertain palette). */
+.ew-mc { flex: 1 1 100%; min-width: 0; margin: var(--ew-s1) 0 var(--ew-s2); padding: var(--ew-s3) var(--ew-s4); background: var(--ew-uncertain-bg);
+  border: 1px solid var(--ew-uncertain-border); border-left-width: 4px; border-radius: var(--ew-r-card); font: var(--ew-t-ui); color: var(--ew-text); }
+.ew-mc p { margin: 0; overflow-wrap: anywhere; }
+.ew-mc-head { font-weight: 600; }
+.ew-mc-note, .ew-mc-foot { font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-mc-fields { list-style: none; margin: var(--ew-s2) 0; padding: 0; display: flex; flex-direction: column; gap: var(--ew-s1); }
+.ew-mc-field { display: flex; flex-wrap: wrap; gap: 0 var(--ew-s2); min-width: 0; }
+.ew-mc-label { font-weight: 600; min-width: 9rem; }
+.ew-mc-state, .ew-mc-mismatch { overflow-wrap: anywhere; min-width: 0; }
+.ew-mc-brief, .ew-mc-said { flex-basis: 100%; padding-left: calc(9rem + var(--ew-s2)); font: var(--ew-t-meta); color: var(--ew-text-2); overflow-wrap: anywhere; }
+.ew-mc-mismatch { flex-basis: 100%; padding-left: calc(9rem + var(--ew-s2)); font-weight: 600; }
+.ew-mc-overall { font-weight: 600; margin-top: var(--ew-s1); }
+.ew-mc-pl p { margin: 0; overflow-wrap: anywhere; }
+.ew-mc-pl .ew-mc-overall { font-weight: 400; }
+@media (max-width: 640px) { .ew-mc-brief, .ew-mc-said, .ew-mc-mismatch { padding-left: 0; } .ew-mc-label { min-width: 0; flex-basis: 100%; } }
+.ew-work-pl-out .ew-episodes { align-self: stretch; }
+.ew-work-pl-out .ew-ep { grid-template-columns: minmax(0, 1fr); padding: var(--ew-s2) var(--ew-s3); }
+.ew-work-pl-out .ew-ep-act { justify-self: start; }
+.ew-work-table { border: 0; border-radius: 0; }
+/* Words stay whole; the wrapper (.ew-table-wrap) scrolls the table at narrow widths. */
+.ew-work-table .data-table { min-width: 520px; }
+.ew-work-table th, .ew-work-table td { overflow-wrap: normal; }
+.ew-work-new { margin-left: var(--ew-s2); }
+.ew-work-table > .section-note { padding: var(--ew-s4) var(--ew-s5); margin: 0; }
+.ew-work-sources > li { gap: var(--ew-s2); }
+.ew-work-source-head { display: flex; flex-wrap: wrap; gap: var(--ew-s2) var(--ew-s4); align-items: center; }
+.ew-work-subhead { border-top: 1px solid var(--ew-border); }
+.ew-work-subhead h3 { font: var(--ew-t-card); }
+.ew-work-attach { padding: var(--ew-s4) var(--ew-s5) var(--ew-s5); border-top: 1px solid var(--ew-border); }
+.ew-work-attach-row { display: flex; gap: var(--ew-s2); }
+.ew-work-attach-row input { flex: 1; min-width: 0; }
+.report-preview { width: 100%; height: 760px; border: 0; display: block; background: var(--ew-sheet); }
+
+/* -- Attach / allocation dialog. -- */
+.ew-work-alloc { display: flex; flex-direction: column; gap: var(--ew-s4); }
+.ew-work-alloc .ew-card-inset b { font: 600 14px/20px var(--ew-sans); }
+.ew-work-alloc .section-note { margin-top: 0; }
+.ew-work-unit { display: flex; flex-direction: column; gap: var(--ew-s1); padding: var(--ew-s3) var(--ew-s4); border: 1px solid var(--ew-border); border-radius: var(--ew-r-card); }
+.ew-work-unit:empty { display: none; }
+.ew-work-unit .section-note { margin-top: 0; }
+
+/* -- Narrow widths. -- */
+@media (max-width: 1199px) {
+  .ew-work-split { grid-template-columns: minmax(0, 1fr) 300px; }
+  .ew-work-alerts { display: block; }
+  .ew-work-alert { grid-template-columns: minmax(0, 1fr) auto; }
+  .ew-work-alert-state { grid-column: 2; grid-row: 1; justify-self: end; align-self: start; }
+  .ew-work-last { grid-column: 1 / -1; }
+  .ew-work-alert-actions { grid-column: 1 / -1; }
+}
+@media (max-width: 1023px) {
+  .ew-work-split { grid-template-columns: 1fr; }
+  .ew-alert-split { grid-template-areas: "main" "aside"; }
+  .ew-work-placement { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .ew-work-pl-act { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; align-items: center; gap: var(--ew-s2) var(--ew-s4); }
+  .ew-work-camp { grid-template-columns: minmax(0, 1fr) auto; }
+  .ew-work-camp-scope { grid-column: 1; }
+  .ew-work-camp-state { grid-column: 2; grid-row: 1 / span 2; }
+}
+@media (max-width: 599px) {
+  .ew-work-page { gap: var(--ew-s5); }
+  .ew-work-alert { padding: var(--ew-s4); }
+  .ew-work-placement { grid-template-columns: 1fr; padding: var(--ew-s4); }
+  .ew-work-pl-act { flex-direction: column; align-items: flex-start; }
+  .ew-ep { grid-template-columns: minmax(0, 1fr); padding: var(--ew-s3) var(--ew-s4); }
+  .ew-ep-act { justify-self: start; }
+  .ew-work-camp { padding: var(--ew-s4); }
+  .ew-work-card > .ew-card-head > .ew-work-meta { text-align: left; }
+  .ew-work-attach-row { flex-direction: column; }
+  .ew-work-tabs { margin-inline: calc(-1 * var(--ew-gutter)); padding-inline: var(--ew-gutter); }
+  .report-preview { height: 640px; }
+}
+
+/* The page-head paragraph rule would otherwise flatten the eyebrow. */
+.ew-work-page .page-head .eyebrow { font: var(--ew-t-label); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ew-text-2); }
+
+/* -- Work dialogs: the form is the dialog body's single child, so its
+      fields get the body's 18 px rhythm here. -- */
+#alert-form, #campaign, #placement, #target, #target-note { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+#alert-form > *, #campaign > *, #placement > *, #target > *, #target-note > * { margin-top: 0; min-width: 0; }
+#alert-form > #form-errors:empty, #campaign > #form-errors:empty, #placement > #form-errors:empty, #target > #form-errors:empty, #target-note > #form-errors:empty { display: none; }
+/* UX-11a: a shorter alert dialog. */
+.ew-alert-group { display: grid; gap: 18px; border: 0; padding: 0; margin: 0; min-width: 0; }
+.ew-alert-group > legend { font: var(--ew-t-label); letter-spacing: .06em; text-transform: uppercase; color: var(--ew-text-2); margin-bottom: var(--ew-s2); padding: 0; }
+/* V-23: the summary is the footer's first, full-width row. */
+.dialog-footer > .ew-alert-scope { flex: 1 1 100%; margin: 0; }
+.ew-alert-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--ew-s4); }
+#alert-form > #alert-track { margin: 0; }
+.ew-alert-more-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px var(--ew-s4); padding-top: var(--ew-s2); }
+@media (max-width: 599px) {
+  .ew-alert-pair, .ew-alert-more-body { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Meaning alerts (design 2026-10-26 section 5, v3 Meaning Alert Screen). */
+.meaning-kind { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--ew-s3); margin-bottom: var(--ew-s4); }
+.meaning-kind-option { display: flex; gap: var(--ew-s2); align-items: flex-start; padding: var(--ew-s3); border: 1px solid var(--ew-border); border-radius: var(--ew-r-card); background: var(--ew-sheet); cursor: pointer; min-height: var(--ew-target); }
+.meaning-kind-option:has(input:checked) { border-color: var(--ew-action); background: var(--ew-selected); }
+.meaning-kind-text { display: flex; flex-direction: column; gap: 2px; }
+.meaning-kind-label { font-weight: 600; }
+.meaning-kind-note { font-size: var(--ew-t-meta); color: var(--ew-text-2); }
+.meaning-form textarea { width: 100%; font: inherit; }
+.meaning-examples { display: flex; flex-wrap: wrap; gap: var(--ew-s2); align-items: center; margin: calc(-1 * var(--ew-s2)) 0 var(--ew-s4); }
+.meaning-terms { margin-top: var(--ew-s4); }
+.meaning-terms-row { display: flex; gap: var(--ew-s2); }
+.meaning-terms-row input { flex: 1 1 auto; min-width: 0; }
+.meaning-preview { border-top: 1px solid var(--ew-rule); margin-top: var(--ew-s4); padding-top: var(--ew-s4); }
+.meaning-matches { list-style: none; margin: 0; padding: 0; }
+.meaning-match { display: flex; flex-direction: column; gap: var(--ew-s1); padding: var(--ew-s3) var(--ew-s4); border-bottom: 1px solid var(--ew-rule); }
+.meaning-match:last-child { border-bottom: 0; }
+.meaning-reason { margin: 0; font-weight: 600; }
+.meaning-quote { margin: 0; font-family: var(--ew-serif); font-size: var(--ew-t-quote-s); line-height: 1.5; color: var(--ew-text); }
+.meaning-meta { margin: 0; font-size: var(--ew-t-meta); color: var(--ew-text-2); }
+.meaning-match-actions { display: flex; flex-wrap: wrap; gap: var(--ew-s2); align-items: flex-start; }
+.meaning-summary { margin: 0 0 var(--ew-s2); }
+.meaning-banner { display: flex; flex-wrap: wrap; gap: var(--ew-s3); align-items: center; justify-content: space-between; }
+.meaning-banner p { margin: 0; }
+.meaning-definition dl, .meaning-delivery dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--ew-s1) var(--ew-s3); margin: 0 0 var(--ew-s3); }
+.meaning-definition dt, .meaning-delivery dt { color: var(--ew-text-2); }
+.meaning-definition dd, .meaning-delivery dd { margin: 0; overflow-wrap: anywhere; }
+.meaning-check.is-failed .meaning-check-when { color: var(--ew-gap); font-weight: 600; }
+.meaning-failed .button { margin-top: var(--ew-s2); }
+.meaning-checks ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--ew-s2); }
+.meaning-check-when { font-size: var(--ew-t-meta); color: var(--ew-text-2); }
+.meaning-disclosure summary { cursor: pointer; min-height: var(--ew-target); display: flex; align-items: center; }
+.meaning-disclosure ul { gap: var(--ew-s1); padding-left: var(--ew-s4); }
+.meaning-head h1 { overflow-wrap: anywhere; }
+@media (max-width: 720px) {
+  .meaning-kind { grid-template-columns: minmax(0, 1fr); }
+  .meaning-terms-row { flex-direction: column; }
+}
+/* Check now sits above the definition beside the matches, and above the
+   matches when the page stacks. */
+.meaning-alert.ew-alert-split { grid-template-areas: "main check" "main aside"; grid-template-rows: auto 1fr; }
+.meaning-alert > .meaning-check-slot { grid-area: check; }
+@media (max-width: 1023px) {
+  .meaning-alert.ew-alert-split { grid-template-areas: "check" "main" "aside"; grid-template-rows: none; }
+}
+.meaning-alert.ew-alert-split:not(:has(.meaning-check-slot)) { grid-template-areas: "main aside"; grid-template-rows: none; }
+@media (max-width: 1023px) {
+  .meaning-alert.ew-alert-split:not(:has(.meaning-check-slot)) { grid-template-areas: "main" "aside"; }
+}
+.meaning-preview { scroll-margin-top: 72px; }
+.meaning-check-mark { color: var(--ew-gap); font-weight: 700; margin-right: var(--ew-s1); }
+

@@ -1,0 +1,62 @@
+{
+  "turn_id": "t_part1",
+  "thread_id": "h_part1",
+  "question": "Which shows talk about mortgage rates?",
+  "state": "partial",
+  "step": null,
+  "error_code": null,
+  "based_on": "Based on 2 passages in 2 episodes",
+  "sections": [
+    {
+      "heading": null,
+      "paragraphs": [
+        {
+          "text": "Two shows discuss mortgage rates, both in the context of a sponsor read.",
+          "cites": ["p1", "p2"]
+        }
+      ]
+    }
+  ],
+  "uncertain": [
+    {
+      "text": "A third show may mention refinancing, but only one passage points that way.",
+      "cites": ["p2"]
+    }
+  ],
+  "lines": ["Ask searched the words of 12 of 40 episodes, so it may have missed some passages."],
+  "line_kinds": ["scope"],
+  "sources": [
+    {
+      "pid": "p1",
+      "label": "ad · Rocket Mortgage",
+      "show": "Money Matters Weekly",
+      "episode": "Episode 130: Housing Market",
+      "time": "14:09",
+      "kind": "detected_ad",
+      "text": "Rates have moved, so see what you qualify for with a quick online application.",
+      "clip": null
+    },
+    {
+      "pid": "p2",
+      "label": "transcript",
+      "show": "The Daily Commute",
+      "episode": "Episode 220: Interest Rates",
+      "time": "22:40",
+      "kind": "transcript",
+      "text": "Mortgage rates are the first thing people ask me about, and refinancing is back on the table.",
+      "clip": null
+    }
+  ],
+  "disclosure": {
+    "model": "muse-spark-1.3",
+    "searches": 2,
+    "word_searches": 2,
+    "passages_read": 9,
+    "dropped": 1,
+    "usd_settled": null,
+    "cost_shown": true,
+    "word_search": true,
+    "episodes_searched": 12,
+    "episodes_in_scope": 40
+  }
+}

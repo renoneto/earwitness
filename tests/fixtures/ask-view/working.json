@@ -1,0 +1,14 @@
+{
+  "turn_id": "t_work1",
+  "thread_id": "h_work1",
+  "question": "How do hosts pitch VPNs in this collection?",
+  "state": "working",
+  "step": 2,
+  "error_code": null,
+  "based_on": null,
+  "sections": [],
+  "uncertain": [],
+  "lines": [],
+  "sources": [],
+  "disclosure": null
+}

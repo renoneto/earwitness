@@ -1,0 +1,14 @@
+{
+  "turn_id": "t_fail1",
+  "thread_id": "h_fail1",
+  "question": "How do hosts pitch VPNs in this collection?",
+  "state": "failed",
+  "step": null,
+  "error_code": "TIMEOUT",
+  "based_on": null,
+  "sections": [],
+  "uncertain": [],
+  "lines": [],
+  "sources": [],
+  "disclosure": null
+}

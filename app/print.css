@@ -1,0 +1,40 @@
+/* EarWitness print styles (design v3, Exhibit): exports ("Printable page")
+   and frozen campaign reports. Linked with media="print". Hooks are data
+   attributes so they work on any page: data-print="hide|ad|frozen-note",
+   data-print-url, data-print="full-time" (+ data-start/data-end), data-tag. */
+@page { size: auto; margin: 16mm 14mm 18mm; }
+@media print {
+  :root { color-scheme: light; }
+  html, body { background: #fff !important; color: #000 !important; font: 10.5pt/1.45 var(--ew-sans); }
+
+  /* Remove app chrome and anything interactive. */
+  header[role="banner"], #header, .topbar, .primary-nav, nav, .dataset-strip, .footer, #save-notice,
+  .skip, .toast, #toast, dialog, .mobile-menu, button, select, input, textarea,
+  details > summary, [role="tablist"], .ew-tabs, .ew-segmented, .ew-filter-rail, .ew-pagination,
+  .report-problem, audio, [data-print="hide"] { display: none !important; }
+  details { display: block; } details > *:not(summary) { display: block !important; }
+
+  .page, .ew-page { max-width: none; margin: 0; padding: 0; }
+  .ew-card, .surface, .result, .ew-result, .empty, .ew-state { border: 1px solid #000; background: #fff !important; }
+
+  /* One ad per page; never split an ad. */
+  [data-print="ad"] { break-inside: avoid; page-break-inside: avoid; }
+  [data-print="ad"] + [data-print="ad"] { break-before: page; page-break-before: always; }
+  h1, h2, h3 { break-after: avoid; color: #000; }
+  h1, h2 { font-family: var(--ew-serif); }
+
+  /* Print sources in full. */
+  a[href] { color: #000; text-decoration: underline; }
+  a[data-print-url]::after { content: " <" attr(href) ">"; font-family: var(--ew-mono); font-size: 9pt; word-break: break-all; }
+  [data-print="full-time"]::after { content: " (" attr(data-start) " to " attr(data-end) ")"; font-family: var(--ew-mono); }
+
+  /* Tags keep their words; color becomes outline so it survives b/w printing. */
+  [data-tag], .tag, .ew-tag { background: none !important; color: #000 !important; border: 1px solid #000 !important; }
+  [data-tag="review"], [data-tag="uncertain"], .ew-tag-review, .ew-tag-uncertain { border-style: dashed !important; }
+  mark { background: none !important; color: #000 !important; text-decoration: underline 2px; }
+
+  /* Running footer for frozen reports. */
+  [data-print="frozen-note"] { display: block !important; font-size: 9pt; color: #000; border-top: 1px solid #000; padding-top: 4pt; margin-top: 12pt; }
+
+  * { box-shadow: none !important; animation: none !important; transition: none !important; }
+}

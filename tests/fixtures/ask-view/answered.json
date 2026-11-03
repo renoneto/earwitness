@@ -1,0 +1,70 @@
+{
+  "turn_id": "t_ans1",
+  "thread_id": "h_ans1",
+  "question": "How do hosts pitch VPNs in this collection?",
+  "state": "answered",
+  "step": null,
+  "error_code": null,
+  "based_on": "Based on 3 passages in 3 episodes",
+  "sections": [
+    {
+      "heading": null,
+      "paragraphs": [
+        {
+          "text": "Most hosts frame a VPN as protection on public Wi-Fi, and say it while reading a sponsor script.",
+          "cites": ["p1", "p3"]
+        },
+        {
+          "text": "A smaller group pitches streaming access abroad and ties it to a discount code.",
+          "cites": ["p3", "p2"]
+        }
+      ]
+    }
+  ],
+  "uncertain": [],
+  "lines": [],
+  "sources": [
+    {
+      "pid": "p1",
+      "label": "ad · SafeLine VPN",
+      "show": "The Daily Commute",
+      "episode": "Episode 212: Airport Chaos",
+      "time": "12:31",
+      "kind": "detected_ad",
+      "text": "This episode is brought to you by SafeLine VPN. Use it on hotel and airport Wi-Fi so nobody can snoop on your traffic.",
+      "clip": { "ref": "evidence:r_101", "playback": "local", "source_offset_s": 746.0, "start_s": 751.0, "end_s": 812.0, "display_span": [751.0, 812.0] }
+    },
+    {
+      "pid": "p3",
+      "label": "ad · SafeLine VPN",
+      "show": "Gadget Hour",
+      "episode": "Episode 88: Travel Tech",
+      "time": "3:05",
+      "kind": "detected_ad",
+      "text": "Stay private on any network. Go to safeline dot com slash gadget for three extra months free.",
+      "clip": null
+    },
+    {
+      "pid": "p2",
+      "label": "transcript",
+      "show": "Weekend Tech Talk",
+      "episode": "Episode 41: Cord Cutting",
+      "time": "27:48",
+      "kind": "transcript",
+      "text": "I use a VPN to watch my home team when I travel, and the code TECH20 takes twenty percent off the first year.",
+      "clip": null
+    }
+  ],
+  "disclosure": {
+    "model": "muse-spark-1.3",
+    "searches": 3,
+    "word_searches": 3,
+    "passages_read": 17,
+    "dropped": 2,
+    "usd_settled": 0.04,
+    "cost_shown": true,
+    "word_search": true,
+    "episodes_searched": 40,
+    "episodes_in_scope": 40
+  }
+}

@@ -1,0 +1,19 @@
+{
+ "header": "synthetic test list for tests/test_ask_contract.py; not the product display list",
+ "brands": {
+  "saatva": "Saatva",
+  "casper": "Casper",
+  "quince": "Quince",
+  "shopify": "Shopify",
+  "air france": "Air France",
+  "kpmg": "KPMG",
+  "helix sleep": "Helix Sleep",
+  "apple card": "Apple Card"
+ },
+ "aliases": {
+  "helixsleep": "Helix Sleep",
+  "net sweet": "NetSuite",
+  "netsuite": "NetSuite",
+  "satva": "Saatva"
+ }
+}

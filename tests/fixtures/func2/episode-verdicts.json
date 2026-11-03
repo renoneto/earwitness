@@ -1,0 +1,722 @@
+{
+ "_note": "FUNC-2 App fixture: the agreed episode_verdicts shape with Fresh's FINAL review fields (FUNC2-PLAN.md 'Fresh's FINAL route + fields': reads[], review, review_revision, basis, summary.unconfirmed). Add Fresh's ws-fresh/func2/fixture-episode-verdicts.json when it lands. evidence_ref (FUNC2-FIX1 F2-R1-01): the record's current source ref, as citations.current_source_ref(con, 'evidence', id); deliberately unlike evidence_id.",
+ "draft": {
+  "campaign": {
+   "id": 1,
+   "revision": 4,
+   "name": "Fern Q4 host reads"
+  },
+  "mode": "supplied_requirements",
+  "synthetic": false,
+  "synthetic_placements": [],
+  "placements": [
+   {
+    "id": "pl-win",
+    "scope": "show_window",
+    "show_id": "s1",
+    "date_from": "2026-09-01",
+    "date_to": "2026-10-31",
+    "expected_count": 4,
+    "binding": "eligible",
+    "requirements": {
+     "code": "FERN40",
+     "offer": "40% off"
+    },
+    "provenance": {
+     "binding": "eligible"
+    }
+   },
+   {
+    "id": "pl-ep",
+    "scope": "show_window",
+    "show_id": "s2",
+    "expected_count": 2,
+    "binding": "eligible",
+    "requirements": {
+     "message": "Sleep better"
+    },
+    "provenance": {
+     "binding": "eligible"
+    },
+    "date_from": "2026-09-01",
+    "date_to": "2026-10-31"
+   },
+   {
+    "id": "pl-amb",
+    "scope": "show_window",
+    "show_id": "s3",
+    "date_from": "2026-09-01",
+    "date_to": "2026-10-31",
+    "expected_count": 1,
+    "binding": "eligible",
+    "requirements": {
+     "code": "FERN40"
+    },
+    "provenance": {
+     "binding": "eligible"
+    }
+   },
+   {
+    "id": "pl-url",
+    "scope": "show_window",
+    "show_id": "s4",
+    "date_from": "2026-09-01",
+    "date_to": "2026-10-31",
+    "expected_count": 2,
+    "binding": "eligible",
+    "requirements": {
+     "code": "FERN40",
+     "duration_s": [
+      60,
+      90
+     ]
+    },
+    "provenance": {
+     "binding": "eligible"
+    }
+   }
+  ],
+  "targets": [],
+  "episode_titles": {
+   "e21": "Night shift"
+  },
+  "show_titles": {
+   "s1": "Morning Show",
+   "s2": "Sleep Talk",
+   "s3": "Mixed Bag",
+   "s4": "Late Desk"
+  },
+  "coverage_by_placement": {
+   "pl-win": {
+    "state": "incomplete",
+    "missing": [
+     "e16"
+    ],
+    "failed": [],
+    "episodes": [
+     "e10",
+     "e11",
+     "e12",
+     "e13",
+     "e14",
+     "e15",
+     "e16"
+    ]
+   },
+   "pl-ep": {
+    "state": "incomplete",
+    "missing": [
+     "e22"
+    ],
+    "failed": [],
+    "episodes": [
+     "e21",
+     "e22",
+     "e23"
+    ]
+   },
+   "pl-amb": {
+    "state": "complete",
+    "missing": [],
+    "failed": [],
+    "episodes": [
+     "e31"
+    ]
+   },
+   "pl-url": {
+    "state": "incomplete",
+    "missing": [
+     "e44",
+     "e45"
+    ],
+    "failed": [],
+    "episodes": [
+     "e41",
+     "e42",
+     "e43",
+     "e44",
+     "e45",
+     "e46"
+    ]
+   }
+  },
+  "comparisons": {},
+  "allocation": {
+   "evaluations": {
+    "pl-win": {
+     "placement_id": "pl-win",
+     "outcome": "incomplete_coverage",
+     "eligible_ids": [],
+     "allocated_elsewhere": [],
+     "occurrence_order": [],
+     "reasons": []
+    },
+    "pl-ep": {
+     "placement_id": "pl-ep",
+     "outcome": "supported",
+     "eligible_ids": [],
+     "allocated_elsewhere": [],
+     "occurrence_order": [],
+     "reasons": []
+    },
+    "pl-amb": {
+     "placement_id": "pl-amb",
+     "outcome": "supported",
+     "eligible_ids": [],
+     "allocated_elsewhere": [],
+     "occurrence_order": [],
+     "reasons": []
+    },
+    "pl-url": {
+     "placement_id": "pl-url",
+     "outcome": "incomplete_coverage",
+     "eligible_ids": [],
+     "allocated_elsewhere": [],
+     "occurrence_order": [],
+     "reasons": []
+    }
+   },
+   "citations": {}
+  },
+  "reason_codes": {
+   "evaluations": {},
+   "citations": {}
+  },
+  "assessment_scope": {
+   "basis": "entered_structured_requirements_only",
+   "by_unit": {}
+  },
+  "pins": {
+   "attachments": {}
+  },
+  "allowed_actions": [
+   "read",
+   "edit",
+   "targets",
+   "placements",
+   "freeze",
+   "reports"
+  ],
+  "episode_verdicts": {
+   "pl-win": {
+    "episodes": [
+     {
+      "episode_id": "e10",
+      "show": "Morning Show",
+      "episode_title": "Ep. 10 <i>live</i>",
+      "published": "2026-10-20",
+      "verdict": "heard_right",
+      "mismatch": [],
+      "said_code": "FERN40",
+      "brief_code": "FERN40",
+      "evidence_id": "ev-10",
+      "evidence_ref": "sr1:ba20eaa3982bcf3144357f93dd9bd97d",
+      "has_clip": true,
+      "display_span": [
+       61.2,
+       92.0
+      ],
+      "waiting_for_review": 0,
+      "not_checked_reason": null,
+      "review_revision": 3,
+      "reads": [
+       {
+        "evidence_id": "ev-10",
+        "evidence_ref": "sr1:ba20eaa3982bcf3144357f93dd9bd97d",
+        "machine_code": "FERN40",
+        "machine_url": null,
+        "brief_code": "FERN40",
+        "has_clip": true,
+        "display_span": [
+         61.2,
+         92.0
+        ],
+        "review": {
+         "decision": "confirmed",
+         "by_name": "Dana & <b>Co</b>",
+         "at": "2026-10-27T18:00:00Z",
+         "code": null
+        }
+       }
+      ],
+      "review": {
+       "decision": "confirmed",
+       "by_name": "Dana & <b>Co</b>",
+       "at": "2026-10-27T18:00:00Z",
+       "code": null
+      },
+      "basis": "judge_review"
+     },
+     {
+      "episode_id": "e11",
+      "show": "Morning Show",
+      "episode_title": "Ep. 11",
+      "published": "2026-10-13",
+      "verdict": "heard_wrong",
+      "mismatch": [
+       {
+        "field": "offer",
+        "said": "20% off",
+        "brief": "<b>40% off</b>"
+       },
+       {
+        "field": "code",
+        "said": "FURN40",
+        "brief": "FERN40"
+       }
+      ],
+      "said_code": "FURN40",
+      "brief_code": "FERN40",
+      "evidence_id": "ev-11",
+      "evidence_ref": "sr1:23f7b8e888a3d5b85dc789522fe8a88d",
+      "has_clip": false,
+      "display_span": [
+       10.0,
+       40.0
+      ],
+      "waiting_for_review": 0,
+      "not_checked_reason": null,
+      "review_revision": 0,
+      "reads": [],
+      "review": null,
+      "basis": "verified"
+     },
+     {
+      "episode_id": "e12",
+      "show": "Morning Show",
+      "episode_title": "Ep. 12",
+      "published": "2026-10-06",
+      "verdict": "heard_unconfirmed",
+      "mismatch": [],
+      "said_code": null,
+      "brief_code": "FERN40",
+      "evidence_id": "ev-12",
+      "evidence_ref": "sr1:b39d5b3246ba3ffd73c64e6fb811f03a",
+      "has_clip": true,
+      "display_span": [
+       300.0,
+       331.5
+      ],
+      "waiting_for_review": 1,
+      "not_checked_reason": null,
+      "review_revision": 1,
+      "reads": [
+       {
+        "evidence_id": "ev-12",
+        "evidence_ref": "sr1:b39d5b3246ba3ffd73c64e6fb811f03a",
+        "machine_code": "FURN<40>",
+        "machine_url": null,
+        "brief_code": "FERN40",
+        "has_clip": true,
+        "display_span": [
+         300.0,
+         331.5
+        ],
+        "review": null
+       },
+       {
+        "evidence_id": "ev-12b",
+        "evidence_ref": "sr1:f19d4e84746418ed5334739e27a752d4",
+        "machine_code": null,
+        "machine_url": null,
+        "brief_code": "FERN40",
+        "has_clip": false,
+        "display_span": null,
+        "review": null
+       }
+      ],
+      "review": null,
+      "machine_code": "FURN<40>",
+      "machine_url": null
+     },
+     {
+      "episode_id": "e13",
+      "show": "Morning Show",
+      "episode_title": "Ep. 13",
+      "published": "2026-09-29",
+      "verdict": "waiting_review",
+      "mismatch": [],
+      "said_code": null,
+      "brief_code": "FERN40",
+      "evidence_id": "ev-13",
+      "evidence_ref": "sr1:65e50afd1e0268e7762f0799f1f0f6a9",
+      "has_clip": false,
+      "display_span": null,
+      "waiting_for_review": 2,
+      "not_checked_reason": null,
+      "review_revision": 0,
+      "reads": [],
+      "review": null
+     },
+     {
+      "episode_id": "e14",
+      "show": "Morning Show",
+      "episode_title": "Ep. 14",
+      "published": "2026-09-22",
+      "verdict": "not_heard",
+      "mismatch": [],
+      "said_code": null,
+      "brief_code": "FERN40",
+      "evidence_id": null,
+      "evidence_ref": null,
+      "has_clip": false,
+      "display_span": null,
+      "waiting_for_review": 0,
+      "not_checked_reason": null,
+      "review_revision": 0,
+      "reads": [],
+      "review": null
+     },
+     {
+      "episode_id": "e15",
+      "show": "Morning Show",
+      "episode_title": "Ep. 15",
+      "published": "2026-09-15",
+      "verdict": "not_heard",
+      "mismatch": [],
+      "said_code": null,
+      "brief_code": "FERN40",
+      "evidence_id": "ev-15",
+      "evidence_ref": "sr1:e27e88f480ec046dba08bc55878b58bd",
+      "has_clip": true,
+      "display_span": [
+       5.0,
+       30.0
+      ],
+      "waiting_for_review": 0,
+      "not_checked_reason": null,
+      "review_revision": 2,
+      "reads": [
+       {
+        "evidence_id": "ev-15",
+        "evidence_ref": "sr1:e27e88f480ec046dba08bc55878b58bd",
+        "machine_code": "FERN15",
+        "machine_url": null,
+        "brief_code": "FERN40",
+        "has_clip": true,
+        "display_span": [
+         5.0,
+         30.0
+        ],
+        "review": {
+         "decision": "rejected",
+         "by_name": "Lee",
+         "at": "2026-10-27T18:05:00Z",
+         "code": null
+        }
+       }
+      ],
+      "review": {
+       "decision": "rejected",
+       "by_name": "Lee",
+       "at": "2026-10-27T18:05:00Z",
+       "code": null
+      }
+     },
+     {
+      "episode_id": "e16",
+      "show": "Morning Show",
+      "episode_title": "Ep. 16",
+      "published": null,
+      "verdict": "not_checked",
+      "mismatch": [],
+      "said_code": null,
+      "brief_code": "FERN40",
+      "evidence_id": null,
+      "evidence_ref": null,
+      "has_clip": false,
+      "display_span": null,
+      "waiting_for_review": 0,
+      "not_checked_reason": "not_fully_checked",
+      "review_revision": 0,
+      "reads": [],
+      "review": null
+     }
+    ],
+    "summary": {
+     "heard": 2,
+     "heard_right": 1,
+     "heard_wrong": 1,
+     "not_heard": 2,
+     "checked": 4,
+     "waiting_review": 1,
+     "not_checked": 1,
+     "unconfirmed": 1
+    }
+   },
+   "pl-ep": {
+    "episodes": [
+     {
+      "episode_id": "e21",
+      "show": "Sleep Talk",
+      "episode_title": "Night shift",
+      "published": "2026-10-01",
+      "verdict": "heard_right",
+      "mismatch": [],
+      "said_code": null,
+      "brief_code": null,
+      "evidence_id": "ev-21",
+      "evidence_ref": "sr1:d54616c24dc37ee24b6b3868cef5b78c",
+      "has_clip": true,
+      "display_span": [
+       12.0,
+       70.0
+      ],
+      "waiting_for_review": 0,
+      "not_checked_reason": null,
+      "review_revision": 0,
+      "reads": [],
+      "review": null,
+      "basis": "verified"
+     },
+     {
+      "episode_id": "e22",
+      "show": "Sleep Talk",
+      "episode_title": "Night shift II",
+      "published": "2026-09-24",
+      "verdict": "heard_unconfirmed",
+      "basis": null,
+      "mismatch": [],
+      "said_code": null,
+      "machine_code": null,
+      "machine_url": null,
+      "brief_code": null,
+      "evidence_id": "ev-22",
+      "evidence_ref": "sr1:33946c267920c893b5cdf50e7a709c7d",
+      "has_clip": false,
+      "display_span": null,
+      "waiting_for_review": 1,
+      "not_checked_reason": "not_fully_checked",
+      "reads": [
+       {
+        "evidence_id": "ev-22",
+        "evidence_ref": "sr1:33946c267920c893b5cdf50e7a709c7d",
+        "machine_code": null,
+        "machine_url": null,
+        "brief_code": null,
+        "has_clip": false,
+        "display_span": null,
+        "review": null
+       }
+      ],
+      "review": null,
+      "review_revision": 0
+     },
+     {
+      "episode_id": "e23",
+      "show": "Sleep Talk",
+      "episode_title": "Night shift III",
+      "published": "2026-09-17",
+      "verdict": "waiting_review",
+      "basis": null,
+      "mismatch": [],
+      "said_code": null,
+      "machine_code": null,
+      "machine_url": null,
+      "brief_code": null,
+      "evidence_id": "ev-23",
+      "evidence_ref": "sr1:d961888d7c3ae630556bf6ae1c5fc41c",
+      "has_clip": true,
+      "display_span": [
+       200.0,
+       236.5
+      ],
+      "waiting_for_review": 1,
+      "not_checked_reason": null,
+      "reads": [],
+      "review": null,
+      "review_revision": 0
+     }
+    ],
+    "summary": {
+     "heard": 1,
+     "heard_right": 1,
+     "heard_wrong": 0,
+     "not_heard": 0,
+     "checked": 1,
+     "waiting_review": 1,
+     "not_checked": 0,
+     "unconfirmed": 1
+    }
+   },
+   "pl-amb": {
+    "episodes": [],
+    "summary": null
+   },
+   "pl-url": {
+    "episodes": [
+     {
+      "episode_id": "e41",
+      "show": "Late Desk",
+      "episode_title": "Ep. 41",
+      "published": "2026-10-21",
+      "verdict": "heard_wrong",
+      "mismatch": [
+       {
+        "field": "duration_s",
+        "said": 45,
+        "brief": [
+         60,
+         90
+        ]
+       },
+       {
+        "field": "url",
+        "said": "fern.co/<x>",
+        "brief": "fern.com/40"
+       }
+      ],
+      "said_code": null,
+      "brief_code": "FERN40",
+      "evidence_id": "ev-41",
+      "evidence_ref": "sr1:2c9062510878ab8f2409158ab18f2a3f",
+      "has_clip": true,
+      "display_span": [
+       100.0,
+       145.0
+      ],
+      "waiting_for_review": 0,
+      "not_checked_reason": null,
+      "review_revision": 0,
+      "reads": [],
+      "review": null,
+      "basis": "verified"
+     },
+     {
+      "episode_id": "e46",
+      "show": "Late Desk",
+      "episode_title": "Ep. 46",
+      "published": "2026-10-17",
+      "verdict": "heard_wrong",
+      "basis": "judge_review",
+      "mismatch": [
+       {
+        "field": "code",
+        "said": null,
+        "brief": "FERN40"
+       }
+      ],
+      "said_code": null,
+      "brief_code": "FERN40",
+      "evidence_id": "ev-46",
+      "evidence_ref": "sr1:3b690f200c90fc2a4fbba416eb7f254d",
+      "has_clip": false,
+      "display_span": null,
+      "waiting_for_review": 0,
+      "not_checked_reason": null,
+      "reads": [
+       {
+        "evidence_id": "ev-46",
+        "evidence_ref": "sr1:3b690f200c90fc2a4fbba416eb7f254d",
+        "machine_code": null,
+        "machine_url": null,
+        "brief_code": "FERN40",
+        "has_clip": false,
+        "display_span": null,
+        "review": {
+         "decision": "confirmed",
+         "by_name": "Sam",
+         "at": "2026-10-27T19:00:00Z",
+         "code": null
+        }
+       }
+      ],
+      "review": {
+       "decision": "confirmed",
+       "by_name": "Sam",
+       "at": "2026-10-27T19:00:00Z",
+       "code": null
+      },
+      "review_revision": 1
+     },
+     {
+      "episode_id": "e42",
+      "show": "Late Desk",
+      "episode_title": "Ep. 42",
+      "published": "2026-10-14",
+      "verdict": "not_heard",
+      "mismatch": [],
+      "said_code": null,
+      "brief_code": "FERN40",
+      "evidence_id": null,
+      "evidence_ref": null,
+      "has_clip": false,
+      "display_span": null,
+      "waiting_for_review": 0,
+      "not_checked_reason": null,
+      "review_revision": 0,
+      "reads": [],
+      "review": null
+     },
+     {
+      "episode_id": "e43",
+      "show": "Late Desk",
+      "episode_title": "Ep. 43",
+      "published": "2026-10-07",
+      "verdict": "not_heard",
+      "mismatch": [],
+      "said_code": null,
+      "brief_code": "FERN40",
+      "evidence_id": null,
+      "evidence_ref": null,
+      "has_clip": false,
+      "display_span": null,
+      "waiting_for_review": 0,
+      "not_checked_reason": null,
+      "review_revision": 0,
+      "reads": [],
+      "review": null
+     },
+     {
+      "episode_id": "e44",
+      "show": "Late Desk",
+      "episode_title": "Ep. 44",
+      "published": "2026-09-30",
+      "verdict": "not_checked",
+      "mismatch": [],
+      "said_code": null,
+      "brief_code": "FERN40",
+      "evidence_id": null,
+      "evidence_ref": null,
+      "has_clip": false,
+      "display_span": null,
+      "waiting_for_review": 0,
+      "not_checked_reason": "no_transcript",
+      "review_revision": 0,
+      "reads": [],
+      "review": null
+     },
+     {
+      "episode_id": "e45",
+      "show": "Late Desk",
+      "episode_title": "Ep. 45",
+      "published": "2026-09-23",
+      "verdict": "not_checked",
+      "mismatch": [],
+      "said_code": null,
+      "brief_code": "FERN40",
+      "evidence_id": null,
+      "evidence_ref": null,
+      "has_clip": false,
+      "display_span": null,
+      "waiting_for_review": 0,
+      "not_checked_reason": "not_visible",
+      "review_revision": 0,
+      "reads": [],
+      "review": null
+     }
+    ],
+    "summary": {
+     "heard": 2,
+     "heard_right": 0,
+     "heard_wrong": 2,
+     "not_heard": 2,
+     "checked": 4,
+     "waiting_review": 0,
+     "not_checked": 2,
+     "unconfirmed": 0
+    }
+   }
+  }
+ }
+}

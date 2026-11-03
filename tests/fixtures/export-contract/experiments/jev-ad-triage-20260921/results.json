@@ -1,0 +1,277 @@
+{
+ "run_id": "corpus-jev",
+ "status": "corpus_jev_screen",
+ "model_returned": "jev-1.13.0",
+ "window_seconds": 60.0,
+ "seed_threshold": 0.8,
+ "episodes": [
+  {
+   "episode_id": "ep_fx1",
+   "model": "jev-1.13.0",
+   "answers": {
+    "window_000": {
+     "noul": 0.05,
+     "start_s": 0.0,
+     "end_s": 60.0
+    },
+    "window_001": {
+     "noul": 0.95,
+     "start_s": 60.0,
+     "end_s": 120.0
+    },
+    "window_002": {
+     "noul": 0.05,
+     "start_s": 120.0,
+     "end_s": 180.0
+    },
+    "window_003": {
+     "noul": 0.05,
+     "start_s": 180.0,
+     "end_s": 240.0
+    },
+    "window_004": {
+     "noul": 0.05,
+     "start_s": 240.0,
+     "end_s": 300.0
+    },
+    "window_005": {
+     "noul": 0.05,
+     "start_s": 300.0,
+     "end_s": 360.0
+    },
+    "window_006": {
+     "noul": 0.05,
+     "start_s": 360.0,
+     "end_s": 420.0
+    },
+    "window_007": {
+     "noul": 0.05,
+     "start_s": 420.0,
+     "end_s": 480.0
+    },
+    "window_008": {
+     "noul": 0.05,
+     "start_s": 480.0,
+     "end_s": 540.0
+    },
+    "window_009": {
+     "noul": 0.05,
+     "start_s": 540.0,
+     "end_s": 600.0
+    },
+    "window_010": {
+     "noul": 0.95,
+     "start_s": 600.0,
+     "end_s": 660.0
+    },
+    "window_011": {
+     "noul": 0.05,
+     "start_s": 660.0,
+     "end_s": 720.0
+    },
+    "window_012": {
+     "noul": 0.05,
+     "start_s": 720.0,
+     "end_s": 780.0
+    },
+    "window_013": {
+     "noul": 0.05,
+     "start_s": 780.0,
+     "end_s": 840.0
+    },
+    "window_014": {
+     "noul": 0.05,
+     "start_s": 840.0,
+     "end_s": 900.0
+    },
+    "window_015": {
+     "noul": 0.95,
+     "start_s": 900.0,
+     "end_s": 960.0
+    },
+    "window_016": {
+     "noul": 0.05,
+     "start_s": 960.0,
+     "end_s": 1020.0
+    },
+    "window_017": {
+     "noul": 0.05,
+     "start_s": 1020.0,
+     "end_s": 1080.0
+    },
+    "window_018": {
+     "noul": 0.05,
+     "start_s": 1080.0,
+     "end_s": 1140.0
+    },
+    "window_019": {
+     "noul": 0.05,
+     "start_s": 1140.0,
+     "end_s": 1200
+    }
+   }
+  },
+  {
+   "episode_id": "ep_fx2",
+   "model": "jev-1.13.0",
+   "answers": {
+    "window_000": {
+     "noul": 0.05,
+     "start_s": 0.0,
+     "end_s": 60.0
+    },
+    "window_001": {
+     "noul": 0.05,
+     "start_s": 60.0,
+     "end_s": 120.0
+    },
+    "window_002": {
+     "noul": 0.95,
+     "start_s": 120.0,
+     "end_s": 180.0
+    },
+    "window_003": {
+     "noul": 0.95,
+     "start_s": 180.0,
+     "end_s": 240.0
+    },
+    "window_004": {
+     "noul": 0.05,
+     "start_s": 240.0,
+     "end_s": 300.0
+    },
+    "window_005": {
+     "noul": 0.05,
+     "start_s": 300.0,
+     "end_s": 360.0
+    },
+    "window_006": {
+     "noul": 0.05,
+     "start_s": 360.0,
+     "end_s": 420.0
+    },
+    "window_007": {
+     "noul": 0.05,
+     "start_s": 420.0,
+     "end_s": 480.0
+    },
+    "window_008": {
+     "noul": 0.05,
+     "start_s": 480.0,
+     "end_s": 540.0
+    },
+    "window_009": {
+     "noul": 0.05,
+     "start_s": 540.0,
+     "end_s": 600.0
+    },
+    "window_010": {
+     "noul": 0.05,
+     "start_s": 600.0,
+     "end_s": 660.0
+    },
+    "window_011": {
+     "noul": 0.05,
+     "start_s": 660.0,
+     "end_s": 720.0
+    },
+    "window_012": {
+     "noul": 0.05,
+     "start_s": 720.0,
+     "end_s": 780.0
+    },
+    "window_013": {
+     "noul": 0.05,
+     "start_s": 780.0,
+     "end_s": 840.0
+    },
+    "window_014": {
+     "noul": 0.05,
+     "start_s": 840.0,
+     "end_s": 900
+    }
+   }
+  },
+  {
+   "episode_id": "ep_fx3",
+   "model": "jev-1.13.0",
+   "answers": {
+    "window_000": {
+     "noul": 0.05,
+     "start_s": 0.0,
+     "end_s": 60.0
+    },
+    "window_001": {
+     "noul": 0.05,
+     "start_s": 60.0,
+     "end_s": 120.0
+    },
+    "window_002": {
+     "noul": 0.05,
+     "start_s": 120.0,
+     "end_s": 180.0
+    },
+    "window_003": {
+     "noul": 0.05,
+     "start_s": 180.0,
+     "end_s": 240.0
+    },
+    "window_004": {
+     "noul": 0.05,
+     "start_s": 240.0,
+     "end_s": 300.0
+    },
+    "window_005": {
+     "noul": 0.05,
+     "start_s": 300.0,
+     "end_s": 360.0
+    },
+    "window_006": {
+     "noul": 0.05,
+     "start_s": 360.0,
+     "end_s": 420.0
+    },
+    "window_007": {
+     "noul": 0.05,
+     "start_s": 420.0,
+     "end_s": 480.0
+    },
+    "window_008": {
+     "noul": 0.05,
+     "start_s": 480.0,
+     "end_s": 540.0
+    },
+    "window_009": {
+     "noul": 0.05,
+     "start_s": 540.0,
+     "end_s": 600.0
+    },
+    "window_010": {
+     "noul": 0.05,
+     "start_s": 600.0,
+     "end_s": 660.0
+    },
+    "window_011": {
+     "noul": 0.05,
+     "start_s": 660.0,
+     "end_s": 720.0
+    },
+    "window_012": {
+     "noul": 0.05,
+     "start_s": 720.0,
+     "end_s": 780.0
+    },
+    "window_013": {
+     "noul": 0.05,
+     "start_s": 780.0,
+     "end_s": 840.0
+    },
+    "window_014": {
+     "noul": 0.05,
+     "start_s": 840.0,
+     "end_s": 900
+    }
+   }
+  }
+ ]
+}

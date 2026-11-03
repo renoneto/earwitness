@@ -1,0 +1,184 @@
+[
+ {
+  "candidate_id": "ep_fx1.named.60000-120000",
+  "ep_id": "ep_fx1",
+  "show_title": null,
+  "ep_title": null,
+  "pub_date": null,
+  "fetch_date": "2026-10-09",
+  "brand": "quince",
+  "brand_spoken": "quince",
+  "brand_raw": "quince",
+  "brand_url": null,
+  "brand_code": null,
+  "anchor": "namer:cta",
+  "confidence": "high",
+  "confidence_score": 0.9,
+  "needs_review": false,
+  "offer_codes": [],
+  "urls": [],
+  "start_s": 60.0,
+  "end_s": 120.0,
+  "provenance": {
+   "pipeline": "cta+gliner+repair",
+   "jev_window_ids": [],
+   "jev_threshold": 0.8,
+   "candidates": [
+    {
+     "brand": "quince",
+     "score": 3.8
+    }
+   ]
+  },
+  "excerpt": "This episode is brought to you by Quince. Quince has everything from organic cotton sheets to cashmere sweaters. Go to quince dot com slash fixture for free shipping.",
+  "source": "jev+namer",
+  "self_promo": false,
+  "self_promo_reason": null,
+  "brand_display": "Quince",
+  "brand_display_basis": "brand_list",
+  "clip": {
+   "file": "clips/ep_fx1/45000-135000.mp3",
+   "clip_start_s": 45.0,
+   "offset_s": 15.0
+  },
+  "supporting_keys": [
+   "det:ep_fx1.c0",
+   "jev:ep_fx1:window_001"
+  ]
+ },
+ {
+  "candidate_id": "ep_fx1.named.900000-960000",
+  "ep_id": "ep_fx1",
+  "show_title": null,
+  "ep_title": null,
+  "pub_date": null,
+  "fetch_date": "2026-10-09",
+  "brand": "fixture show",
+  "brand_spoken": "fixture show",
+  "brand_raw": "fixture show",
+  "brand_url": null,
+  "brand_code": null,
+  "anchor": "namer:cta",
+  "confidence": "medium",
+  "confidence_score": 0.6,
+  "needs_review": false,
+  "offer_codes": [],
+  "urls": [],
+  "start_s": 900.0,
+  "end_s": 960.0,
+  "provenance": {
+   "pipeline": "cta+gliner+repair",
+   "jev_window_ids": [],
+   "jev_threshold": 0.8,
+   "candidates": [
+    {
+     "brand": "fixture show",
+     "score": 2.0
+    }
+   ]
+  },
+  "excerpt": "Join our Patreon at patreon dot com slash fixture show.",
+  "source": "jev+namer",
+  "self_promo": true,
+  "self_promo_reason": "own membership page",
+  "brand_display": null,
+  "brand_display_basis": "none",
+  "clip": null,
+  "supporting_keys": [
+   "jev:ep_fx1:window_015"
+  ]
+ },
+ {
+  "candidate_id": "ep_fx2.named.120000-180000",
+  "ep_id": "ep_fx2",
+  "show_title": null,
+  "ep_title": null,
+  "pub_date": null,
+  "fetch_date": "2026-10-09",
+  "brand": "simply safe",
+  "brand_spoken": "simply safe",
+  "brand_raw": "simply safe",
+  "brand_url": null,
+  "brand_code": null,
+  "anchor": "namer:cta",
+  "confidence": "low",
+  "confidence_score": 0.3,
+  "needs_review": true,
+  "offer_codes": [],
+  "urls": [],
+  "start_s": 120.0,
+  "end_s": 180.0,
+  "provenance": {
+   "pipeline": "cta+gliner+repair",
+   "jev_window_ids": [],
+   "jev_threshold": 0.8,
+   "candidates": [
+    {
+     "brand": "simply safe",
+     "score": 1.2
+    },
+    {
+     "brand": "ring",
+     "score": 0.9
+    }
+   ]
+  },
+  "excerpt": "Today's sponsor is simply safe home security. Simply safe protects your home, visit simply safe dot com.",
+  "source": "jev+namer",
+  "self_promo": false,
+  "self_promo_reason": null,
+  "brand_canonical": "simplisafe",
+  "canon_reason": "spacing",
+  "brand_display": "SimpliSafe",
+  "brand_display_basis": "brand_list",
+  "clip": null,
+  "supporting_keys": [
+   "det:ep_fx2.c0",
+   "jev:ep_fx2:window_002"
+  ]
+ },
+ {
+  "candidate_id": "ep_fx2.named.180000-240000",
+  "ep_id": "ep_fx2",
+  "show_title": null,
+  "ep_title": null,
+  "pub_date": null,
+  "fetch_date": "2026-10-09",
+  "brand": "a g 1",
+  "brand_spoken": "a g 1",
+  "brand_raw": "a g 1",
+  "brand_url": null,
+  "brand_code": null,
+  "anchor": "namer:cta",
+  "confidence": "medium",
+  "confidence_score": 0.6,
+  "needs_review": false,
+  "offer_codes": [],
+  "urls": [],
+  "start_s": 180.0,
+  "end_s": 240.0,
+  "provenance": {
+   "pipeline": "cta+gliner+repair",
+   "jev_window_ids": [],
+   "jev_threshold": 0.8,
+   "candidates": [
+    {
+     "brand": "a g 1",
+     "score": 2.1
+    }
+   ]
+  },
+  "excerpt": "Also brought to you by a g one, the daily greens drink. Try a g one today with a free gift.",
+  "source": "jev+namer",
+  "self_promo": false,
+  "self_promo_reason": null,
+  "brand_canonical": "ag1",
+  "canon_reason": "spacing",
+  "brand_display": null,
+  "brand_display_basis": "none",
+  "clip": null,
+  "supporting_keys": [
+   "jev:ep_fx2:window_003"
+  ]
+ }
+]

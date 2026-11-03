@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" class="ew-operator">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EarWitness — local research workspace</title>
+<link rel="stylesheet" href="/app/fonts/plex.css">
+<link rel="stylesheet" href="/app/tokens.css">
+<link rel="stylesheet" href="/app/operator/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <button id="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">☰</button>
+  <span class="op-wordmark">EarWitness</span>
+  <span class="op-tag">Operator · internal</span>
+  <nav class="sidebar" id="sidebar" aria-label="Primary">
+    <a href="#/overview" data-route="overview">Overview</a>
+    <a href="#/library" data-route="library">Library</a>
+    <a href="#/ad-review" data-route="ad-review">Ad review</a>
+    <a href="#/explore" data-route="explore">Explore</a>
+    <a href="#/creatives" data-route="creatives">Creatives</a>
+    <a href="#/watchlists" data-route="watchlists">Watchlists</a>
+    <a href="#/campaigns" data-route="campaigns">Campaigns</a>
+    <a href="#/processing" data-route="processing">Processing</a>
+    <a href="#/data" data-route="data">Data &amp; Settings</a>
+  </nav>
+  <span id="agg-rev" class="agg-rev" title="Workspace aggregate revision"></span>
+</header>
+<div class="shell">
+  <main id="main" class="content" tabindex="-1">
+    <div id="toolbar" class="toolbar" role="toolbar" aria-label="Task toolbar"></div>
+    <div id="view" aria-live="off"></div>
+  </main>
+</div>
+<div id="live" class="visually-hidden" role="status" aria-live="polite"></div>
+<dialog id="modal" aria-labelledby="modal-title">
+  <h2 id="modal-title"></h2>
+  <div id="modal-body"></div>
+  <form method="dialog" class="modal-actions">
+    <button id="modal-ok" type="submit" value="ok">Close</button>
+  </form>
+</dialog>
+<script src="/app/operator/app.js"></script>
+<script src="/app/operator/views.js"></script>
+</body>
+</html>

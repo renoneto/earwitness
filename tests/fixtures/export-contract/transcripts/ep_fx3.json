@@ -1,0 +1,158 @@
+{
+ "ep_id": "ep_fx3",
+ "model": "tiny",
+ "language": "en",
+ "duration_min": 15.0,
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 30.0,
+   "text": "Host chat at minute 0."
+  },
+  {
+   "start": 30.0,
+   "end": 60.0,
+   "text": "Host chat at minute 0."
+  },
+  {
+   "start": 60.0,
+   "end": 90.0,
+   "text": "Host chat at minute 1."
+  },
+  {
+   "start": 90.0,
+   "end": 120.0,
+   "text": "Host chat at minute 1."
+  },
+  {
+   "start": 120.0,
+   "end": 150.0,
+   "text": "Host chat at minute 2."
+  },
+  {
+   "start": 150.0,
+   "end": 180.0,
+   "text": "Host chat at minute 2."
+  },
+  {
+   "start": 180.0,
+   "end": 210.0,
+   "text": "Host chat at minute 3."
+  },
+  {
+   "start": 210.0,
+   "end": 240.0,
+   "text": "Host chat at minute 3."
+  },
+  {
+   "start": 240.0,
+   "end": 270.0,
+   "text": "Host chat at minute 4."
+  },
+  {
+   "start": 270.0,
+   "end": 300.0,
+   "text": "Host chat at minute 4."
+  },
+  {
+   "start": 300.0,
+   "end": 330.0,
+   "text": "Host chat at minute 5."
+  },
+  {
+   "start": 330.0,
+   "end": 360.0,
+   "text": "Host chat at minute 5."
+  },
+  {
+   "start": 360.0,
+   "end": 390.0,
+   "text": "Host chat at minute 6."
+  },
+  {
+   "start": 390.0,
+   "end": 420.0,
+   "text": "Host chat at minute 6."
+  },
+  {
+   "start": 420.0,
+   "end": 450.0,
+   "text": "Host chat at minute 7."
+  },
+  {
+   "start": 450.0,
+   "end": 480.0,
+   "text": "Host chat at minute 7."
+  },
+  {
+   "start": 480.0,
+   "end": 510.0,
+   "text": "Host chat at minute 8."
+  },
+  {
+   "start": 510.0,
+   "end": 540.0,
+   "text": "Host chat at minute 8."
+  },
+  {
+   "start": 540.0,
+   "end": 570.0,
+   "text": "Host chat at minute 9."
+  },
+  {
+   "start": 570.0,
+   "end": 600.0,
+   "text": "Host chat at minute 9."
+  },
+  {
+   "start": 600.0,
+   "end": 630.0,
+   "text": "Host chat at minute 10."
+  },
+  {
+   "start": 630.0,
+   "end": 660.0,
+   "text": "Host chat at minute 10."
+  },
+  {
+   "start": 660.0,
+   "end": 690.0,
+   "text": "Host chat at minute 11."
+  },
+  {
+   "start": 690.0,
+   "end": 720.0,
+   "text": "Host chat at minute 11."
+  },
+  {
+   "start": 720.0,
+   "end": 750.0,
+   "text": "Host chat at minute 12."
+  },
+  {
+   "start": 750.0,
+   "end": 780.0,
+   "text": "Host chat at minute 12."
+  },
+  {
+   "start": 780.0,
+   "end": 810.0,
+   "text": "Host chat at minute 13."
+  },
+  {
+   "start": 810.0,
+   "end": 840.0,
+   "text": "Host chat at minute 13."
+  },
+  {
+   "start": 840.0,
+   "end": 870.0,
+   "text": "Host chat at minute 14."
+  },
+  {
+   "start": 870.0,
+   "end": 900.0,
+   "text": "Host chat at minute 14."
+  }
+ ]
+}

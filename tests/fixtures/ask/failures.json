@@ -1,0 +1,439 @@
+{
+ "header": "Synthetic fixtures for the chat doc's measured failures (docs/plans/2026-10-24-ask-chat-simplified.md section 8). Invented text only; no transcript text. Passage fields not given take tests/test_ask_contract.py P() defaults.",
+ "cases": [
+  {
+   "id": "F1",
+   "note": "a missed ad (sponsor cue nearby, so in_ad) posing as a mention: brand mode removes the item",
+   "brand_mode": true,
+   "brand": "Quince",
+   "passages": [
+    {
+     "pid": "p1",
+     "text": "this hour is brought to you by quince, soft sweaters from fifty dollars",
+     "in_ad": true
+    },
+    {
+     "pid": "p2",
+     "episode_id": "ep2",
+     "text": "my quince tee from the market held up through three washes"
+    }
+   ],
+   "answer": {
+    "outcome": "answered",
+    "asks_about_tone": false,
+    "paragraphs": [
+     {
+      "text": "Quince comes up for its soft sweaters.",
+      "cites": [
+       "p1"
+      ],
+      "section": "mentions"
+     },
+     {
+      "text": "A host says a Quince tee \u201cheld up through three washes\u201d.",
+      "cites": [
+       "p2"
+      ],
+      "section": "mentions"
+     }
+    ],
+    "uncertain": []
+   },
+   "kept": [
+    "A host says a Quince tee \u201cheld up through three washes\u201d."
+   ],
+   "kept_uncertain": [],
+   "reasons": [
+    "brand_mode_no_mention"
+   ]
+  },
+  {
+   "id": "F2",
+   "note": "a common-word brand: 'helix' in a science passage does not ground Helix Sleep",
+   "brand_mode": true,
+   "brand": "Helix Sleep",
+   "passages": [
+    {
+     "pid": "p1",
+     "text": "the double helix of the molecule twists to the right"
+    }
+   ],
+   "answer": {
+    "outcome": "answered",
+    "asks_about_tone": false,
+    "paragraphs": [
+     {
+      "text": "Helix Sleep comes up in a talk about molecules.",
+      "cites": [
+       "p1"
+      ],
+      "section": "mentions"
+     }
+    ],
+    "uncertain": []
+   },
+   "kept": [],
+   "kept_uncertain": [],
+   "reasons": [
+    "name_not_grounded"
+   ]
+  },
+  {
+   "id": "F3",
+   "note": "an ASR spelling: the item may not name Saatva from 'sotva'; the quote of what was said stays",
+   "brand_mode": false,
+   "brand": null,
+   "passages": [
+    {
+     "pid": "p1",
+     "text": "we tried the sotva mattress for a month and kept it"
+    },
+    {
+     "pid": "p2",
+     "episode_id": "ep2",
+     "text": "we tried the sotva mattress for a month and kept it"
+    }
+   ],
+   "answer": {
+    "outcome": "answered",
+    "asks_about_tone": false,
+    "paragraphs": [
+     {
+      "text": "Saatva comes up as a mattress the hosts tried.",
+      "cites": [
+       "p1"
+      ]
+     },
+     {
+      "text": "A host says \u201cwe tried the sotva mattress\u201d.",
+      "cites": [
+       "p2"
+      ]
+     }
+    ],
+    "uncertain": []
+   },
+   "kept": [
+    "A host says \u201cwe tried the sotva mattress\u201d."
+   ],
+   "kept_uncertain": [],
+   "reasons": [
+    "name_not_grounded"
+   ]
+  },
+  {
+   "id": "F4",
+   "note": "overgeneralising: four items from one passage keep one",
+   "brand_mode": false,
+   "brand": null,
+   "passages": [
+    {
+     "pid": "p1",
+     "text": "the drink mix is pretty high in sugar but the flavours are good"
+    }
+   ],
+   "answer": {
+    "outcome": "answered",
+    "asks_about_tone": false,
+    "paragraphs": [
+     {
+      "text": "A host says the drink mix is \u201cpretty high in sugar\u201d.",
+      "cites": [
+       "p1"
+      ]
+     },
+     {
+      "text": "The flavours come up on Night Shift Radio.",
+      "cites": [
+       "p1"
+      ]
+     },
+     {
+      "text": "Sugar is a theme in the discussion.",
+      "cites": [
+       "p1"
+      ]
+     },
+     {
+      "text": "The drink mix comes up once more.",
+      "cites": [
+       "p1"
+      ]
+     }
+    ],
+    "uncertain": []
+   },
+   "kept": [
+    "A host says the drink mix is \u201cpretty high in sugar\u201d."
+   ],
+   "kept_uncertain": [],
+   "reasons": [
+    "items_exceed_passages",
+    "items_exceed_passages",
+    "items_exceed_passages"
+   ]
+  },
+  {
+   "id": "F6",
+   "note": "'mentioned' with every cite an ad is removed; 'advertised' citing the brand's ad stays",
+   "brand_mode": false,
+   "brand": null,
+   "passages": [
+    {
+     "pid": "p1",
+     "kind": "detected_ad",
+     "brands": [
+      "Casper"
+     ],
+     "brand_channel": "spoken",
+     "text": "casper makes a mattress that sleeps cool"
+    },
+    {
+     "pid": "p2",
+     "episode_id": "ep2",
+     "text": "casper makes a mattress that sleeps cool",
+     "in_ad": true
+    }
+   ],
+   "answer": {
+    "outcome": "answered",
+    "asks_about_tone": false,
+    "paragraphs": [
+     {
+      "text": "Casper is mentioned on Night Shift Radio.",
+      "cites": [
+       "p1",
+       "p2"
+      ]
+     },
+     {
+      "text": "Casper advertised on Night Shift Radio.",
+      "cites": [
+       "p1"
+      ]
+     }
+    ],
+    "uncertain": []
+   },
+   "kept": [
+    "Casper advertised on Night Shift Radio."
+   ],
+   "kept_uncertain": [],
+   "reasons": [
+    "mentioned_all_ads"
+   ]
+  },
+  {
+   "id": "F7",
+   "note": "a status leak in an uncertain item is removed",
+   "brand_mode": false,
+   "brand": null,
+   "passages": [
+    {
+     "pid": "p1",
+     "kind": "detected_ad",
+     "held": true,
+     "text": "sleep on it for a hundred nights"
+    }
+   ],
+   "answer": {
+    "outcome": "partial",
+    "asks_about_tone": false,
+    "paragraphs": [],
+    "uncertain": [
+     {
+      "text": "This ad is labelled with no brand, so the brand is unclear.",
+      "cites": [
+       "p1"
+      ]
+     }
+    ]
+   },
+   "kept": [],
+   "kept_uncertain": [],
+   "reasons": [
+    "status_word"
+   ]
+  },
+  {
+   "id": "F8",
+   "note": "outcome nothing drops the model's items",
+   "brand_mode": false,
+   "brand": null,
+   "passages": [
+    {
+     "pid": "p1",
+     "text": "a long chat about grooming kits and travel"
+    }
+   ],
+   "answer": {
+    "outcome": "nothing",
+    "asks_about_tone": false,
+    "paragraphs": [
+     {
+      "text": "The passage talks about grooming kits.",
+      "cites": [
+       "p1"
+      ]
+     }
+    ],
+    "uncertain": [
+     {
+      "text": "The passage is about travel.",
+      "cites": [
+       "p1"
+      ]
+     }
+    ]
+   },
+   "kept": [],
+   "kept_uncertain": [],
+   "reasons": [
+    "outcome_nothing",
+    "outcome_nothing"
+   ]
+  },
+  {
+   "id": "F9",
+   "note": "a model 'correction' of ASR inside a quote is removed; a quote ending in a comma matches",
+   "brand_mode": false,
+   "brand": null,
+   "passages": [
+    {
+     "pid": "p1",
+     "text": "the middle amount take a cut of every sale, so we sell direct, no matter what"
+    },
+    {
+     "pid": "p2",
+     "episode_id": "ep2",
+     "text": "the middle amount take a cut of every sale, so we sell direct, no matter what"
+    }
+   ],
+   "answer": {
+    "outcome": "answered",
+    "asks_about_tone": false,
+    "paragraphs": [
+     {
+      "text": "A host says \u201cthe middle men take a cut\u201d.",
+      "cites": [
+       "p1"
+      ]
+     },
+     {
+      "text": "A host says \u201ctake a cut of every sale,\u201d and sells direct.",
+      "cites": [
+       "p2"
+      ]
+     }
+    ],
+    "uncertain": []
+   },
+   "kept": [
+    "A host says \u201ctake a cut of every sale,\u201d and sells direct."
+   ],
+   "kept_uncertain": [],
+   "reasons": [
+    "quote_not_found"
+   ]
+  },
+  {
+   "id": "F10",
+   "note": "an unrelated ad from free-text evidence search in a brand answer is removed",
+   "brand_mode": true,
+   "brand": "Quince",
+   "passages": [
+    {
+     "pid": "p1",
+     "kind": "detected_ad",
+     "brands": [
+      "Air France"
+     ],
+     "brand_channel": "url",
+     "text": "fly to paris this winter with air france"
+    },
+    {
+     "pid": "p2",
+     "episode_id": "ep2",
+     "text": "my quince tee from the market held up through three washes"
+    },
+    {
+     "pid": "p3",
+     "episode_id": "ep3",
+     "text": "my quince tee from the market held up through three washes"
+    }
+   ],
+   "answer": {
+    "outcome": "answered",
+    "asks_about_tone": false,
+    "paragraphs": [
+     {
+      "text": "A host wears a Quince tee.",
+      "cites": [
+       "p1",
+       "p2"
+      ],
+      "section": "mentions"
+     },
+     {
+      "text": "A host wears a Quince tee from the market.",
+      "cites": [
+       "p3"
+      ],
+      "section": "mentions"
+     }
+    ],
+    "uncertain": []
+   },
+   "kept": [
+    "A host wears a Quince tee from the market."
+   ],
+   "kept_uncertain": [],
+   "reasons": [
+    "brand_mode_unrelated_ad"
+   ]
+  },
+  {
+   "id": "F14",
+   "note": "a quote ending in , or . inside the quote marks matches a passage with other punctuation after the word",
+   "brand_mode": false,
+   "brand": null,
+   "passages": [
+    {
+     "pid": "p1",
+     "show": "Money Talk Daily",
+     "text": "shopify told us they process payments for 1.7 million merchants. Then the agents started buying"
+    },
+    {
+     "pid": "p2",
+     "episode_id": "ep2",
+     "text": "the checkout is faster than anything. We tested it twice; it held"
+    }
+   ],
+   "answer": {
+    "outcome": "answered",
+    "asks_about_tone": false,
+    "paragraphs": [
+     {
+      "text": "On Money Talk Daily, Shopify is said to serve \u201c1.7 million merchants,\u201d and \u201cThen the agents started buying.\u201d",
+      "cites": [
+       "p1"
+      ]
+     },
+     {
+      "text": "A guest calls the checkout \u201cfaster than anything,\u201d and says \u201cwe tested it twice.\u201d",
+      "cites": [
+       "p2"
+      ]
+     }
+    ],
+    "uncertain": []
+   },
+   "kept": [
+    "On Money Talk Daily, Shopify is said to serve \u201c1.7 million merchants,\u201d and \u201cThen the agents started buying.\u201d",
+    "A guest calls the checkout \u201cfaster than anything,\u201d and says \u201cwe tested it twice.\u201d"
+   ],
+   "kept_uncertain": [],
+   "reasons": []
+  }
+ ]
+}

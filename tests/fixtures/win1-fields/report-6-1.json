@@ -1,0 +1,773 @@
+{
+ "_note": "Trimmed copy of UX's Report 1 read of campaign 6 'Quince ad check' (ws-ux/win/report-api-r2/2-customer_campaigns_6_reports_1.json, D4 seed, UX panel host, 2026-10-28): only the frozen keys the Report page reads; no context token, captured excerpts, pins or actors. WIN1-FIELDS.",
+ "frozen": {
+  "allocation": {
+   "citations": {},
+   "evaluations": {
+    "exp:109b616f13b9": {
+     "allocated_elsewhere": [],
+     "coverage_gap_ids": {
+      "failed": [],
+      "missing": []
+     },
+     "coverage_state": "complete",
+     "eligible_ids": [],
+     "occurrence_order": [
+      "named:0f38f908384e8c15809774c58351be61fb110ae7de07b25279add0407c392015",
+      "named:d8287419923c66f702ffe534bf2f075391ca12f1487d86097a71dfa2c3810876",
+      "named:92cb853bfafb524adc5f4f3f5aab4dbbf076ddf9cb378261ba0cc082466c9303"
+     ],
+     "outcome": "unreviewed_detections_in_scope",
+     "placement_id": "exp:109b616f13b9",
+     "reasons": [
+      "no reviewed match yet; reads in scope wait for review",
+      "named:0f38f908384e8c15809774c58351be61fb110ae7de07b25279add0407c392015: unresolved correspondence",
+      "named:0f38f908384e8c15809774c58351be61fb110ae7de07b25279add0407c392015: not currently reviewed_ad",
+      "named:0f38f908384e8c15809774c58351be61fb110ae7de07b25279add0407c392015: advertiser attribution unconfirmed"
+     ]
+    },
+    "exp:67f60ceede96": {
+     "allocated_elsewhere": [],
+     "coverage_gap_ids": {
+      "failed": [],
+      "missing": []
+     },
+     "coverage_state": "complete",
+     "eligible_ids": [],
+     "occurrence_order": [
+      "named:0f38f908384e8c15809774c58351be61fb110ae7de07b25279add0407c392015",
+      "named:d8287419923c66f702ffe534bf2f075391ca12f1487d86097a71dfa2c3810876",
+      "named:92cb853bfafb524adc5f4f3f5aab4dbbf076ddf9cb378261ba0cc082466c9303"
+     ],
+     "outcome": "unreviewed_detections_in_scope",
+     "placement_id": "exp:67f60ceede96",
+     "reasons": [
+      "no reviewed match yet; reads in scope wait for review",
+      "named:92cb853bfafb524adc5f4f3f5aab4dbbf076ddf9cb378261ba0cc082466c9303: unresolved correspondence",
+      "named:92cb853bfafb524adc5f4f3f5aab4dbbf076ddf9cb378261ba0cc082466c9303: not currently reviewed_ad",
+      "named:92cb853bfafb524adc5f4f3f5aab4dbbf076ddf9cb378261ba0cc082466c9303: advertiser attribution unconfirmed"
+     ]
+    },
+    "exp:96bac8f54665": {
+     "allocated_elsewhere": [],
+     "coverage_gap_ids": {
+      "failed": [],
+      "missing": []
+     },
+     "coverage_state": "complete",
+     "eligible_ids": [],
+     "occurrence_order": [
+      "named:0f38f908384e8c15809774c58351be61fb110ae7de07b25279add0407c392015",
+      "named:d8287419923c66f702ffe534bf2f075391ca12f1487d86097a71dfa2c3810876",
+      "named:92cb853bfafb524adc5f4f3f5aab4dbbf076ddf9cb378261ba0cc082466c9303"
+     ],
+     "outcome": "no_observation_in_covered_sources",
+     "placement_id": "exp:96bac8f54665",
+     "reasons": []
+    },
+    "exp:a9af25402b7f": {
+     "allocated_elsewhere": [],
+     "coverage_gap_ids": {
+      "failed": [],
+      "missing": []
+     },
+     "coverage_state": "complete",
+     "eligible_ids": [],
+     "occurrence_order": [
+      "named:0f38f908384e8c15809774c58351be61fb110ae7de07b25279add0407c392015",
+      "named:d8287419923c66f702ffe534bf2f075391ca12f1487d86097a71dfa2c3810876",
+      "named:92cb853bfafb524adc5f4f3f5aab4dbbf076ddf9cb378261ba0cc082466c9303"
+     ],
+     "outcome": "unreviewed_detections_in_scope",
+     "placement_id": "exp:a9af25402b7f",
+     "reasons": [
+      "no reviewed match yet; reads in scope wait for review",
+      "named:d8287419923c66f702ffe534bf2f075391ca12f1487d86097a71dfa2c3810876: unresolved correspondence",
+      "named:d8287419923c66f702ffe534bf2f075391ca12f1487d86097a71dfa2c3810876: not currently reviewed_ad",
+      "named:d8287419923c66f702ffe534bf2f075391ca12f1487d86097a71dfa2c3810876: advertiser attribution unconfirmed"
+     ]
+    },
+    "exp:e58b54ebc4da": {
+     "allocated_elsewhere": [],
+     "coverage_gap_ids": {
+      "failed": [],
+      "missing": []
+     },
+     "coverage_state": "complete",
+     "eligible_ids": [],
+     "occurrence_order": [
+      "named:0f38f908384e8c15809774c58351be61fb110ae7de07b25279add0407c392015",
+      "named:d8287419923c66f702ffe534bf2f075391ca12f1487d86097a71dfa2c3810876",
+      "named:92cb853bfafb524adc5f4f3f5aab4dbbf076ddf9cb378261ba0cc082466c9303"
+     ],
+     "outcome": "no_observation_in_covered_sources",
+     "placement_id": "exp:e58b54ebc4da",
+     "reasons": []
+    }
+   },
+   "invalid_overrides": {},
+   "used": {}
+  },
+  "assessment_scope": {
+   "basis": "entered_structured_requirements_only",
+   "by_unit": {
+    "exp:109b616f13b9": {
+     "assessed_fields": [],
+     "entered_fields": [],
+     "unknown_fields": []
+    },
+    "exp:67f60ceede96": {
+     "assessed_fields": [],
+     "entered_fields": [],
+     "unknown_fields": []
+    },
+    "exp:96bac8f54665": {
+     "assessed_fields": [],
+     "entered_fields": [],
+     "unknown_fields": []
+    },
+    "exp:a9af25402b7f": {
+     "assessed_fields": [],
+     "entered_fields": [],
+     "unknown_fields": []
+    },
+    "exp:e58b54ebc4da": {
+     "assessed_fields": [],
+     "entered_fields": [],
+     "unknown_fields": []
+    }
+   },
+   "limitations": [
+    "Only entered supported checks are assessed; no whole-brief or legal compliance claim."
+   ],
+   "unassessed_brief_conditions": true
+  },
+  "brief_versions": {
+   "campaign": {
+    "brief_id": "brief-69861cfb1c1c4d72",
+    "captured_at": "2026-10-28T04:29:08+00:00",
+    "digest": "025b860222891e3db8ffa8cef98d4dd4513c492657bdabbf17ad6c73411a228f",
+    "provided_text": "One Quince ad read in each listed episode.",
+    "title": "Quince podcast ads",
+    "version": 1,
+    "workspace_id": "local"
+   },
+   "exp:109b616f13b9": {
+    "brief_id": "brief-69861cfb1c1c4d72",
+    "captured_at": "2026-10-28T04:29:08+00:00",
+    "digest": "025b860222891e3db8ffa8cef98d4dd4513c492657bdabbf17ad6c73411a228f",
+    "provided_text": "One Quince ad read in each listed episode.",
+    "title": "Quince podcast ads",
+    "version": 1,
+    "workspace_id": "local"
+   },
+   "exp:67f60ceede96": {
+    "brief_id": "brief-69861cfb1c1c4d72",
+    "captured_at": "2026-10-28T04:29:08+00:00",
+    "digest": "025b860222891e3db8ffa8cef98d4dd4513c492657bdabbf17ad6c73411a228f",
+    "provided_text": "One Quince ad read in each listed episode.",
+    "title": "Quince podcast ads",
+    "version": 1,
+    "workspace_id": "local"
+   },
+   "exp:96bac8f54665": {
+    "brief_id": "brief-69861cfb1c1c4d72",
+    "captured_at": "2026-10-28T04:29:08+00:00",
+    "digest": "025b860222891e3db8ffa8cef98d4dd4513c492657bdabbf17ad6c73411a228f",
+    "provided_text": "One Quince ad read in each listed episode.",
+    "title": "Quince podcast ads",
+    "version": 1,
+    "workspace_id": "local"
+   },
+   "exp:a9af25402b7f": {
+    "brief_id": "brief-69861cfb1c1c4d72",
+    "captured_at": "2026-10-28T04:29:08+00:00",
+    "digest": "025b860222891e3db8ffa8cef98d4dd4513c492657bdabbf17ad6c73411a228f",
+    "provided_text": "One Quince ad read in each listed episode.",
+    "title": "Quince podcast ads",
+    "version": 1,
+    "workspace_id": "local"
+   },
+   "exp:e58b54ebc4da": {
+    "brief_id": "brief-69861cfb1c1c4d72",
+    "captured_at": "2026-10-28T04:29:08+00:00",
+    "digest": "025b860222891e3db8ffa8cef98d4dd4513c492657bdabbf17ad6c73411a228f",
+    "provided_text": "One Quince ad read in each listed episode.",
+    "title": "Quince podcast ads",
+    "version": 1,
+    "workspace_id": "local"
+   }
+  },
+  "campaign": {
+   "brand": "quince",
+   "id": 6,
+   "mode": "supplied_requirements",
+   "name": "Quince ad check",
+   "revision": 9
+  },
+  "campaign_id": 6,
+  "captured_at": "2026-10-28T04:37:21+00:00",
+  "comparisons": {
+   "exp:109b616f13b9": [],
+   "exp:67f60ceede96": [],
+   "exp:96bac8f54665": [],
+   "exp:a9af25402b7f": [],
+   "exp:e58b54ebc4da": []
+  },
+  "coverage_by_placement": {
+   "exp:109b616f13b9": {
+    "episode_checks": {
+     "ep_c237b1d5638ae8e4": {
+      "fully_checked": true,
+      "not_fully_checked": [],
+      "screened": true,
+      "state": "fully_checked",
+      "transcript_short_s": 0.6
+     }
+    },
+    "episode_labels": {
+     "ep_c237b1d5638ae8e4": "MAGA’s scare tactics aren’t working like they did in 2024."
+    },
+    "episodes": [
+     "ep_c237b1d5638ae8e4"
+    ],
+    "failed": [],
+    "missing": [],
+    "searchable_hours": 1.007011,
+    "state": "complete",
+    "waiting_for_review": 2
+   },
+   "exp:67f60ceede96": {
+    "episode_checks": {
+     "ep_1727d8d7abf03249": {
+      "fully_checked": true,
+      "not_fully_checked": [],
+      "screened": true,
+      "state": "fully_checked",
+      "transcript_short_s": 6.7
+     }
+    },
+    "episode_labels": {
+     "ep_1727d8d7abf03249": "#431: Daddy's $20 Little Habit"
+    },
+    "episodes": [
+     "ep_1727d8d7abf03249"
+    ],
+    "failed": [],
+    "missing": [],
+    "searchable_hours": 1.231978,
+    "state": "complete",
+    "waiting_for_review": 4
+   },
+   "exp:96bac8f54665": {
+    "episode_checks": {
+     "ep_cb656344621a1e71": {
+      "fully_checked": true,
+      "not_fully_checked": [],
+      "screened": true,
+      "state": "fully_checked",
+      "transcript_short_s": 4.2
+     }
+    },
+    "episode_labels": {
+     "ep_cb656344621a1e71": "The Man on the Bench"
+    },
+    "episodes": [
+     "ep_cb656344621a1e71"
+    ],
+    "failed": [],
+    "missing": [],
+    "searchable_hours": 0.392333,
+    "state": "complete",
+    "waiting_for_review": 0
+   },
+   "exp:a9af25402b7f": {
+    "episode_checks": {
+     "ep_4ac8b194179fc958": {
+      "fully_checked": true,
+      "not_fully_checked": [],
+      "screened": true,
+      "state": "fully_checked",
+      "transcript_short_s": 0.2
+     }
+    },
+    "episode_labels": {
+     "ep_4ac8b194179fc958": "756 - Karen Bass - Part Two"
+    },
+    "episodes": [
+     "ep_4ac8b194179fc958"
+    ],
+    "failed": [],
+    "missing": [],
+    "searchable_hours": 1.461289,
+    "state": "complete",
+    "waiting_for_review": 6
+   },
+   "exp:e58b54ebc4da": {
+    "episode_checks": {
+     "ep_40f0e20b2bcc105d": {
+      "fully_checked": true,
+      "not_fully_checked": [],
+      "screened": true,
+      "state": "fully_checked",
+      "transcript_short_s": 0.0
+     }
+    },
+    "episode_labels": {
+     "ep_40f0e20b2bcc105d": "[Space Bites+] This Telescope Will Do What JWST and Roman Can't"
+    },
+    "episodes": [
+     "ep_40f0e20b2bcc105d"
+    ],
+    "failed": [],
+    "missing": [],
+    "searchable_hours": 0.352,
+    "state": "complete",
+    "waiting_for_review": 0
+   }
+  },
+  "episode_titles": {
+   "ep_1727d8d7abf03249": "#431: Daddy's $20 Little Habit",
+   "ep_40f0e20b2bcc105d": "[Space Bites+] This Telescope Will Do What JWST and Roman Can't",
+   "ep_4ac8b194179fc958": "756 - Karen Bass - Part Two",
+   "ep_c237b1d5638ae8e4": "MAGA’s scare tactics aren’t working like they did in 2024.",
+   "ep_cb656344621a1e71": "The Man on the Bench"
+  },
+  "evaluations": {
+   "exp:109b616f13b9": {
+    "allocated_elsewhere": [],
+    "coverage_gap_ids": {
+     "failed": [],
+     "missing": []
+    },
+    "coverage_state": "complete",
+    "eligible_ids": [],
+    "occurrence_order": [
+     "named:0f38f908384e8c15809774c58351be61fb110ae7de07b25279add0407c392015",
+     "named:d8287419923c66f702ffe534bf2f075391ca12f1487d86097a71dfa2c3810876",
+     "named:92cb853bfafb524adc5f4f3f5aab4dbbf076ddf9cb378261ba0cc082466c9303"
+    ],
+    "outcome": "unreviewed_detections_in_scope",
+    "placement_id": "exp:109b616f13b9",
+    "reasons": [
+     "no reviewed match yet; reads in scope wait for review",
+     "named:0f38f908384e8c15809774c58351be61fb110ae7de07b25279add0407c392015: unresolved correspondence",
+     "named:0f38f908384e8c15809774c58351be61fb110ae7de07b25279add0407c392015: not currently reviewed_ad",
+     "named:0f38f908384e8c15809774c58351be61fb110ae7de07b25279add0407c392015: advertiser attribution unconfirmed"
+    ]
+   },
+   "exp:67f60ceede96": {
+    "allocated_elsewhere": [],
+    "coverage_gap_ids": {
+     "failed": [],
+     "missing": []
+    },
+    "coverage_state": "complete",
+    "eligible_ids": [],
+    "occurrence_order": [
+     "named:0f38f908384e8c15809774c58351be61fb110ae7de07b25279add0407c392015",
+     "named:d8287419923c66f702ffe534bf2f075391ca12f1487d86097a71dfa2c3810876",
+     "named:92cb853bfafb524adc5f4f3f5aab4dbbf076ddf9cb378261ba0cc082466c9303"
+    ],
+    "outcome": "unreviewed_detections_in_scope",
+    "placement_id": "exp:67f60ceede96",
+    "reasons": [
+     "no reviewed match yet; reads in scope wait for review",
+     "named:92cb853bfafb524adc5f4f3f5aab4dbbf076ddf9cb378261ba0cc082466c9303: unresolved correspondence",
+     "named:92cb853bfafb524adc5f4f3f5aab4dbbf076ddf9cb378261ba0cc082466c9303: not currently reviewed_ad",
+     "named:92cb853bfafb524adc5f4f3f5aab4dbbf076ddf9cb378261ba0cc082466c9303: advertiser attribution unconfirmed"
+    ]
+   },
+   "exp:96bac8f54665": {
+    "allocated_elsewhere": [],
+    "coverage_gap_ids": {
+     "failed": [],
+     "missing": []
+    },
+    "coverage_state": "complete",
+    "eligible_ids": [],
+    "occurrence_order": [
+     "named:0f38f908384e8c15809774c58351be61fb110ae7de07b25279add0407c392015",
+     "named:d8287419923c66f702ffe534bf2f075391ca12f1487d86097a71dfa2c3810876",
+     "named:92cb853bfafb524adc5f4f3f5aab4dbbf076ddf9cb378261ba0cc082466c9303"
+    ],
+    "outcome": "no_observation_in_covered_sources",
+    "placement_id": "exp:96bac8f54665",
+    "reasons": []
+   },
+   "exp:a9af25402b7f": {
+    "allocated_elsewhere": [],
+    "coverage_gap_ids": {
+     "failed": [],
+     "missing": []
+    },
+    "coverage_state": "complete",
+    "eligible_ids": [],
+    "occurrence_order": [
+     "named:0f38f908384e8c15809774c58351be61fb110ae7de07b25279add0407c392015",
+     "named:d8287419923c66f702ffe534bf2f075391ca12f1487d86097a71dfa2c3810876",
+     "named:92cb853bfafb524adc5f4f3f5aab4dbbf076ddf9cb378261ba0cc082466c9303"
+    ],
+    "outcome": "unreviewed_detections_in_scope",
+    "placement_id": "exp:a9af25402b7f",
+    "reasons": [
+     "no reviewed match yet; reads in scope wait for review",
+     "named:d8287419923c66f702ffe534bf2f075391ca12f1487d86097a71dfa2c3810876: unresolved correspondence",
+     "named:d8287419923c66f702ffe534bf2f075391ca12f1487d86097a71dfa2c3810876: not currently reviewed_ad",
+     "named:d8287419923c66f702ffe534bf2f075391ca12f1487d86097a71dfa2c3810876: advertiser attribution unconfirmed"
+    ]
+   },
+   "exp:e58b54ebc4da": {
+    "allocated_elsewhere": [],
+    "coverage_gap_ids": {
+     "failed": [],
+     "missing": []
+    },
+    "coverage_state": "complete",
+    "eligible_ids": [],
+    "occurrence_order": [
+     "named:0f38f908384e8c15809774c58351be61fb110ae7de07b25279add0407c392015",
+     "named:d8287419923c66f702ffe534bf2f075391ca12f1487d86097a71dfa2c3810876",
+     "named:92cb853bfafb524adc5f4f3f5aab4dbbf076ddf9cb378261ba0cc082466c9303"
+    ],
+    "outcome": "no_observation_in_covered_sources",
+    "placement_id": "exp:e58b54ebc4da",
+    "reasons": []
+   }
+  },
+  "limitation": "Evidence captured at the recorded time; does not reflect later corrections.",
+  "mode": "supplied_requirements",
+  "placements": [
+   {
+    "binding": "eligible",
+    "campaign_id": 6,
+    "date_from": null,
+    "date_to": null,
+    "episode_id": "ep_c237b1d5638ae8e4",
+    "expected_count": 1,
+    "id": "exp:109b616f13b9",
+    "provenance": {
+     "binding": "eligible",
+     "brief_id": "brief-69861cfb1c1c4d72",
+     "brief_ref": {
+      "brief_id": "brief-69861cfb1c1c4d72",
+      "captured_at": "2026-10-28T04:29:08+00:00",
+      "digest": "025b860222891e3db8ffa8cef98d4dd4513c492657bdabbf17ad6c73411a228f",
+      "qualification": {
+       "synthetic": false
+      },
+      "source_kind": "provided_text",
+      "source_label": "Quince podcast ads",
+      "version": 1
+     },
+     "captured_at": "2026-10-28T04:29:08+00:00",
+     "digest": "025b860222891e3db8ffa8cef98d4dd4513c492657bdabbf17ad6c73411a228f",
+     "qualification": {
+      "synthetic": false
+     },
+     "source_kind": "provided_text",
+     "source_label": "Quince podcast ads",
+     "source_scope": {
+      "bounds": {
+       "end_s": 3625.8,
+       "start_s": 0.0
+      },
+      "bounds_basis": "full_effective_source",
+      "source_ref": "sr1:00a488f5d9e44170947a415a3c5a2a80"
+     },
+     "version": 1
+    },
+    "requirements": {
+     "code": null,
+     "message": null,
+     "offer": null,
+     "priority": 0
+    },
+    "revision": 1,
+    "scope": "episode",
+    "show_id": "",
+    "timezone": "UTC",
+    "updated_at": "2026-10-28T04:29:08+00:00",
+    "workspace_id": "local"
+   },
+   {
+    "binding": "eligible",
+    "campaign_id": 6,
+    "date_from": null,
+    "date_to": null,
+    "episode_id": "ep_1727d8d7abf03249",
+    "expected_count": 1,
+    "id": "exp:67f60ceede96",
+    "provenance": {
+     "binding": "eligible",
+     "brief_id": "brief-69861cfb1c1c4d72",
+     "brief_ref": {
+      "brief_id": "brief-69861cfb1c1c4d72",
+      "captured_at": "2026-10-28T04:29:08+00:00",
+      "digest": "025b860222891e3db8ffa8cef98d4dd4513c492657bdabbf17ad6c73411a228f",
+      "qualification": {
+       "synthetic": false
+      },
+      "source_kind": "provided_text",
+      "source_label": "Quince podcast ads",
+      "version": 1
+     },
+     "captured_at": "2026-10-28T04:29:08+00:00",
+     "digest": "025b860222891e3db8ffa8cef98d4dd4513c492657bdabbf17ad6c73411a228f",
+     "qualification": {
+      "synthetic": false
+     },
+     "source_kind": "provided_text",
+     "source_label": "Quince podcast ads",
+     "source_scope": {
+      "bounds": {
+       "end_s": 4441.8,
+       "start_s": 0.0
+      },
+      "bounds_basis": "full_effective_source",
+      "source_ref": "sr1:2a955dcafb204a968afe48030c73f233"
+     },
+     "version": 1
+    },
+    "requirements": {
+     "code": null,
+     "message": null,
+     "offer": null,
+     "priority": 0
+    },
+    "revision": 1,
+    "scope": "episode",
+    "show_id": "",
+    "timezone": "UTC",
+    "updated_at": "2026-10-28T04:29:08+00:00",
+    "workspace_id": "local"
+   },
+   {
+    "binding": "eligible",
+    "campaign_id": 6,
+    "date_from": null,
+    "date_to": null,
+    "episode_id": "ep_cb656344621a1e71",
+    "expected_count": 1,
+    "id": "exp:96bac8f54665",
+    "provenance": {
+     "binding": "eligible",
+     "brief_id": "brief-69861cfb1c1c4d72",
+     "brief_ref": {
+      "brief_id": "brief-69861cfb1c1c4d72",
+      "captured_at": "2026-10-28T04:29:08+00:00",
+      "digest": "025b860222891e3db8ffa8cef98d4dd4513c492657bdabbf17ad6c73411a228f",
+      "qualification": {
+       "synthetic": false
+      },
+      "source_kind": "provided_text",
+      "source_label": "Quince podcast ads",
+      "version": 1
+     },
+     "captured_at": "2026-10-28T04:29:08+00:00",
+     "digest": "025b860222891e3db8ffa8cef98d4dd4513c492657bdabbf17ad6c73411a228f",
+     "qualification": {
+      "synthetic": false
+     },
+     "source_kind": "provided_text",
+     "source_label": "Quince podcast ads",
+     "source_scope": {
+      "bounds": {
+       "end_s": 1416.6,
+       "start_s": 0.0
+      },
+      "bounds_basis": "full_effective_source",
+      "source_ref": "sr1:660c3d8f211f4216880fcc75ff14def6"
+     },
+     "version": 1
+    },
+    "requirements": {
+     "code": null,
+     "message": null,
+     "offer": null,
+     "priority": 0
+    },
+    "revision": 1,
+    "scope": "episode",
+    "show_id": "",
+    "timezone": "UTC",
+    "updated_at": "2026-10-28T04:29:08+00:00",
+    "workspace_id": "local"
+   },
+   {
+    "binding": "eligible",
+    "campaign_id": 6,
+    "date_from": null,
+    "date_to": null,
+    "episode_id": "ep_4ac8b194179fc958",
+    "expected_count": 1,
+    "id": "exp:a9af25402b7f",
+    "provenance": {
+     "binding": "eligible",
+     "brief_id": "brief-69861cfb1c1c4d72",
+     "brief_ref": {
+      "brief_id": "brief-69861cfb1c1c4d72",
+      "captured_at": "2026-10-28T04:29:08+00:00",
+      "digest": "025b860222891e3db8ffa8cef98d4dd4513c492657bdabbf17ad6c73411a228f",
+      "qualification": {
+       "synthetic": false
+      },
+      "source_kind": "provided_text",
+      "source_label": "Quince podcast ads",
+      "version": 1
+     },
+     "captured_at": "2026-10-28T04:29:08+00:00",
+     "digest": "025b860222891e3db8ffa8cef98d4dd4513c492657bdabbf17ad6c73411a228f",
+     "qualification": {
+      "synthetic": false
+     },
+     "source_kind": "provided_text",
+     "source_label": "Quince podcast ads",
+     "source_scope": {
+      "bounds": {
+       "end_s": 5260.8,
+       "start_s": 0.0
+      },
+      "bounds_basis": "full_effective_source",
+      "source_ref": "sr1:dd0dd15dd5b842cdb044ab451da596eb"
+     },
+     "version": 1
+    },
+    "requirements": {
+     "code": null,
+     "message": null,
+     "offer": null,
+     "priority": 0
+    },
+    "revision": 1,
+    "scope": "episode",
+    "show_id": "",
+    "timezone": "UTC",
+    "updated_at": "2026-10-28T04:29:08+00:00",
+    "workspace_id": "local"
+   },
+   {
+    "binding": "eligible",
+    "campaign_id": 6,
+    "date_from": null,
+    "date_to": null,
+    "episode_id": "ep_40f0e20b2bcc105d",
+    "expected_count": 1,
+    "id": "exp:e58b54ebc4da",
+    "provenance": {
+     "binding": "eligible",
+     "brief_id": "brief-69861cfb1c1c4d72",
+     "brief_ref": {
+      "brief_id": "brief-69861cfb1c1c4d72",
+      "captured_at": "2026-10-28T04:29:08+00:00",
+      "digest": "025b860222891e3db8ffa8cef98d4dd4513c492657bdabbf17ad6c73411a228f",
+      "qualification": {
+       "synthetic": false
+      },
+      "source_kind": "provided_text",
+      "source_label": "Quince podcast ads",
+      "version": 1
+     },
+     "captured_at": "2026-10-28T04:29:08+00:00",
+     "digest": "025b860222891e3db8ffa8cef98d4dd4513c492657bdabbf17ad6c73411a228f",
+     "qualification": {
+      "synthetic": false
+     },
+     "source_kind": "provided_text",
+     "source_label": "Quince podcast ads",
+     "source_scope": {
+      "bounds": {
+       "end_s": 1267.33,
+       "start_s": 0.0
+      },
+      "bounds_basis": "full_effective_source",
+      "source_ref": "sr1:e91257c4b7af44f98367700e4c438cf8"
+     },
+     "version": 1
+    },
+    "requirements": {
+     "code": null,
+     "message": null,
+     "offer": null,
+     "priority": 0
+    },
+    "revision": 1,
+    "scope": "episode",
+    "show_id": "",
+    "timezone": "UTC",
+    "updated_at": "2026-10-28T04:29:08+00:00",
+    "workspace_id": "local"
+   }
+  ],
+  "reason_codes": {
+   "citations": {},
+   "evaluations": {
+    "exp:109b616f13b9": [
+     {
+      "code": "unreviewed_detections_in_scope",
+      "field": null
+     },
+     {
+      "code": "unresolved_correspondence",
+      "field": null
+     },
+     {
+      "code": "not_reviewed_ad",
+      "field": null
+     },
+     {
+      "code": "attribution_unconfirmed",
+      "field": null
+     }
+    ],
+    "exp:67f60ceede96": [
+     {
+      "code": "unreviewed_detections_in_scope",
+      "field": null
+     },
+     {
+      "code": "unresolved_correspondence",
+      "field": null
+     },
+     {
+      "code": "not_reviewed_ad",
+      "field": null
+     },
+     {
+      "code": "attribution_unconfirmed",
+      "field": null
+     }
+    ],
+    "exp:96bac8f54665": [],
+    "exp:a9af25402b7f": [
+     {
+      "code": "unreviewed_detections_in_scope",
+      "field": null
+     },
+     {
+      "code": "unresolved_correspondence",
+      "field": null
+     },
+     {
+      "code": "not_reviewed_ad",
+      "field": null
+     },
+     {
+      "code": "attribution_unconfirmed",
+      "field": null
+     }
+    ],
+    "exp:e58b54ebc4da": []
+   }
+  },
+  "renderer": "campaign-report/4.1",
+  "report_no": 1,
+  "research_scope": null,
+  "suggestions": [],
+  "synthetic": false,
+  "synthetic_placements": [],
+  "targets": []
+ },
+ "stale": false,
+ "stale_reasons": []
+}

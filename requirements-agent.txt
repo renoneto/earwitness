@@ -1,0 +1,8 @@
+# Optional pinned MCP/runtime dependencies for the EarWitness local agent reader (package D).
+# The application runs WITHOUT these installed; only scripts/app_mcp.py and
+# earwitness/agents/mcp_server.py require them.
+# Qualified 2026-09-22 on macOS 26.3.1 arm64, Python 3.14.7, isolated venv /tmp/ew-mcp-qual.
+# Install: python3 -m venv .venv-agent && . .venv-agent/bin/activate && pip install -r requirements-agent.txt
+# Full transitive lock record: requirements-agent.lock (pip freeze from the qualified install).
+# Historical requirements.txt / requirements.lock are UNCHANGED by this file.
+mcp==2.2.0

@@ -1,0 +1,612 @@
+/* EarWitness design v3 (Exhibit) · search.css
+   Search and Overview pages (search form, tabs, rail, results, inspector).
+   Page workers own this file. Use the --ew-* tokens (tokens.css) and the
+   shared components in styles.css; no inline styles (CSP style-src 'self'). */
+
+/* == Search band: box, result-type tabs, actions, scope line ============== */
+.ew-search-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "form form" "tabs actions" "scope scope";
+  gap: 14px 0; margin: calc(-1 * var(--ew-s8)) calc(-1 * var(--ew-gutter)) 0; padding: var(--ew-s6) var(--ew-gutter) 18px;
+  border-bottom: 1px solid var(--ew-border); background: var(--ew-page); }
+.ew-search-head > .ew-searchbox { grid-area: form; }
+.ew-searchbox input { height: 48px; font: 400 17px/24px var(--ew-sans); }
+.ew-searchbox .button, .ew-searchbox button { min-height: 48px; padding: 0 22px; }
+.ew-search-tabs { grid-area: tabs; gap: 20px; border-bottom: 1px solid var(--ew-border); }
+.ew-search-tabs button { font: var(--ew-t-body); white-space: nowrap; }
+.ew-search-tabs button[aria-pressed=true] { font-weight: 600; }
+.ew-search-tabs button[aria-pressed=true] > .ew-tab-count { background: var(--ew-inverse); color: var(--ew-text-inverse); }
+.ew-search-actions { grid-area: actions; display: flex; gap: var(--ew-s1); align-items: center; justify-content: flex-end; flex-wrap: wrap;
+  padding-bottom: var(--ew-s1); border-bottom: 1px solid var(--ew-border); }
+.ew-search-actions .button.quiet { padding: 0 var(--ew-s3); }
+.ew-search-actions .ew-short { display: none; }
+.ew-scope-line { grid-area: scope; display: flex; flex-wrap: wrap; gap: var(--ew-s2) 10px; align-items: center; margin: 0; font: var(--ew-t-ui); color: var(--ew-text-2); }
+.ew-scope-line > .ew-tier { height: 24px; padding: 0 9px; color: var(--ew-text); border-color: var(--ew-text); }
+.ew-scope-line > a { color: var(--ew-action); }
+/* The export status line: its own row under the tab row, shown only while
+   it says something, so the tab-row actions never move (DEMO2-SCR-R1-12).
+   Empty, it is hidden visually only (.visually-hidden), never display:none:
+   a live region must stay in the accessibility tree to be announced. */
+.ew-search-head > #export-status { grid-area: status; }
+.ew-search-head > #export-status:empty { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.ew-search-head:has(> #export-status:not(:empty)) { grid-template-areas: "form form" "tabs actions" "status status" "scope scope"; }
+/* A page notice above the search band (an export still being prepared, a
+   switch waiting): its own row, never under the band, with the band's gap
+   between the search box and the tabs below it (DEMO2-SCR-R1-04). The
+   "Loading results…" note above a retained frame too (DEMO2-SCR-R2-02). */
+#main > .notice:has(~ .ew-search-head), #main > .section-note:has(~ .ew-search-head) { margin-bottom: 14px; }
+#main > .notice ~ .ew-search-head, #main > .section-note ~ .ew-search-head { margin-top: 0; padding-top: 0; }
+/* No rail on the page (narrow at render, or loading): the Filters button stays. */
+#main:has(.ew-search-body:not(.has-rail)) .ew-search-head .ew-filters-open { display: inline-flex; }
+.ew-filters-open { font-weight: 600; }
+.ew-search-head + .ew-back, .breadcrumb.ew-back { margin-bottom: var(--ew-s2); }
+
+/* == Body: filter rail · results · inspector ================================= */
+.ew-search-body { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; align-items: start; padding-top: var(--ew-s6); }
+.ew-search-body > * { min-width: 0; }
+.ew-inspector { display: none; }
+.ew-inspector-body { display: contents; }
+@media (min-width: 1200px) {
+  .ew-search-body { grid-template-columns: minmax(0, 1fr) var(--ew-inspector); }
+  .ew-search-body.has-rail { grid-template-columns: var(--ew-rail) minmax(0, 1fr) var(--ew-inspector); }
+  /* No results: no inspector column (R2-15). */
+  .ew-search-body.no-inspector { grid-template-columns: minmax(0, 1fr); }
+  .ew-search-body.has-rail.no-inspector { grid-template-columns: var(--ew-rail) minmax(0, 1fr); }
+  .ew-inspector { display: flex; flex-direction: column; position: sticky; top: var(--ew-s4); background: var(--ew-sheet);
+    border: 1px solid var(--ew-border); border-radius: var(--ew-r-card); box-shadow: var(--ew-e1); }
+}
+
+/* Filter rail: the Filters dialog's groups, compact; Apply at the end. */
+.ew-search-rail { width: auto; gap: 0; font: var(--ew-t-ui); }
+.ew-search-rail form { display: flex; flex-direction: column; gap: var(--ew-s4); }
+.ew-rail-head { display: flex; justify-content: space-between; align-items: center; }
+.ew-rail-head h2 { font: 600 18px/24px var(--ew-serif); }
+.ew-rail-head .button.quiet { min-height: var(--ew-target); padding: 0 6px; font-size: 13px; }
+.ew-rail-apply { position: sticky; bottom: 0; z-index: 1; padding: var(--ew-s3) 0 var(--ew-s2); background: var(--ew-page); border-top: 1px solid var(--ew-border); }
+.ew-rail-apply .button { width: 100%; }
+.ew-rail-note { font: 400 12px/17px var(--ew-sans); color: var(--ew-text-2); }
+.filter-block { display: flex; flex-direction: column; gap: 0; margin: 0; }
+.filter-block > legend { font: 600 13px/18px var(--ew-sans); color: var(--ew-text); padding: 0 0 var(--ew-s1); }
+.filter-block .field-help { margin-bottom: var(--ew-s1); }
+.filter-block .od-field { display: flex; flex-direction: column; gap: var(--ew-s1); }
+.filter-block .od-field > label { font: var(--ew-t-meta); color: var(--ew-text-2); display: flex; flex-direction: column; gap: var(--ew-s1); }
+.filter-block .check-list { max-height: 216px; overflow-y: auto; overscroll-behavior: contain; margin-top: var(--ew-s1); }
+.filter-block .check-list label, .filter-block .radio-group label { min-height: var(--ew-target); gap: 10px; font-weight: 400; }
+.filter-block input[type=checkbox], .filter-block input[type=radio] { width: 16px; height: 16px; min-height: 16px; }
+.filter-block .actions { gap: 0 var(--ew-s1); }
+.filter-block .actions .button.quiet { min-height: var(--ew-target); padding: 0 6px; font-size: 13px; }
+dialog .filter-block { padding-bottom: var(--ew-s4); border-bottom: 1px solid var(--ew-rule); margin-bottom: var(--ew-s4); }
+dialog .filter-block .check-list label, dialog .filter-block .radio-group label { min-height: 44px; font-size: 15px; }
+dialog .filter-block input[type=checkbox], dialog .filter-block input[type=radio] { width: 20px; height: 20px; min-height: 20px; }
+
+/* == Results column ========================================================= */
+.ew-search-results { display: flex; flex-direction: column; gap: var(--ew-s3); }
+.ew-results-bar { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--ew-s3); flex-wrap: wrap; }
+.ew-results-count { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.ew-count-line { font: 600 15px/22px var(--ew-sans); margin: 0; }
+.ew-results-tools { display: flex; gap: var(--ew-s3); align-items: center; flex-wrap: wrap; }
+.ew-sort { display: flex; flex-direction: row; gap: var(--ew-s2); align-items: center; font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-sort select { width: auto; min-width: 0; color: var(--ew-text); }
+.ew-view-switch .ew-segmented-options label { min-height: var(--ew-target); }
+.ew-results-meta { display: flex; justify-content: space-between; align-items: flex-start; gap: 0 var(--ew-s3); flex-wrap: wrap; }
+.ew-results-meta > details, .ew-results-disclosures { flex: 1 1 260px; min-width: 0; }
+.ew-results-disclosures { display: flex; flex-wrap: wrap; gap: 0 var(--ew-s4); }
+.ew-results-disclosures > details[open] { flex-basis: 100%; }
+.ew-results-meta > details > summary, .ew-results-disclosures > details > summary { min-height: var(--ew-target); font: var(--ew-t-meta); }
+.ew-results-meta > details[open], .ew-results-disclosures > details[open] { display: flex; flex-direction: column; gap: var(--ew-s2); padding-bottom: var(--ew-s2); }
+.ew-results-meta .section-note { font: var(--ew-t-meta); color: var(--ew-text-2); max-width: 70ch; }
+.ew-results-meta .button.quiet { font-size: 13px; }
+.ew-results-meta-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0 var(--ew-s1); margin-left: auto; }
+.ew-quick-scope { display: flex; gap: 0 var(--ew-s1); }
+/* Export selected: its own outlined control, with its reason at 0 (R2-14b). */
+.ew-export-group { display: inline-flex; align-items: center; gap: var(--ew-s2); flex-wrap: wrap; }
+.ew-export-group .ew-help { margin: 0; }
+.ew-match-mode { margin: 0; font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-match-mode a { margin-left: var(--ew-s2); }
+.ew-brand-jump { margin: 0; font: var(--ew-t-ui); }
+.ew-pref-note { display: flex; flex-wrap: wrap; align-items: center; gap: 0 var(--ew-s2); margin: 0 0 var(--ew-s3); font: var(--ew-t-ui); color: var(--ew-text-2); }
+/* The rail carries the same dates, shows and brands at 1200 px and up. */
+@media (min-width: 1200px) { .has-rail .ew-quick-scope { display: none; } }
+#search-results { display: flex; flex-direction: column; gap: var(--ew-s3); }
+#search-results > .section-note { font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-search-results .ew-chips, .ew-search-results .filter-summary { align-items: center; }
+/* A long chip label wraps inside its pill (max-width and overflow-wrap from
+   styles.css .filter-summary .filter-chip); the × (flex: none) stays in it (SF-SCR-R2-01). */
+.ew-search-results .filter-chip { white-space: normal; padding-block: var(--ew-s1); }
+
+/* Week strip: 30 px bars from returned counts; numbers in the disclosure. */
+.chart.ew-week { padding: 0; background: transparent; border: 0; display: flex; flex-direction: column; gap: var(--ew-s1); }
+.ew-week-row { display: flex; align-items: flex-end; gap: var(--ew-s1) 10px; flex-wrap: wrap; }
+/* The bar is drawn 24 px wide; the button around it is a full target. */
+.ew-week-bars { display: flex; align-items: flex-end; gap: 0; height: var(--ew-target); max-width: 100%; }
+.ew-week-bar { flex: 0 1 var(--ew-target); width: var(--ew-target); min-width: 0; height: var(--ew-target); display: flex; align-items: flex-end; justify-content: center; padding: 0; border: 0; background: transparent; }
+button.ew-week-bar { cursor: pointer; }
+.ew-week-svg { width: 24px; max-width: 100%; height: 30px; display: block; }
+.ew-week-svg .bar-rect { fill: var(--ew-border-strong); }
+button.ew-week-bar:hover .bar-rect, button.ew-week-bar:focus-visible .bar-rect { fill: var(--ew-text-2); }
+.ew-week-caption { font: 400 12px/16px var(--ew-sans); color: var(--ew-text-2); }
+.ew-week .chart-unknown { margin: 0; font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-week-data > summary { min-height: var(--ew-target); font: var(--ew-t-meta); }
+.ew-week-data[open] { display: flex; flex-direction: column; gap: var(--ew-s2); max-width: 560px; }
+.ew-week-data .chart-unit, .ew-week-data .chart-foot { margin: 0; font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-week-data .data-table { background: var(--ew-sheet); border: 1px solid var(--ew-border); }
+
+/* Result cards (Ads / All mentions / Episodes). */
+.ew-result-list { display: flex; flex-direction: column; gap: var(--ew-s3); background: transparent; border: 0; }
+.ew-search-card { cursor: default; }
+.ew-search-card .ew-result-meta { align-items: baseline; gap: var(--ew-s1) var(--ew-s3); }
+.ew-result-where { display: inline-flex; align-items: baseline; gap: var(--ew-s2); min-width: 0; flex: 1 1 280px; overflow-wrap: anywhere; }
+.ew-result-where a { color: var(--ew-text-2); }
+/* The date is its own item: it never sits inside the two-line clamp of the show and episode. */
+.ew-result-date { flex: none; white-space: nowrap; }
+.ew-result-date::before { content: "· "; }
+.ew-result-where .ew-select { align-self: center; }
+.ew-select { display: inline-flex; align-items: center; justify-content: center; gap: var(--ew-s2); min-width: var(--ew-target); min-height: var(--ew-target); cursor: pointer; }
+.ew-result-time .ew-time, .ew-result-count { color: var(--ew-text); }
+.ew-result-count { font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-inspect { /* The time is the preview control at every width (UX-10): the panel at 1200 px
+  and up, the bottom sheet below. A dotted underline at rest. */ display: inline-flex; align-items: center; min-height: var(--ew-target); padding: 0 var(--ew-s1); border: 0; background: transparent; font: var(--ew-t-time); color: var(--ew-text);
+  cursor: pointer; text-decoration: underline dotted; text-underline-offset: 3px; }
+.ew-inspect[aria-pressed=true] { font: 600 13px/18px var(--ew-sans); color: var(--ew-action); }
+.ew-inspect:hover { color: var(--ew-action); text-decoration: underline solid; }
+.ew-search-card .ew-result-time { display: none; }
+.ew-search-card { cursor: pointer; }
+.ew-inspect-shown { display: none; }
+@media (max-width: 1199px) {
+  /* No panel below 1200: the pressed state means nothing there. */
+  .ew-inspect[aria-pressed=true] { font: var(--ew-t-time); color: var(--ew-text); }
+  .ew-inspect.ew-inspect-text[aria-pressed=true] { font: var(--ew-t-meta); color: var(--ew-text-2); }
+}
+@media (min-width: 1200px) {
+  .ew-inspect[aria-pressed=true] .ew-inspect-shown { display: inline; }
+  .ew-inspect[aria-pressed=true] .ew-inspect-time { display: none; }
+  .ew-search-card:hover:not(.is-selected) { border-color: var(--ew-border-strong); }
+}
+.ew-search-card .ew-result-head h3 { font: var(--ew-t-card); }
+.ew-search-card .ew-result-head h3.ew-mention-title { font: var(--ew-t-body); font-weight: 600; overflow-wrap: anywhere; }
+.ew-search-card .ew-mention-title a { color: var(--ew-text); }
+.ew-brand-none { color: var(--ew-text-2); font-weight: 500; }
+.ew-search-card .ew-result-quote { max-width: 72ch; }
+.ew-search-card .ew-result-actions { gap: var(--ew-s2) var(--ew-s3); }
+.ew-clip-len, .ew-noclip { font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-search-card .report-problem { margin: 0; }
+.ew-search-card .report-problem > summary { padding: 0 var(--ew-s2); }
+.ew-search-card .report-problem > summary::before { content: none; }
+.ew-search-card .report-problem[open] { flex: 1 1 100%; order: 5; }
+.ew-search-card .report-problem[open] > summary { padding: 0 var(--ew-s4); }
+.ew-search-card .report-problem[open] > summary::before { content: "−"; }
+.ew-view { font-weight: 600; }
+.ew-view:hover { color: var(--ew-text); }
+.ew-episode-card h3 a { color: var(--ew-text); text-decoration-thickness: 1px; }
+@media (max-width: 599px) {
+  /* Weeks stay in one row: the bars share the width (full 40 px targets while they fit). */
+  .ew-week-bars { width: 100%; }
+  .ew-week-bar { flex: 1 1 0; width: auto; max-width: var(--ew-target); }
+  .ew-search-card .ew-result-actions > .ew-view { flex: 0 0 auto; }
+  .ew-search-card { padding: var(--ew-s4); }
+  /* Shorter phone cards (UX-13): show · episode in two lines (full text in
+     its title), the clip note over Report a problem and Open evidence. */
+  .ew-search-card .ew-result-where > .ew-result-where-text { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+  .ew-search-card .ew-result-actions { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "clip clip" "report view"; align-items: center; }
+  .ew-search-card .ew-result-actions > .ew-spacer { display: none; }
+  .ew-search-card .ew-result-actions > .ew-noclip, .ew-search-card .ew-result-actions > .ew-play, .ew-search-card .ew-result-actions > .ew-clip-len { grid-area: clip; }
+  .ew-search-card .ew-result-actions > .ew-play { justify-self: start; }
+  .ew-search-card .ew-result-actions > .ew-clip-len { justify-self: start; margin-left: calc(var(--ew-target) + var(--ew-s3)); }
+  .ew-search-card .ew-result-actions > .report-problem { grid-area: report; justify-self: start; }
+  .ew-search-card .ew-result-actions > .report-problem[open] { grid-column: 1 / -1; grid-row: 2; }
+  .ew-search-card .ew-result-actions > .ew-view { grid-area: view; }
+  .ew-search-card .ew-result-actions > .report-problem[open] ~ .ew-view { grid-area: auto; grid-column: 2; grid-row: 3; }
+}
+
+/* List view (Ads tab): compact rows. */
+.ew-rows-wrap { background: var(--ew-sheet); border: 1px solid var(--ew-border); border-radius: var(--ew-r-card); overflow: hidden; }
+.ew-rows { list-style: none; margin: 0; padding: 0; }
+.ew-rows-head, .ew-row { display: grid; grid-template-columns: var(--ew-target) 44px 112px minmax(150px, 1.2fr) minmax(0, 1fr) 64px 132px 40px;
+  gap: 0 var(--ew-s2); align-items: center; padding: 0 var(--ew-s2) 0 var(--ew-s4); }
+.ew-rows-head { min-height: var(--ew-target); font: var(--ew-t-label); color: var(--ew-text-2); }
+.ew-row { min-height: 52px; border-top: 1px solid var(--ew-rule); font: var(--ew-t-ui); }
+.ew-row:hover { background: var(--ew-hover); }
+.ew-row.is-selected { background: var(--ew-selected); box-shadow: inset 3px 0 0 var(--ew-action); }
+.ew-row > span { min-width: 0; }
+/* Grid areas keep the wide columns in order whatever the source order is. */
+.ew-rows-head, .ew-row { grid-template-areas: "check play time brand where date status open"; }
+.ew-row-check, .ew-rows-all { grid-area: check; } .ew-row-play { grid-area: play; } .ew-row-time { grid-area: time; }
+.ew-row-brand { grid-area: brand; } .ew-row-where { grid-area: where; } .ew-row-date { grid-area: date; }
+.ew-row-status { grid-area: status; } .ew-row-open { grid-area: open; }
+.ew-row-where { color: var(--ew-text-2); display: flex; flex-direction: column; overflow: hidden; }
+.ew-row-show, .ew-row-ep { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ew-row-ep { font: var(--ew-t-meta); }
+.ew-row-date { font: 400 13px/18px var(--ew-mono); color: var(--ew-text-2); white-space: nowrap; }
+.ew-row-brand { font-weight: 600; overflow-wrap: anywhere; display: flex; flex-wrap: wrap; align-items: center; gap: var(--ew-s1) var(--ew-s2); }
+.ew-row-brand .ew-brand-product { font-weight: 500; color: var(--ew-text-2); }
+.ew-row-note { font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-row-open { width: 40px; height: 40px; display: grid; place-items: center; border-radius: var(--ew-r-control); font-size: 20px; text-decoration: none; }
+.ew-row-open:hover { background: var(--ew-selected); }
+.ew-row .ew-play { width: var(--ew-target); height: var(--ew-target); }
+.ew-row-time .ew-inspect { display: inline-flex; padding: 0; }
+.ew-row-time-text { display: none; }
+.ew-row-meta { display: contents; }
+.ew-row { cursor: pointer; }
+/* PLAIN-ADS: Report a mistake sits in the row's former status column;
+   open, it takes a full line under the row. */
+.ew-row-report .report-problem { margin: 0; }
+.ew-row-report .report-problem > summary { padding: 0 var(--ew-s1); white-space: nowrap; }
+.ew-row-report:has(.report-problem[open]) { grid-column: 1 / -1; grid-row: 2; padding-bottom: var(--ew-s2); }
+.ew-row:has(.report-problem[open]) { cursor: auto; }
+/* Below 1200 px the whole row opens the evidence (R2-14d): the open link
+   stretches over the row; the checkbox, play and time stay on top. */
+@media (max-width: 1199px) {
+  .ew-row { position: relative; }
+  .ew-row-open::after { content: ""; position: absolute; inset: 0; }
+  .ew-row .ew-select, .ew-row .ew-play, .ew-row .ew-inspect, .ew-row a:not(.ew-row-open), .ew-row button, .ew-row summary, .ew-row .report-problem { position: relative; z-index: 1; }
+  .ew-results-meta-actions { row-gap: var(--ew-s2); }
+}
+@media (min-width: 600px) and (max-width: 1199px) {
+  .ew-export-group { flex-basis: 100%; justify-content: flex-end; }
+}
+/* Touch layouts: 44 px checkbox targets (R2-14c). */
+@media (max-width: 1023px), (pointer: coarse) {
+  .ew-select { min-width: 44px; min-height: 44px; }
+}
+.ew-select-all-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+@media (max-width: 899px) {
+  /* The column titles go; the head row stays as the select-all control. */
+  .ew-rows-head > span:not(.ew-rows-all) { display: none; }
+  .ew-rows-head { display: flex; padding-left: var(--ew-s2); }
+  .ew-select-all-text { position: static; width: auto; height: auto; clip: auto; overflow: visible; font: var(--ew-t-meta); color: var(--ew-text-2); }
+  .ew-row { grid-template-columns: var(--ew-target) 40px minmax(0, 1fr) 40px;
+    grid-template-areas: "check play brand open" "check play where open" "check play meta open";
+    gap: 0 10px; padding: var(--ew-s2) var(--ew-s2) var(--ew-s2) var(--ew-s1); min-height: 56px; }
+  .ew-row-check { grid-area: check; } .ew-row-play { grid-area: play; } .ew-row-open { grid-area: open; }
+  .ew-row-brand { grid-area: brand; min-width: 0; }
+  .ew-row-brand-name { min-width: 0; max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ew-row-where { grid-area: where; font: var(--ew-t-meta); display: block; white-space: nowrap; text-overflow: ellipsis; }
+  .ew-row-show, .ew-row-ep { display: inline; }
+  .ew-row-ep::before { content: " · "; }
+  /* "Matched title" (Ads, title-only ad): its own line under Show · Episode. */
+  .ew-row-where .match-reason { display: block; margin-top: 0; }
+  .ew-row-meta { grid-area: meta; display: flex; flex-wrap: wrap; align-items: center; gap: 0 10px; }
+  .ew-row-time, .ew-row-date { font: 400 13px/22px var(--ew-mono); color: var(--ew-text-2); }
+  .ew-row-status { font: var(--ew-t-meta); }
+  .ew-row-meta .ew-row-report:has(.report-problem[open]) { flex-basis: 100%; }
+}
+
+/* States: loading skeletons, empty, error, partial. */
+.ew-search-loading { display: flex; flex-direction: column; gap: var(--ew-s3); }
+.ew-search-loading .ew-loading { padding: var(--ew-s4) var(--ew-s5); }
+.ew-search-results .ew-state h2 { font: var(--ew-t-section); }
+.ew-search-error { margin-top: var(--ew-s6); }
+.ew-search-error .ew-state-kind { font: 600 13px/18px var(--ew-sans); }
+.ew-search-error p + p { margin-top: 0; }
+
+/* Inspector (1200 px and up). */
+.ew-inspector-none { padding: 28px 22px; display: flex; flex-direction: column; gap: 6px; font: var(--ew-t-ui); color: var(--ew-text-2); }
+.ew-inspector-none b { font: 600 18px/24px var(--ew-serif); color: var(--ew-text); }
+.ew-inspector-head { padding: var(--ew-s5) 22px 14px; border-bottom: 1px solid var(--ew-rule); display: flex; flex-direction: column; gap: var(--ew-s1); }
+.ew-inspector-head h2 { font: 600 26px/32px var(--ew-serif); overflow-wrap: anywhere; }
+.ew-inspector-head h2 .ew-brand-product { font-weight: 400; font-size: 20px; color: var(--ew-text-2); }
+.ew-inspector-head > .ew-tag { align-self: flex-start; }
+.ew-inspector-head p { font: var(--ew-t-ui); }
+.ew-inspector-where { font: var(--ew-t-ui); color: var(--ew-text-2); overflow-wrap: anywhere; }
+.ew-inspector-clip { padding: var(--ew-s4) 22px; display: flex; flex-direction: column; gap: 10px; border-bottom: 1px solid var(--ew-rule); }
+.ew-inspector-time { display: flex; align-items: center; gap: 14px; }
+.ew-inspector-time .ew-play-lg { width: 48px; height: 48px; }
+.ew-inspector-time .ew-play-lg svg { width: 14px; height: 14px; }
+.ew-inspector-time > div { display: flex; flex-direction: column; }
+.ew-inspector-start { font: 500 28px/32px var(--ew-mono); letter-spacing: -0.02em; }
+.ew-inspector-end { font: 400 13px/18px var(--ew-mono); color: var(--ew-text-2); }
+.ew-inspector-noclip { font: var(--ew-t-ui); color: var(--ew-text-2); }
+.ew-inspector-quote { font: 400 15px/24px var(--ew-serif); overflow-wrap: anywhere; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 8; overflow: hidden; }
+.ew-inspector .ew-ledger { font: var(--ew-t-meta); }
+.ew-inspector .ew-ledger tr { border-bottom: 1px solid var(--ew-rule); }
+.ew-inspector .ew-ledger th { padding: 9px var(--ew-s3) 9px 22px; width: 44%; }
+.ew-inspector .ew-ledger td { padding: 9px 22px 9px 0; }
+.ew-inspector-actions { padding: var(--ew-s4) 22px var(--ew-s5); display: flex; flex-direction: column; gap: var(--ew-s2); }
+.ew-inspector-actions > .button.primary { min-height: 44px; font-size: 15px; }
+.ew-inspector-pair { display: flex; gap: var(--ew-s2); }
+.ew-inspector-pair > .button { flex: 1; }
+
+/* The inspector in the bottom sheet below 1200 px (UX-10). */
+dialog.ew-sheet .ew-inspector-sheet { display: flex; flex-direction: column; position: static; border: 0; box-shadow: none; background: transparent; }
+dialog.ew-sheet .ew-inspector-sheet .ew-inspector-head, dialog.ew-sheet .ew-inspector-sheet .ew-inspector-clip,
+dialog.ew-sheet .ew-inspector-sheet .ew-inspector-actions { padding-inline: 0; }
+dialog.ew-sheet .ew-inspector-sheet .ew-inspector-head { padding-top: 0; }
+dialog.ew-sheet .ew-inspector-sheet .ew-ledger th, dialog.ew-sheet .ew-inspector-sheet .ew-ledger td { display: table-cell; padding: 9px var(--ew-s3) 9px 0; }
+dialog.ew-sheet .ew-inspector-sheet .ew-ledger th { width: 40%; }
+dialog.ew-sheet .ew-inspector-sheet .ew-ledger td { padding-right: 0; }
+dialog.ew-sheet .ew-inspector-sheet .ew-inspector-actions { position: sticky; bottom: 0; padding: var(--ew-s3) 0 0; margin-bottom: calc(-1 * var(--ew-s4)); padding-bottom: var(--ew-s4); background: var(--ew-sheet); border-top: 1px solid var(--ew-rule); }
+
+/* Export dialog. */
+#export-search { display: flex; flex-direction: column; gap: 18px; }
+#export-search .radio-group label .meta { margin-left: var(--ew-s1); }
+
+/* == Below 1200 / tablet / phone ============================================= */
+@media (max-width: 1199px) {
+  .ew-search-head { grid-template-columns: minmax(0, 1fr); grid-template-areas: "form" "tabs" "scope" "actions"; }
+  .ew-search-actions { justify-content: flex-start; border-bottom: 0; padding-bottom: 0; gap: var(--ew-s2); }
+  .ew-search-actions .ew-filters-open { order: -1; }
+  .ew-search-head:has(> #export-status:not(:empty)) { grid-template-areas: "form" "tabs" "scope" "actions" "status"; }
+}
+@media (max-width: 599px) {
+  .ew-search-head { margin-top: -20px; padding: var(--ew-s4) var(--ew-gutter) 14px; gap: var(--ew-s3) 0; }
+  .ew-search-tabs { gap: var(--ew-s5); }
+  .ew-search-actions .button.quiet { padding: 0 10px; }
+  .ew-search-actions .ew-long { display: none; }
+  .ew-search-actions .ew-short { display: inline; }
+  /* Compact phone chrome (R2-11): the scope on one line (full text in
+     its title and in About these counts), the week strip inside its
+     disclosure, count + view on one row (Sort lives in Filters), quick
+     scope through Filters, and the actions row sticky. */
+  .ew-scope-line { flex-wrap: nowrap; }
+  .ew-scope-line > span:not(.ew-tag) { flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ew-scope-line > a { flex: none; }
+  /* Plan A (SUI-SCR-R2-01): the plan sentence takes its own line, unclipped. */
+  .ew-scope-line:has(> .ew-plan-scope) { flex-wrap: wrap; }
+  .ew-scope-line:has(> .ew-plan-scope) > span:not(.ew-tag):not(.ew-plan-scope) { flex-basis: 0; }
+  .ew-scope-line > span.ew-plan-scope { flex: 1 0 100%; order: 1; white-space: normal; overflow: visible; text-overflow: clip; }
+  .ew-search-body { padding-top: var(--ew-s3); gap: var(--ew-s4); }
+  .ew-search-results .ew-week:has(.ew-week-data:not([open])) .ew-week-row { display: none; }
+  .ew-search-results:has(.ew-week-data:not([open])) .ew-week-row { display: none; }
+  .ew-results-bar { flex-direction: row; flex-wrap: nowrap; align-items: flex-start; }
+  .ew-results-count { flex: 1 1 0; }
+  /* A wrapped separator would lead a line: phones drop it. */
+  .ew-brand-jump .ew-sep { display: none; }
+  /* The status mix drops to a quiet second line beside the count. */
+  .ew-count-mix { display: block; font: var(--ew-t-meta); color: var(--ew-text-2); }
+  .ew-count-mix .ew-sep { display: none; }
+  .ew-results-tools .ew-sort { display: none; }
+  .ew-quick-scope { display: none; }
+  .ew-results-meta { flex-wrap: nowrap; align-items: flex-start; }
+  .ew-results-meta > details, .ew-results-disclosures { flex: 1 1 0; }
+  .ew-results-meta > details[open], .ew-results-disclosures > details[open] { flex-basis: 100%; }
+  .ew-results-meta:has(> details[open], > .ew-results-disclosures > details[open]) { flex-wrap: wrap; }
+  .ew-results-disclosures:has(> details[open]) { flex-basis: 100%; }
+  .ew-results-meta-actions { flex: none; }
+  /* Export selected folds into the sticky Export… (its count rides on that button). */
+  .ew-export-group { display: none; }
+  /* The band sticks with only its last row (the actions) in view: its
+     top offset is the height above that row, all single-line on phone
+     (padding s4, box 48, tabs 45, scope 24, three s3 gaps). */
+  .ew-search-head { position: sticky; top: calc(-1 * (var(--ew-s4) + 48px + 45px + 24px + 3 * var(--ew-s3))); z-index: 3; }
+  /* Under a page notice the band has no top padding (above). */
+  #main > .notice:has(~ .ew-search-head), #main > .section-note:has(~ .ew-search-head) { margin-bottom: var(--ew-s3); }
+  #main > .notice ~ .ew-search-head, #main > .section-note ~ .ew-search-head { top: calc(-1 * (48px + 45px + 24px + 3 * var(--ew-s3))); }
+}
+
+/* Fixes from the first visual pass. */
+.filter-block .od-field > label { align-items: stretch; text-align: left; }
+.ew-results-count { flex: 1 1 280px; }
+.ew-results-tools { flex: none; }
+.ew-inspector-head h2 .ew-brand { font: inherit; }
+@media (max-width: 1199px) {
+  .ew-search-card.is-selected { border-color: var(--ew-border); box-shadow: none; }
+  .ew-row.is-selected { background: transparent; box-shadow: none; }
+}
+
+/* == Overview =============================================================== */
+/* FIRST-SCREEN (UX audit M1): "Try a search:" and its example chips. */
+.ew-ov-try { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ew-s2); margin: 0 0 var(--ew-s4); font: var(--ew-t-ui); color: var(--ew-text-2); }
+.ew-ov-try .ew-chip { padding: 0 14px; text-decoration: none; }
+.overview-search { max-width: none; display: flex; flex-direction: column; gap: var(--ew-s3); margin-bottom: var(--ew-s8); }
+.overview-search .ew-searchbox input { height: 52px; }
+.overview-search .ew-searchbox .button { min-height: 52px; }
+.ew-ov-scope { font: var(--ew-t-ui); color: var(--ew-text-2); }
+.ew-ov-scope a { margin-left: var(--ew-s1); }
+.ew-ov-fresh { display: flex; flex-wrap: wrap; gap: var(--ew-s1) var(--ew-s4); margin: 0; font: var(--ew-t-ui); color: var(--ew-text-2); }
+.ew-ov-fresh-item { min-width: 0; overflow-wrap: anywhere; }
+.ew-ov-fresh-label { font-weight: 600; }
+@media (max-width: 599px) { .ew-ov-fresh { flex-direction: column; } .ew-ov-fresh .ew-ov-fresh-sep { display: none; } }
+.ew-ov-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 444px); gap: var(--ew-s6); align-items: start; }
+.ew-ov-main, .ew-ov-side { display: flex; flex-direction: column; gap: var(--ew-s5); min-width: 0; }
+.ew-ov-card .ew-card-head { align-items: center; padding: 18px var(--ew-s5); }
+.ew-ov-card .ew-card-head > h2 { font: var(--ew-t-section); }
+.ew-ov-card .ew-card-head > .actions { gap: 0 var(--ew-s2); }
+.ew-ov-card .ew-card-list > li { padding: var(--ew-s4) var(--ew-s5); }
+.ew-ov-alert-head, .ew-ov-row, .ew-ov-tags { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ew-s2); min-width: 0; }
+.ew-ov-name { font: 600 15px/22px var(--ew-sans); color: var(--ew-text); overflow-wrap: anywhere; }
+.ew-ov-name:hover { color: var(--ew-action); }
+.ew-ov-when { margin-left: auto; font: 400 13px/18px var(--ew-mono); color: var(--ew-text-2); }
+.ew-ov-right { margin-left: auto; }
+.ew-ov-alert p, .ew-ov-excerpt { font: var(--ew-t-ui); color: var(--ew-text); }
+.ew-ov-excerpt { font: 400 15px/23px var(--ew-serif); overflow-wrap: anywhere; }
+.ew-ov-gaps-note { margin-top: var(--ew-s2); }
+.ew-ov-gaps { list-style: none; margin: var(--ew-s2) 0 0; padding: 0 0 0 var(--ew-s4); border-left: 2px solid var(--ew-border); display: flex; flex-direction: column; gap: var(--ew-s1); }
+.ew-ov-gaps > li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--ew-s2); min-width: 0; }
+.ew-ov-gap-link { min-height: var(--ew-target); display: inline-flex; align-items: center; overflow-wrap: anywhere; min-width: 0; }
+.ew-ov-lead { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--ew-s2); }
+.ew-ov-alert-foot, .ew-ov-card .result-bottom { display: flex; justify-content: flex-end; }
+.ew-ov-card .result-bottom .text-link, .ew-ov-alert-foot .text-link { margin: 0; }
+.ew-ov-card .coexistence-note { padding: 0 var(--ew-s5) var(--ew-s4); font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-ov-subhead { padding: var(--ew-s4) var(--ew-s5) var(--ew-s2); border-top: 1px solid var(--ew-border); font: 600 15px/22px var(--ew-sans); }
+.ew-ov-card .gap-list > li { flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.ew-ov-card .gap-target { display: flex; color: var(--ew-text); text-decoration: none; min-width: 0; }
+.ew-ov-row-text { display: flex; flex-direction: column; }
+.ew-ov-details { padding: 0 var(--ew-s5); }
+.ew-ov-card > .ew-ov-details { border-top: 1px solid var(--ew-rule); }
+.ew-ov-more { padding: var(--ew-s3) var(--ew-s5); border-top: 1px solid var(--ew-rule); }
+.ew-ov-failed { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ew-s2) var(--ew-s4); padding: var(--ew-s5); font: var(--ew-t-ui); }
+.ew-ov-failed b { color: var(--ew-gap); }
+.ew-ov-first { padding: 28px; display: flex; flex-direction: column; gap: var(--ew-s4); margin-bottom: var(--ew-s6); }
+.ew-ov-first-head { display: flex; flex-direction: column; gap: 6px; }
+.ew-ov-first-head p { font: var(--ew-t-ui); color: var(--ew-text-2); }
+.ew-ov-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--ew-s3); }
+.ew-ov-steps > li { border: 1px solid var(--ew-border); border-radius: var(--ew-r-card); padding: var(--ew-s4); display: flex; flex-direction: column; gap: 6px; }
+.ew-ov-steps h3 { font: 600 18px/24px var(--ew-serif); }
+.ew-ov-steps p { font: var(--ew-t-ui); color: var(--ew-text-2); flex: 1; }
+.ew-ov-steps .button { margin-top: var(--ew-s3); width: 100%; font-weight: 600; }
+.ew-ov-step { font: var(--ew-t-code); color: var(--ew-text-2); }
+#main > .ew-ov-details { margin-top: var(--ew-s5); padding: 0; }
+#main > .ew-ov-details .lined-list > li { padding: var(--ew-s2) 0; }
+@media (max-width: 1023px) {
+  .ew-ov-grid { grid-template-columns: minmax(0, 1fr); }
+  .ew-ov-steps { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 599px) {
+  .overview-search { margin-bottom: var(--ew-s6); }
+  .ew-ov-card .ew-card-head, .ew-ov-card .ew-card-list > li { padding-inline: var(--ew-s4); }
+  .ew-ov-first { padding: var(--ew-s5) var(--ew-s4); }
+}
+@media (max-width: 599px) { .ew-ov-subhead, .ew-ov-details, .ew-ov-more, .ew-ov-failed { padding-inline: var(--ew-s4); } }
+.ew-inspect.ew-inspect-text { font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-inspect.ew-inspect-text[aria-pressed=true], .ew-inspect[aria-pressed=true] { font: 600 13px/18px var(--ew-sans); color: var(--ew-action); }
+.ew-row-time .ew-inspect[aria-pressed=true] { font: var(--ew-t-time); color: var(--ew-action); }
+/* Wide rows only: below 900 px the selectable row keeps the stacked phone
+   grid above (40 px check, play, brand / Show·Episode / time·date·status,
+   open), never the eight desktop tracks with a 0 px Show/Episode (A1). */
+@media (min-width: 900px) {
+  .ew-rows-head, .ew-row { grid-template-columns: var(--ew-target) 40px 132px minmax(110px, 1fr) minmax(0, 1.1fr) 68px 116px 40px; }
+}
+/* Nothing to select (a viewer): the check column goes at every width (P3-3). */
+.ew-no-select .ew-rows-head, .ew-no-select .ew-row { grid-template-columns: 40px 132px minmax(110px, 1fr) minmax(0, 1.1fr) 68px 116px 40px; grid-template-areas: "play time brand where date status open"; }
+@media (max-width: 899px) {
+  .ew-no-select .ew-rows-head { display: none; }
+  .ew-no-select .ew-row { grid-template-columns: 40px minmax(0, 1fr) 40px; grid-template-areas: "play brand open" "play where open" "play meta open"; }
+}
+.ew-row-brand .ew-brand { font: 600 14px/20px var(--ew-sans); }
+@media (min-width: 1200px) { .ew-search-card .ew-result-count { display: none; } }
+.ew-results-bar { align-items: flex-start; }
+.ew-results-tools { margin-top: 2px; }
+.ew-row-brand .ew-tag { white-space: normal; height: auto; min-height: 22px; padding-block: 2px; }
+.ew-search-results .ew-search-error { margin-top: var(--ew-s4); }
+dialog.ew-sheet .dialog-head .button { border-color: var(--ew-control); background: var(--ew-sheet); color: var(--ew-text); text-decoration: none; }
+
+/* UAT search fixes. */
+/* A separator travels with the item that follows it and never hangs at a line end. */
+.ew-sep { white-space: nowrap; }
+/* Filters dialog: a focused field scrolls clear of the sticky head and footer. */
+dialog.ew-sheet { scroll-padding-block: 76px; }
+.filter-block[data-filter-group="dates"] .od-field + .od-field { margin-top: var(--ew-s3); }
+/* The phone sheet's title already says what is selected. */
+.ew-inspector-sheet .ew-inspector-head > .eyebrow { display: none; }
+
+/* Row 1 ads (Search Ads): one box per ad, its matching evidence inside. */
+.ew-break { display: flex; flex-direction: column; gap: var(--ew-s2); padding: var(--ew-s3); background: var(--ew-sunken); border: 1px solid var(--ew-border); border-radius: var(--ew-r-card); min-width: 0; }
+.ew-break-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--ew-s1) var(--ew-s3); min-width: 0; }
+.ew-break-title { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ew-s1) var(--ew-s3); margin: 0; font: var(--ew-t-ui); font-weight: 600; color: var(--ew-text); min-width: 0; overflow-wrap: anywhere; }
+.ew-break-time, .ew-break-count, .ew-break-copy { font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ew-break-brand { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--ew-s1); min-width: 0; }
+.ew-break-actions { display: flex; flex-wrap: wrap; gap: var(--ew-s2); }
+.ew-break-reads { display: flex; flex-direction: column; gap: var(--ew-s2); min-width: 0; }
+.ew-break-list { list-style: none; margin: 0; padding: 0; }
+.ew-break-row { border-top: 1px solid var(--ew-border); }
+.ew-break-row > .ew-break-head, .ew-break-row > .ew-break-actions { padding: var(--ew-s2) var(--ew-s2) 0 var(--ew-s4); background: var(--ew-sunken); }
+.ew-break-row > .ew-break-actions { padding-bottom: var(--ew-s2); }
+/* AB-R1-02: in the list the Ad break box draws its 3 px rule inside its
+   rows' left padding, so its rows stay on the column grid. */
+.ew-break-list > .ew-adbreak { padding-left: 0; border-left: 0; box-shadow: inset 3px 0 0 var(--ew-border); }
+.ew-break-list > .ew-adbreak > .ew-adbreak-h { padding-left: var(--ew-s4); }
+.ew-break-list > .ew-adbreak .ew-break-row > :is(.ew-break-head, .ew-break-actions),
+.ew-break-list > .ew-adbreak .ew-row:not(.is-selected) { box-shadow: inset 3px 0 0 var(--ew-border); }
+@media (max-width: 599px) { .ew-break-list > .ew-adbreak > .ew-adbreak-h { padding-left: var(--ew-s2); } }
+@media (max-width: 599px) {
+  .ew-break { padding: var(--ew-s2); }
+  .ew-break-row > .ew-break-head, .ew-break-row > .ew-break-actions { padding-left: var(--ew-s2); }
+}
+/* A 44 px play button on a phone (CLIP-PLAYER-FIX2, screen R1-06): the same thumb uses it and the seek bar. */
+@media (max-width: 599px) { .ew-play:not(.ew-play-lg) { width: 44px; height: 44px; } }
+
+/* Below 600 px the scope chip row runs the full results width, under the
+   count and Cards/List row (SF-SCR-R2-02). 600 px and up it stays in the
+   count column, directly under the count line (SF-SCR-R1-01). */
+@media (max-width: 599px) {
+  .ew-results-bar:has(> .ew-results-count > .ew-chips) { flex-wrap: wrap; row-gap: var(--ew-s2); }
+  .ew-results-bar:has(> .ew-results-count > .ew-chips) > .ew-results-count { display: contents; }
+  .ew-results-count:has(> .ew-chips) > * { order: 1; flex: 1 1 100%; min-width: 0; }
+  .ew-results-count:has(> .ew-chips) > .ew-count-line { order: 0; flex: 1 1 0; align-self: center; }
+  .ew-results-bar:has(> .ew-results-count > .ew-chips) > .ew-results-tools { margin-left: auto; }
+}
+
+/* Ask (T10) */
+.ask-page { max-width: 880px; margin: 0 auto; padding: var(--ew-s6) 0 var(--ew-s10, 48px); padding-inline: 0; }
+.ask-head h1 { font: var(--ew-t-title); margin: 0 0 var(--ew-s2); }
+.ask-lede { font: var(--ew-t-body-l); color: var(--ew-text-2); margin: 0 0 var(--ew-s6); text-wrap: pretty; }
+.ask-off { font: var(--ew-t-body-l); color: var(--ew-text-2); }
+/* A thread drawn under the paused line keeps the open page's gap above its first rule (ARV-R1-01). */
+.ask-off + .ask-thread { margin-top: var(--ew-s4); }
+.ask-form { display: flex; flex-direction: column; gap: var(--ew-s2); margin-bottom: var(--ew-s4); }
+.ask-form label { font: var(--ew-t-label); }
+.ask-form textarea, .ask-form input { font: var(--ew-t-body-l); padding: var(--ew-s3); background: var(--ew-sheet); border: 1px solid var(--ew-control); border-radius: var(--ew-r-control); color: var(--ew-text); width: 100%; box-sizing: border-box; }
+.ask-form textarea { font: var(--ew-t-quote); resize: vertical; }
+.ask-form-row { display: flex; align-items: center; justify-content: flex-end; gap: var(--ew-s3); }
+.ask-followup { border-top: 1px solid var(--ew-border); padding-top: var(--ew-s5); }
+.ask-followup .ask-form-row { justify-content: stretch; }
+.ask-followup .ask-form-row { align-items: stretch; }
+.ask-followup input { flex: 1 1 auto; }
+.ask-count { font: var(--ew-t-meta); color: var(--ew-text-3); margin-right: auto; }
+.ask-refusal { font: var(--ew-t-ui); color: var(--ew-gap); margin: 0; }
+.ask-examples { margin: var(--ew-s4) 0 var(--ew-s8); }
+.ask-examples h2 { font: var(--ew-t-label); text-transform: uppercase; letter-spacing: .06em; color: var(--ew-text-3); margin: 0 0 var(--ew-s2); }
+.ask-examples .ask-example { display: flex; align-items: center; width: 100%; justify-content: flex-start; text-align: left; white-space: normal; height: auto; padding-block: var(--ew-s2); margin-bottom: var(--ew-s2); font: var(--ew-t-quote); }
+.ask-example-go { margin-left: auto; padding-left: var(--ew-s3); color: var(--ew-action); }
+.ask-examples .ask-example:hover { border-color: var(--ew-text); }
+.ask-turn { padding: var(--ew-s6) 0; border-top: 1px solid var(--ew-border); }
+.ask-q { font: var(--ew-t-section); margin: 0 0 var(--ew-s4); }
+/* Focused by script when a turn lands, like .page; no input-like ring. */
+.ask-q:focus { outline: none; }
+.ask-steps { list-style: none; margin: 0 0 var(--ew-s4); padding: 0; font: var(--ew-t-body); }
+.ask-steps li { display: flex; align-items: center; gap: var(--ew-s3); padding: var(--ew-s1) 0; color: var(--ew-text-3); }
+.ask-steps li::before { content: ""; flex: none; width: 20px; height: 20px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid var(--ew-control); }
+.ask-steps li.is-done::before { content: "\2713"; display: grid; place-items: center; font-size: 12px; color: var(--ew-text-inverse); background: var(--ew-text); border-color: var(--ew-text); }
+.ask-steps li.is-now::before { border: 3px solid var(--ew-border); border-top-color: var(--ew-action); animation: ask-spin 1s linear infinite; }
+@keyframes ask-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .ask-steps li.is-now::before { animation: none; } }
+.ask-steps li.is-done { color: var(--ew-text-2); }
+.ask-steps li.is-now { color: var(--ew-text); font-weight: 600; }
+.ask-step-tag { font-size: 13px; font-weight: 400; color: var(--ew-text-3); }
+.ask-based { font: var(--ew-t-meta); color: var(--ew-text-2); margin: 0 0 var(--ew-s1); }
+.ask-note { font: var(--ew-t-meta); color: var(--ew-text-3); margin: 0 0 var(--ew-s4); }
+/* ASK-UX-R1: coverage in small text under "Based on"; the tone note above the answer; the totals note under the counts. */
+.ask-coverage { font: var(--ew-t-meta); color: var(--ew-text-3); margin: 0 0 var(--ew-s1); }
+.ask-tone { font: var(--ew-t-body); color: var(--ew-text-2); margin: 0 0 var(--ew-s3); max-width: 68ch; }
+.ask-totals-note { font: var(--ew-t-meta); color: var(--ew-text-3); margin: var(--ew-s2) 0 var(--ew-s4); }
+.ask-uncertain-why { font: var(--ew-t-meta); margin: 0 0 var(--ew-s2); max-width: 68ch; }
+.ask-section h3, .ask-uncertain h3, .ask-sources h3 { font: var(--ew-t-card); margin: var(--ew-s4) 0 var(--ew-s2); }
+/* Sections and Sources rank alike, one step below the question (22/28). */
+.ask-section h3, .ask-sources h3 { font: 600 18px/24px var(--ew-serif); }
+.ask-para { font: 400 19px/32px var(--ew-serif); margin: 0 0 var(--ew-s3); }
+.ask-para, .ask-uncertain ul { max-width: 68ch; }
+.ask-cites { white-space: nowrap; }
+.ask-cite { font: var(--ew-t-meta); font-weight: 600; min-width: 28px; padding: 0 var(--ew-s2); margin-left: var(--ew-s1); background: var(--ew-selected); color: var(--ew-action); border: 1px solid transparent; border-radius: var(--ew-r-round); cursor: pointer; vertical-align: 2px; }
+.ask-cite { display: inline-flex; align-items: center; min-height: 28px; padding: 2px 8px; vertical-align: middle; }
+.ask-cite { position: relative; }
+.ask-cite + .ask-cite { margin-left: var(--ew-s2); }
+/* A 40px tap area (--ew-target) around the 28px chip. */
+.ask-cite::after { content: ''; position: absolute; inset: -6px -4px; }
+.ask-cite:focus-visible { outline: var(--ew-focus-ring); outline-offset: 2px; }
+.ask-cite:hover { background: var(--ew-mark); }
+.ask-uncertain { background: var(--ew-uncertain-bg); border: 1px dotted var(--ew-uncertain-border); border-radius: var(--ew-r-card); padding: var(--ew-s2) var(--ew-s4) var(--ew-s4); margin: var(--ew-s4) 0; color: var(--ew-uncertain); }
+.ask-uncertain ul { margin: 0; padding-left: var(--ew-s5); font: var(--ew-t-quote); }
+.ask-line { font: var(--ew-t-body); color: var(--ew-text-2); margin: var(--ew-s3) 0 0; }
+.ask-lines { margin: var(--ew-s3) 0; padding-left: var(--ew-s5); font: var(--ew-t-body); color: var(--ew-text-2); }
+.ask-sources ol { list-style: none; margin: 0; padding: 0; background: var(--ew-sheet); border: 1px solid var(--ew-border); border-radius: var(--ew-r-card); }
+.ask-src { display: grid; grid-template-columns: 28px 1fr; column-gap: var(--ew-s3); padding: var(--ew-s4); border-top: 1px solid var(--ew-rule); }
+.ask-src:first-child { border-top: 0; }
+.ask-src:focus { outline: var(--ew-focus-ring); outline-offset: calc(-1 * var(--ew-focus-offset)); background: var(--ew-hover); }
+.ask-src-n { font: var(--ew-t-code); color: var(--ew-text-3); }
+.ask-src-meta { font: var(--ew-t-meta); color: var(--ew-text-2); }
+.ask-src-text { grid-column: 2; font: var(--ew-t-quote-s); margin: var(--ew-s1) 0 0; color: var(--ew-text-2); }
+/* Passages are what was said, set as quotes like v3; the server text stays as sent. */
+.ask-src-text::before { content: '“'; }
+.ask-src-text::after { content: '”'; }
+.ask-src-clip { grid-column: 2; margin-top: var(--ew-s2); }
+.ask-src-play { display: flex; align-items: center; gap: 8px; }
+.ask-src .ew-time { font: var(--ew-t-code); }
+.ask-report, .ask-disclosure { font: var(--ew-t-meta); color: var(--ew-text-2); margin-top: var(--ew-s4); }
+.ask-report summary, .ask-disclosure summary { cursor: pointer; }
+.ask-report + .ask-disclosure { margin-top: 0; }
+.ask-report summary { color: var(--ew-text-2); font-weight: 400; }
+.ask-report-form { display: flex; flex-direction: column; gap: var(--ew-s2); margin-top: var(--ew-s2); }
+.ask-report-form textarea { width: 100%; box-sizing: border-box; font: var(--ew-t-ui); }
+.ask-disclosure ul { margin: var(--ew-s2) 0 0; padding-left: var(--ew-s5); }
+.ask-disclosure ol.ask-method { margin: var(--ew-s2) 0 0; padding-left: var(--ew-s5); }
+.ask-method li + li { margin-top: var(--ew-s1); }
+.ask-failed { font: var(--ew-t-body-l); background: var(--ew-gap-bg); border: 1px solid var(--ew-gap-border); border-left-width: 4px; border-radius: var(--ew-r-card); color: var(--ew-gap); padding: var(--ew-s3) var(--ew-s4); margin: 0 0 var(--ew-s3); }
+.ask-cancelled { font: var(--ew-t-body-l); background: var(--ew-sheet); border: 1px solid var(--ew-border); border-radius: var(--ew-r-card); color: var(--ew-text); padding: var(--ew-s3) var(--ew-s4); margin: 0 0 var(--ew-s3); }
+.ask-nothing { font: var(--ew-t-body-l); color: var(--ew-text); margin: var(--ew-s3) 0; }
+.ask-hidden { font: var(--ew-t-body); color: var(--ew-text-3); margin: 0; }
+.ask-card { padding: 18px var(--ew-s5) var(--ew-s5); }
+.ask-card h2 { font: var(--ew-t-section); margin: 0; text-wrap: balance; }
+.ask-card p { font: var(--ew-t-body); color: var(--ew-text-2); margin: var(--ew-s2) 0 var(--ew-s3); }
+@media (max-width: 599px) {
+  .ask-head h1 { font: 600 26px/32px var(--ew-serif); }
+  .ask-para { font-size: 18px; line-height: 30px; }
+  .ask-src { grid-template-columns: 24px 1fr; padding: var(--ew-s3); }
+}

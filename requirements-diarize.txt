@@ -1,0 +1,31 @@
+# Optional pinned deps for the corpus runner's `diarize` stage
+# (earwitness/pipeline/diarize.py; scripts/corpus_run.py work --stages diarize,
+# diarize-backfill). The runner works WITHOUT these: the stage is opt-in, and
+# a worker started with it checks this python before claiming (exit 2 if the
+# model cannot load).
+# Model: nvidia/Nemotron-3-Diarization @ f667ed73aee57d40cc39428eb768b4fd87a0a29e
+# (open weights, OpenMDW license, commercial use allowed; NOT the
+# evaluation-only "-preview" repo). 99.2 M params, float32, ~0.4 GB. The
+# child never downloads (local_files_only): cache the pinned weights once
+# with the hf command below; the worker's preflight fails until they are.
+# Qualified 2026-10-09 on macOS arm64 (M1 Pro, 32 GB), Python 3.12.11, fresh
+# venv /tmp/ew-diar-venv built from exactly these pins (uv pip install -r):
+# device mps, 1800-s windows: 62-min episode in 31 s of inference (121x real
+# time under load), child peak RSS 2.9 GB, model load 5 s warm. librosa is
+# needed by the model's feature extractor.
+# Install into a separate venv (transformers here is newer than the namer's
+# pin in requirements-namer.txt) and point the worker at it:
+#   uv venv -p python3.12 ~/ew-diarize-venv
+#   VIRTUAL_ENV=~/ew-diarize-venv uv pip install -r requirements-diarize.txt
+#   ~/ew-diarize-venv/bin/hf download nvidia/Nemotron-3-Diarization \
+#       --revision f667ed73aee57d40cc39428eb768b4fd87a0a29e
+#   corpus_run.py work ... --stages diarize --diarize-python ~/ew-diarize-venv/bin/python
+torch==2.14.1
+transformers==5.19.0
+librosa==1.0.0
+numpy==2.5.3
+huggingface_hub==2.2.0
+safetensors==0.8.0
+tokenizers==0.23.3
+soundfile==0.14.0
+scipy==1.18.1

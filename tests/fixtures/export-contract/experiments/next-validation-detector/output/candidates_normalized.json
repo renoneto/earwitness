@@ -1,0 +1,71 @@
+[
+ {
+  "candidate_id": "ep_fx1.c0",
+  "ep_id": "ep_fx1",
+  "show_title": null,
+  "ep_title": null,
+  "pub_date": null,
+  "fetch_date": "2026-10-09",
+  "brand": "quince",
+  "brand_spoken": "quince",
+  "brand_raw": "quince",
+  "brand_url": null,
+  "brand_code": null,
+  "anchor": "brought_to_you",
+  "confidence": "high",
+  "offer_codes": [],
+  "urls": [],
+  "start_s": 62.0,
+  "end_s": 118.5,
+  "provenance": {
+   "cluster_id": "ep_fx1.cl0"
+  },
+  "excerpt": "This episode is brought to you by Quince."
+ },
+ {
+  "candidate_id": "ep_fx1.c1",
+  "ep_id": "ep_fx1",
+  "show_title": null,
+  "ep_title": null,
+  "pub_date": null,
+  "fetch_date": "2026-10-09",
+  "brand": "acme widgets",
+  "brand_spoken": "acme widgets",
+  "brand_raw": "acme widgets",
+  "brand_url": null,
+  "brand_code": null,
+  "anchor": "promo_code",
+  "confidence": "medium",
+  "offer_codes": [],
+  "urls": [],
+  "start_s": 300.0,
+  "end_s": 330.0,
+  "provenance": {
+   "cluster_id": "ep_fx1.cl1"
+  },
+  "excerpt": "Visit acme widgets dot com for ten percent off."
+ },
+ {
+  "candidate_id": "ep_fx2.c0",
+  "ep_id": "ep_fx2",
+  "show_title": null,
+  "ep_title": null,
+  "pub_date": null,
+  "fetch_date": "2026-10-09",
+  "brand": "simply safe",
+  "brand_spoken": "simply safe",
+  "brand_raw": "simply safe",
+  "brand_url": null,
+  "brand_code": null,
+  "anchor": "sponsor",
+  "confidence": "high",
+  "offer_codes": [],
+  "urls": [],
+  "start_s": 120.0,
+  "end_s": 180.0,
+  "provenance": {
+   "cluster_id": "ep_fx2.cl0"
+  },
+  "excerpt": "Today's sponsor is simply safe home security."
+ }
+]

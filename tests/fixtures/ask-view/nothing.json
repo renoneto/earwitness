@@ -1,0 +1,25 @@
+{
+  "turn_id": "t_none1",
+  "thread_id": "h_none1",
+  "question": "What offers do mattress brands make in their ads?",
+  "state": "nothing",
+  "step": null,
+  "error_code": null,
+  "based_on": null,
+  "sections": [],
+  "uncertain": [],
+  "lines": ["No passage in this collection answers that. Search is by words, so a passage worded differently can be missed."],
+  "sources": [],
+  "disclosure": {
+    "model": "muse-spark-1.3",
+    "searches": 3,
+    "word_searches": 3,
+    "passages_read": 11,
+    "dropped": 0,
+    "usd_settled": 0.02,
+    "cost_shown": true,
+    "word_search": true,
+    "episodes_searched": 40,
+    "episodes_in_scope": 40
+  }
+}

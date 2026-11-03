@@ -1,0 +1,14 @@
+{
+  "turn_id": "t_canc1",
+  "thread_id": "h_canc1",
+  "question": "How do hosts pitch VPNs in this collection?",
+  "state": "cancelled",
+  "step": null,
+  "error_code": null,
+  "based_on": null,
+  "sections": [],
+  "uncertain": [],
+  "lines": [],
+  "sources": [],
+  "disclosure": null
+}

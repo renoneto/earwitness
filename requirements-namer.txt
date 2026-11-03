@@ -1,0 +1,19 @@
+# Optional pinned GLiNER fallback for the corpus runner's `name` stage
+# (earwitness/pipeline/brand_namer.py). The runner works WITHOUT these: the
+# name stage then runs domain/CTA extraction + sound-alike repair only and
+# records "pipeline": "cta+repair" in every names/<episode_id>.json.
+# Qualified 2026-10-09 on macOS arm64, Python 3.14.7, isolated venv
+# /tmp/ew-namer-venv: tests/test_brand_namer.py (real-model test included)
+# and the holdout evaluation ran with exactly these versions.
+# Model: urchade/gliner_small-v2.1 @ 4e091416cf7c3481db542c2a3d26156916f3a47f
+# (backbone microsoft/deberta-v3-small @ a36c739020e01763fe789b4b85e2df55d6180012),
+# fetched from Hugging Face on first load (~0.6 GB disk, ~1.5 GB RAM).
+# Install into the worker venv:
+#   ~/ew-corpus-worker/.venv/bin/pip install -r requirements-namer.txt
+gliner==0.2.29
+torch==2.14.1
+transformers==5.16.1
+huggingface_hub==1.33.0
+tokenizers==0.23.3
+sentencepiece==0.2.2
+protobuf==7.36.2

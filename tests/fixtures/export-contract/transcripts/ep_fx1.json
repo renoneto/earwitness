@@ -1,0 +1,203 @@
+{
+ "ep_id": "ep_fx1",
+ "model": "tiny",
+ "language": "en",
+ "duration_min": 20.0,
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 30.0,
+   "text": "Host talk at minute 0."
+  },
+  {
+   "start": 30.0,
+   "end": 60.0,
+   "text": "Host talk at minute 0."
+  },
+  {
+   "start": 60.0,
+   "end": 75.0,
+   "text": "This episode is brought to you by Quince."
+  },
+  {
+   "start": 75.0,
+   "end": 105.0,
+   "text": "Quince has everything from organic cotton sheets to cashmere sweaters."
+  },
+  {
+   "start": 105.0,
+   "end": 120.0,
+   "text": "Go to quince dot com slash fixture for free shipping."
+  },
+  {
+   "start": 120.0,
+   "end": 150.0,
+   "text": "Host talk at minute 2."
+  },
+  {
+   "start": 150.0,
+   "end": 180.0,
+   "text": "Host talk at minute 2."
+  },
+  {
+   "start": 180.0,
+   "end": 210.0,
+   "text": "Host talk at minute 3."
+  },
+  {
+   "start": 210.0,
+   "end": 240.0,
+   "text": "Host talk at minute 3."
+  },
+  {
+   "start": 240.0,
+   "end": 270.0,
+   "text": "Host talk at minute 4."
+  },
+  {
+   "start": 270.0,
+   "end": 300.0,
+   "text": "Host talk at minute 4."
+  },
+  {
+   "start": 300.0,
+   "end": 330.0,
+   "text": "Visit acme widgets dot com for ten percent off."
+  },
+  {
+   "start": 330.0,
+   "end": 360.0,
+   "text": "Host talk at minute 5."
+  },
+  {
+   "start": 360.0,
+   "end": 390.0,
+   "text": "Host talk at minute 6."
+  },
+  {
+   "start": 390.0,
+   "end": 420.0,
+   "text": "Host talk at minute 6."
+  },
+  {
+   "start": 420.0,
+   "end": 450.0,
+   "text": "Host talk at minute 7."
+  },
+  {
+   "start": 450.0,
+   "end": 480.0,
+   "text": "Host talk at minute 7."
+  },
+  {
+   "start": 480.0,
+   "end": 510.0,
+   "text": "Host talk at minute 8."
+  },
+  {
+   "start": 510.0,
+   "end": 540.0,
+   "text": "Host talk at minute 8."
+  },
+  {
+   "start": 540.0,
+   "end": 570.0,
+   "text": "Host talk at minute 9."
+  },
+  {
+   "start": 570.0,
+   "end": 600.0,
+   "text": "Host talk at minute 9."
+  },
+  {
+   "start": 600.0,
+   "end": 660.0,
+   "text": "And now a word that the namer could not place."
+  },
+  {
+   "start": 660.0,
+   "end": 690.0,
+   "text": "Host talk at minute 11."
+  },
+  {
+   "start": 690.0,
+   "end": 720.0,
+   "text": "Host talk at minute 11."
+  },
+  {
+   "start": 720.0,
+   "end": 750.0,
+   "text": "Host talk at minute 12."
+  },
+  {
+   "start": 750.0,
+   "end": 780.0,
+   "text": "Host talk at minute 12."
+  },
+  {
+   "start": 780.0,
+   "end": 810.0,
+   "text": "Host talk at minute 13."
+  },
+  {
+   "start": 810.0,
+   "end": 840.0,
+   "text": "Host talk at minute 13."
+  },
+  {
+   "start": 840.0,
+   "end": 870.0,
+   "text": "Host talk at minute 14."
+  },
+  {
+   "start": 870.0,
+   "end": 900.0,
+   "text": "Host talk at minute 14."
+  },
+  {
+   "start": 900.0,
+   "end": 960.0,
+   "text": "Join our Patreon at patreon dot com slash fixture show."
+  },
+  {
+   "start": 960.0,
+   "end": 990.0,
+   "text": "Host talk at minute 16."
+  },
+  {
+   "start": 990.0,
+   "end": 1020.0,
+   "text": "Host talk at minute 16."
+  },
+  {
+   "start": 1020.0,
+   "end": 1050.0,
+   "text": "Host talk at minute 17."
+  },
+  {
+   "start": 1050.0,
+   "end": 1080.0,
+   "text": "Host talk at minute 17."
+  },
+  {
+   "start": 1080.0,
+   "end": 1110.0,
+   "text": "Host talk at minute 18."
+  },
+  {
+   "start": 1110.0,
+   "end": 1140.0,
+   "text": "Host talk at minute 18."
+  },
+  {
+   "start": 1140.0,
+   "end": 1170.0,
+   "text": "Host talk at minute 19."
+  },
+  {
+   "start": 1170.0,
+   "end": 1200.0,
+   "text": "Host talk at minute 19."
+  }
+ ]
+}

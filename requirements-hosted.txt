@@ -1,0 +1,11 @@
+# Pinned hosted runtime dependencies for the EarWitness production ASGI
+# service (package E). The local application and MCP reader run WITHOUT
+# these installed. Qualified 2026-09-23 on macOS arm64, Python 3.14.
+# Install: python3 -m venv .venv-hosted && . .venv-hosted/bin/activate \
+#   && pip install -r requirements-hosted.txt
+# Full transitive lock record: requirements-hosted.lock (pip freeze).
+authlib==1.8.0
+mcp==2.2.0
+psycopg==3.3.6
+starlette==1.6.0
+uvicorn==0.53.0

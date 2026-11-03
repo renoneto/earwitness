@@ -1,0 +1,3408 @@
+{
+"again": {
+"report": {
+"ad_reads": {
+"aliases": 4,
+"clips": 0,
+"links": 0,
+"reads": 4,
+"screened_no_ads": 0
+},
+"created": 0,
+"detector_candidates": 0,
+"episodes": 5,
+"human_work": {
+"carried_over": 0,
+"merged": 0,
+"orphaned": 0,
+"overlap_taken": 0
+},
+"jev_skipped": {
+"existing_jev_evidence": 0
+},
+"jev_windows": 0,
+"named_reads": 4,
+"rejected": 0,
+"reused": 25,
+"source_files": 8,
+"transcript_index": {
+"dropped": 0,
+"indexed": 0,
+"segments": 0
+},
+"unresolved": []
+},
+"tables": {
+"ad_brand_aliases": [
+[
+"kwince co",
+"kwince co",
+null,
+"none"
+],
+[
+"morning show",
+"morning show",
+null,
+"none"
+],
+[
+"quince",
+"quince",
+null,
+"none"
+],
+[
+"zorblax",
+"zorblax",
+null,
+"none"
+]
+],
+"ad_clips": [],
+"ad_fallthrough": [],
+"ad_label_undo": [],
+"ad_labels": [],
+"ad_observations": [],
+"ad_read_links": [],
+"ad_reads": [
+[
+1,
+"named:3e51fad98572aa4399fd9b6e040d1a176342b2273b27979cd712dbc573145c0f",
+"named:ep_h.named.10000-60000",
+"ep_h",
+"named",
+0,
+1,
+10.0,
+60.0,
+10.0,
+60.0,
+0,
+1,
+0.5,
+null,
+"low",
+"quince",
+null,
+null,
+"[{\"brand\": \"quince\", \"evidence\": [\"gliner:company\"]}]",
+"this episode is brought to you by Quince. Quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping",
+"this episode is brought to you by quince. quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping this episode is brought to you by quince. quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping"
+],
+[
+2,
+"named:ff726c16446080a9b1e8833650560ad221bc15f6452fd19a155f19151ca56cd1",
+"named:ep_u.named.10000-50000",
+"ep_u",
+"named",
+0,
+1,
+10.0,
+50.0,
+10.0,
+50.0,
+0,
+0,
+0.5,
+null,
+"medium",
+"kwince co",
+null,
+null,
+"[{\"brand\": \"kwince co\", \"evidence\": [\"gliner:company\"]}]",
+"today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order",
+"today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order"
+],
+[
+3,
+"named:2481c9dee7012090368ce24e5381e9085d0e40ddacd9d8d3623420e016d243fb",
+"named:ep_p.named.0-40000",
+"ep_p",
+"named",
+0,
+1,
+0.0,
+40.0,
+0.0,
+40.0,
+0,
+0,
+0.5,
+null,
+"medium",
+"morning show",
+null,
+null,
+"[{\"brand\": \"morning show\", \"evidence\": [\"gliner:company\"]}]",
+"if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes",
+"if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes"
+],
+[
+4,
+"named:f41b42ee77b41fb2762de23c795db85537754ace08085040ec97f9bd0a276e5d",
+"named:ep_x.named.10000-40000",
+"ep_x",
+"named",
+0,
+1,
+10.0,
+40.0,
+10.0,
+40.0,
+0,
+1,
+0.5,
+null,
+"low",
+"zorblax",
+null,
+null,
+"[{\"brand\": \"zorblax\", \"evidence\": [\"gliner:company\"]}]",
+"Zorblax is great and Zorblax is here for you",
+"zorblax is great and zorblax is here for you zorblax is great and zorblax is here for you"
+]
+],
+"ad_reads_fts": [
+[
+"if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes"
+],
+[
+"this episode is brought to you by quince. quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping this episode is brought to you by quince. quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping"
+],
+[
+"today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order"
+],
+[
+"zorblax is great and zorblax is here for you zorblax is great and zorblax is here for you"
+]
+],
+"ad_reads_meta": [
+[
+"built",
+"1"
+],
+[
+"fts_populated",
+"1"
+]
+],
+"ad_reports": [],
+"ad_rules": [],
+"ad_rules_removed": [],
+"ad_show_ranks": [],
+"assignments": [],
+"association_history": [
+[
+"local",
+"named:2481c9dee7012090368ce24e5381e9085d0e40ddacd9d8d3623420e016d243fb",
+0,
+"[{\"brand\": \"morning show\", \"basis\": \"suggested\", \"origin\": \"detector\", \"channel\": \"spoken\", \"revision\": 1}]",
+0,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:3e51fad98572aa4399fd9b6e040d1a176342b2273b27979cd712dbc573145c0f",
+0,
+"[{\"brand\": \"quince\", \"basis\": \"suggested\", \"origin\": \"detector\", \"channel\": \"spoken\", \"revision\": 1}]",
+0,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:f41b42ee77b41fb2762de23c795db85537754ace08085040ec97f9bd0a276e5d",
+0,
+"[{\"brand\": \"zorblax\", \"basis\": \"suggested\", \"origin\": \"detector\", \"channel\": \"spoken\", \"revision\": 1}]",
+0,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:ff726c16446080a9b1e8833650560ad221bc15f6452fd19a155f19151ca56cd1",
+0,
+"[{\"brand\": \"kwince co\", \"basis\": \"suggested\", \"origin\": \"detector\", \"channel\": \"spoken\", \"revision\": 1}]",
+0,
+"mutation",
+"test",
+"<ts>"
+]
+],
+"audit": [
+[
+1,
+"<ts>",
+"test",
+"seed",
+"workspace",
+"seed",
+"{\"created\": 25, \"reused\": 0, \"rejected\": 0, \"unresolved\": [], \"episodes\": 5, \"source_files\": 8, \"jev_windows\": 0, \"detector_candidates\": 0, \"named_reads\": 4, \"jev_skipped\": {\"existing_jev_evidence\": 0}, \"human_work\": {\"merged\": 0, \"carried_over\": 0, \"overlap_taken\": 0, \"orphaned\": 0}, \"ad_reads\": {\"aliases\": 4, \"links\": 0, \"reads\": 4, \"clips\": 0, \"screened_no_ads\": 0}, \"transcript_index\": {\"indexed\": 5, \"segments\": 20, \"dropped\": 0}}",
+1
+],
+[
+2,
+"<ts>",
+"test",
+"seed",
+"workspace",
+"seed",
+"{\"created\": 0, \"reused\": 25, \"rejected\": 0, \"unresolved\": [], \"episodes\": 5, \"source_files\": 8, \"jev_windows\": 0, \"detector_candidates\": 0, \"named_reads\": 4, \"jev_skipped\": {\"existing_jev_evidence\": 0}, \"human_work\": {\"merged\": 0, \"carried_over\": 0, \"overlap_taken\": 0, \"orphaned\": 0}, \"ad_reads\": {\"aliases\": 4, \"links\": 0, \"reads\": 4, \"clips\": 0, \"screened_no_ads\": 0}, \"transcript_index\": {\"indexed\": 0, \"segments\": 0, \"dropped\": 0}}",
+2
+]
+],
+"billing_bindings": [],
+"billing_entitlement": [],
+"billing_events": [],
+"billing_subscriptions": [],
+"billing_trials": [],
+"brand_assocs": [
+[
+1,
+"named:3e51fad98572aa4399fd9b6e040d1a176342b2273b27979cd712dbc573145c0f",
+"quince",
+"suggested",
+"detector",
+1,
+"<ts>",
+"spoken"
+],
+[
+2,
+"named:ff726c16446080a9b1e8833650560ad221bc15f6452fd19a155f19151ca56cd1",
+"kwince co",
+"suggested",
+"detector",
+1,
+"<ts>",
+"spoken"
+],
+[
+3,
+"named:2481c9dee7012090368ce24e5381e9085d0e40ddacd9d8d3623420e016d243fb",
+"morning show",
+"suggested",
+"detector",
+1,
+"<ts>",
+"spoken"
+],
+[
+4,
+"named:f41b42ee77b41fb2762de23c795db85537754ace08085040ec97f9bd0a276e5d",
+"zorblax",
+"suggested",
+"detector",
+1,
+"<ts>",
+"spoken"
+]
+],
+"campaign_checks": [],
+"campaign_evidence": [],
+"campaign_history": [],
+"campaign_reports": [],
+"campaign_targets": [],
+"campaigns": [],
+"check_evaluations": [],
+"comment_revisions": [],
+"comments": [],
+"coverage_attestations": [
+[
+1,
+"local",
+"ep_c",
+"source-version:2",
+"transcribe",
+0.0,
+600.0,
+0.0,
+600.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+2
+],
+[
+2,
+"local",
+"ep_h",
+"source-version:3",
+"transcribe",
+0.0,
+600.0,
+0.0,
+90.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+3
+],
+[
+3,
+"local",
+"ep_p",
+"source-version:4",
+"transcribe",
+0.0,
+600.0,
+0.0,
+60.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+4
+],
+[
+4,
+"local",
+"ep_u",
+"source-version:5",
+"transcribe",
+0.0,
+600.0,
+0.0,
+80.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+5
+],
+[
+5,
+"local",
+"ep_x",
+"source-version:6",
+"transcribe",
+0.0,
+600.0,
+0.0,
+60.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+6
+],
+[
+6,
+"local",
+"ep_h",
+"source-version:8",
+"screen",
+0.0,
+600.0,
+0.0,
+90.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+3
+],
+[
+7,
+"local",
+"ep_u",
+"source-version:8",
+"screen",
+0.0,
+600.0,
+0.0,
+80.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+5
+],
+[
+8,
+"local",
+"ep_p",
+"source-version:8",
+"screen",
+0.0,
+600.0,
+0.0,
+60.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+4
+],
+[
+9,
+"local",
+"ep_x",
+"source-version:8",
+"screen",
+0.0,
+600.0,
+0.0,
+60.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+6
+]
+],
+"coverage_records": [],
+"creative_fingerprints": [],
+"creative_match_configs": [
+[
+"8ee75cab32cd4ed9",
+"{\"duration_band\": 0.2, \"min_shingle_overlap\": 0.05}",
+"<ts>"
+]
+],
+"creative_memberships": [],
+"creatives": [],
+"customer_alert_events": [],
+"customer_alerts": [],
+"customer_conversion_lineage": [],
+"customer_episode_shows": [
+[
+"local",
+"ep_c",
+"cs-24415f020721",
+"unresolved",
+1,
+"<ts>"
+],
+[
+"local",
+"ep_h",
+"cs-274169ba4e2f",
+"unresolved",
+1,
+"<ts>"
+],
+[
+"local",
+"ep_p",
+"cs-e69ebd9fa32b",
+"unresolved",
+1,
+"<ts>"
+],
+[
+"local",
+"ep_u",
+"cs-b333180e4e59",
+"unresolved",
+1,
+"<ts>"
+],
+[
+"local",
+"ep_x",
+"cs-7d7702c5e890",
+"unresolved",
+1,
+"<ts>"
+]
+],
+"customer_mistake_reports": [],
+"customer_saved_items": [],
+"customer_saved_searches": [],
+"customer_show_identities": [
+[
+"cs-24415f020721",
+"local",
+"Morning Show",
+"ep_c",
+"unresolved",
+null,
+1,
+"<ts>"
+],
+[
+"cs-274169ba4e2f",
+"local",
+"Morning Show",
+"ep_h",
+"unresolved",
+null,
+1,
+"<ts>"
+],
+[
+"cs-7d7702c5e890",
+"local",
+"Morning Show",
+"ep_x",
+"unresolved",
+null,
+1,
+"<ts>"
+],
+[
+"cs-b333180e4e59",
+"local",
+"Morning Show",
+"ep_u",
+"unresolved",
+null,
+1,
+"<ts>"
+],
+[
+"cs-e69ebd9fa32b",
+"local",
+"Morning Show",
+"ep_p",
+"unresolved",
+null,
+1,
+"<ts>"
+]
+],
+"delivery_attempts": [],
+"episode_history": [
+[
+"local",
+"ep_c",
+1,
+"Morning Show",
+"ep_c title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-13",
+null,
+null,
+2,
+"unknown",
+0,
+1,
+"mutation",
+"test",
+"<ts>",
+"supplied",
+null,
+null
+],
+[
+"local",
+"ep_h",
+1,
+"Morning Show",
+"ep_h title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-11",
+null,
+null,
+3,
+"unknown",
+0,
+1,
+"mutation",
+"test",
+"<ts>",
+"supplied",
+null,
+null
+],
+[
+"local",
+"ep_p",
+1,
+"Morning Show",
+"ep_p title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-14",
+null,
+null,
+4,
+"unknown",
+0,
+1,
+"mutation",
+"test",
+"<ts>",
+"supplied",
+null,
+null
+],
+[
+"local",
+"ep_u",
+1,
+"Morning Show",
+"ep_u title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-12",
+null,
+null,
+5,
+"unknown",
+0,
+1,
+"mutation",
+"test",
+"<ts>",
+"supplied",
+null,
+null
+],
+[
+"local",
+"ep_x",
+1,
+"Morning Show",
+"ep_x title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-15",
+null,
+null,
+6,
+"unknown",
+0,
+1,
+"mutation",
+"test",
+"<ts>",
+"supplied",
+null,
+null
+]
+],
+"episode_screening": [
+[
+"ep_c",
+null,
+null,
+null,
+null,
+null,
+0,
+0,
+0,
+0,
+0,
+0,
+"full"
+],
+[
+"ep_h",
+null,
+null,
+null,
+null,
+null,
+0,
+0,
+1,
+0,
+0,
+0,
+"full"
+],
+[
+"ep_p",
+null,
+null,
+null,
+null,
+null,
+0,
+0,
+1,
+0,
+0,
+0,
+"full"
+],
+[
+"ep_u",
+null,
+null,
+null,
+null,
+null,
+0,
+0,
+1,
+0,
+0,
+0,
+"full"
+],
+[
+"ep_x",
+null,
+null,
+null,
+null,
+null,
+0,
+0,
+1,
+0,
+0,
+0,
+"full"
+]
+],
+"episodes": [
+[
+"ep_c",
+"supplied",
+null,
+"Morning Show",
+"ep_c title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-13",
+null,
+null,
+2,
+1,
+"<ts>",
+"unknown",
+0,
+null
+],
+[
+"ep_h",
+"supplied",
+null,
+"Morning Show",
+"ep_h title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-11",
+null,
+null,
+3,
+1,
+"<ts>",
+"unknown",
+0,
+null
+],
+[
+"ep_p",
+"supplied",
+null,
+"Morning Show",
+"ep_p title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-14",
+null,
+null,
+4,
+1,
+"<ts>",
+"unknown",
+0,
+null
+],
+[
+"ep_u",
+"supplied",
+null,
+"Morning Show",
+"ep_u title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-12",
+null,
+null,
+5,
+1,
+"<ts>",
+"unknown",
+0,
+null
+],
+[
+"ep_x",
+"supplied",
+null,
+"Morning Show",
+"ep_x title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-15",
+null,
+null,
+6,
+1,
+"<ts>",
+"unknown",
+0,
+null
+]
+],
+"evidence": [
+[
+"named:2481c9dee7012090368ce24e5381e9085d0e40ddacd9d8d3623420e016d243fb",
+"detector",
+8,
+"ep_p",
+0.0,
+40.0,
+"if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes",
+"{\"candidate_id\": \"ep_p.named.0-40000\", \"brand_spoken\": \"morning show\", \"brand_url\": null, \"brand_code\": null, \"offer_codes\": [], \"urls\": [], \"anchor\": \"namer:gliner\", \"confidence\": \"medium\", \"fetch_date\": \"2026-10-14\", \"provenance\": {\"candidates\": [{\"brand\": \"morning show\", \"evidence\": [\"gliner:company\"]}]}, \"source\": \"jev+namer\", \"needs_review\": false, \"confidence_score\": 0.5}",
+1,
+"<ts>",
+4,
+"named:ep_p.named.0-40000",
+0,
+"candidate",
+null
+],
+[
+"named:3e51fad98572aa4399fd9b6e040d1a176342b2273b27979cd712dbc573145c0f",
+"detector",
+8,
+"ep_h",
+10.0,
+60.0,
+"this episode is brought to you by Quince. Quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping",
+"{\"candidate_id\": \"ep_h.named.10000-60000\", \"brand_spoken\": \"quince\", \"brand_url\": null, \"brand_code\": null, \"offer_codes\": [], \"urls\": [], \"anchor\": \"namer:gliner\", \"confidence\": \"low\", \"fetch_date\": \"2026-10-11\", \"provenance\": {\"candidates\": [{\"brand\": \"quince\", \"evidence\": [\"gliner:company\"]}]}, \"source\": \"jev+namer\", \"needs_review\": true, \"confidence_score\": 0.5}",
+1,
+"<ts>",
+3,
+"named:ep_h.named.10000-60000",
+0,
+"candidate",
+null
+],
+[
+"named:f41b42ee77b41fb2762de23c795db85537754ace08085040ec97f9bd0a276e5d",
+"detector",
+8,
+"ep_x",
+10.0,
+40.0,
+"Zorblax is great and Zorblax is here for you",
+"{\"candidate_id\": \"ep_x.named.10000-40000\", \"brand_spoken\": \"zorblax\", \"brand_url\": null, \"brand_code\": null, \"offer_codes\": [], \"urls\": [], \"anchor\": \"namer:gliner\", \"confidence\": \"low\", \"fetch_date\": \"2026-10-15\", \"provenance\": {\"candidates\": [{\"brand\": \"zorblax\", \"evidence\": [\"gliner:company\"]}]}, \"source\": \"jev+namer\", \"needs_review\": true, \"confidence_score\": 0.5}",
+1,
+"<ts>",
+6,
+"named:ep_x.named.10000-40000",
+0,
+"candidate",
+null
+],
+[
+"named:ff726c16446080a9b1e8833650560ad221bc15f6452fd19a155f19151ca56cd1",
+"detector",
+8,
+"ep_u",
+10.0,
+50.0,
+"today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order",
+"{\"candidate_id\": \"ep_u.named.10000-50000\", \"brand_spoken\": \"kwince co\", \"brand_url\": null, \"brand_code\": null, \"offer_codes\": [], \"urls\": [], \"anchor\": \"namer:gliner\", \"confidence\": \"medium\", \"fetch_date\": \"2026-10-12\", \"provenance\": {\"candidates\": [{\"brand\": \"kwince co\", \"evidence\": [\"gliner:company\"]}]}, \"source\": \"jev+namer\", \"needs_review\": false, \"confidence_score\": 0.5}",
+1,
+"<ts>",
+5,
+"named:ep_u.named.10000-50000",
+0,
+"candidate",
+null
+]
+],
+"evidence_fts": [
+[
+"named:2481c9dee7012090368ce24e5381e9085d0e40ddacd9d8d3623420e016d243fb",
+"if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes Morning Show ep_p title morning show"
+],
+[
+"named:3e51fad98572aa4399fd9b6e040d1a176342b2273b27979cd712dbc573145c0f",
+"this episode is brought to you by Quince. Quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping Morning Show ep_h title quince"
+],
+[
+"named:f41b42ee77b41fb2762de23c795db85537754ace08085040ec97f9bd0a276e5d",
+"Zorblax is great and Zorblax is here for you Morning Show ep_x title zorblax"
+],
+[
+"named:ff726c16446080a9b1e8833650560ad221bc15f6452fd19a155f19151ca56cd1",
+"today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order Morning Show ep_u title kwince co"
+]
+],
+"evidence_history": [
+[
+"local",
+"named:2481c9dee7012090368ce24e5381e9085d0e40ddacd9d8d3623420e016d243fb",
+1,
+"detector",
+"ep_p",
+0.0,
+40.0,
+"if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes",
+"{\"candidate_id\": \"ep_p.named.0-40000\", \"brand_spoken\": \"morning show\", \"brand_url\": null, \"brand_code\": null, \"offer_codes\": [], \"urls\": [], \"anchor\": \"namer:gliner\", \"confidence\": \"medium\", \"fetch_date\": \"2026-10-14\", \"provenance\": {\"candidates\": [{\"brand\": \"morning show\", \"evidence\": [\"gliner:company\"]}]}, \"source\": \"jev+namer\", \"needs_review\": false, \"confidence_score\": 0.5}",
+8,
+4,
+"candidate",
+0,
+1,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:3e51fad98572aa4399fd9b6e040d1a176342b2273b27979cd712dbc573145c0f",
+1,
+"detector",
+"ep_h",
+10.0,
+60.0,
+"this episode is brought to you by Quince. Quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping",
+"{\"candidate_id\": \"ep_h.named.10000-60000\", \"brand_spoken\": \"quince\", \"brand_url\": null, \"brand_code\": null, \"offer_codes\": [], \"urls\": [], \"anchor\": \"namer:gliner\", \"confidence\": \"low\", \"fetch_date\": \"2026-10-11\", \"provenance\": {\"candidates\": [{\"brand\": \"quince\", \"evidence\": [\"gliner:company\"]}]}, \"source\": \"jev+namer\", \"needs_review\": true, \"confidence_score\": 0.5}",
+8,
+3,
+"candidate",
+0,
+1,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:f41b42ee77b41fb2762de23c795db85537754ace08085040ec97f9bd0a276e5d",
+1,
+"detector",
+"ep_x",
+10.0,
+40.0,
+"Zorblax is great and Zorblax is here for you",
+"{\"candidate_id\": \"ep_x.named.10000-40000\", \"brand_spoken\": \"zorblax\", \"brand_url\": null, \"brand_code\": null, \"offer_codes\": [], \"urls\": [], \"anchor\": \"namer:gliner\", \"confidence\": \"low\", \"fetch_date\": \"2026-10-15\", \"provenance\": {\"candidates\": [{\"brand\": \"zorblax\", \"evidence\": [\"gliner:company\"]}]}, \"source\": \"jev+namer\", \"needs_review\": true, \"confidence_score\": 0.5}",
+8,
+6,
+"candidate",
+0,
+1,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:ff726c16446080a9b1e8833650560ad221bc15f6452fd19a155f19151ca56cd1",
+1,
+"detector",
+"ep_u",
+10.0,
+50.0,
+"today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order",
+"{\"candidate_id\": \"ep_u.named.10000-50000\", \"brand_spoken\": \"kwince co\", \"brand_url\": null, \"brand_code\": null, \"offer_codes\": [], \"urls\": [], \"anchor\": \"namer:gliner\", \"confidence\": \"medium\", \"fetch_date\": \"2026-10-12\", \"provenance\": {\"candidates\": [{\"brand\": \"kwince co\", \"evidence\": [\"gliner:company\"]}]}, \"source\": \"jev+namer\", \"needs_review\": false, \"confidence_score\": 0.5}",
+8,
+5,
+"candidate",
+0,
+1,
+"mutation",
+"test",
+"<ts>"
+]
+],
+"evidence_lineage": [],
+"evidence_review_order": [],
+"evidence_search_docs": [],
+"evidence_source_membership": [],
+"expected_placements": [],
+"exports": [],
+"field_confirmations": [],
+"index_state": [],
+"invites": [],
+"job_attempts": [],
+"media_artifacts": [],
+"memberships": [],
+"meta": [
+[
+"aggregate_rev",
+"2"
+],
+[
+"data_revision",
+"17"
+],
+[
+"fts_available",
+"1"
+],
+[
+"research_view_state",
+"<tok>"
+],
+[
+"workspace_id",
+"<tok>"
+]
+],
+"monitor_baselines": [],
+"monitor_events": [],
+"monitor_preferences": [],
+"monitor_schedule_state": [],
+"notification_outbox": [],
+"observation_attributions": [],
+"observation_revisions": [],
+"occurrence_observations": [],
+"occurrences": [],
+"p01_idempotency": [],
+"p01_job_deps": [],
+"p01_job_profiles": [],
+"p01_reconcile_log": [],
+"p01p04_holds": [],
+"p01p04_retention": [],
+"p09_feed_sources": [],
+"p09_run_episodes": [],
+"paid_operations": [],
+"placement_evaluations": [],
+"placement_evidence": [],
+"processing_grants": [],
+"processing_jobs": [],
+"processing_runs": [],
+"proposals": [],
+"provided_brief_versions": [],
+"provided_briefs": [],
+"rejected_pairs": [],
+"research_state": [
+[
+1,
+"<tok>"
+]
+],
+"review_history": [
+[
+"local",
+"named:2481c9dee7012090368ce24e5381e9085d0e40ddacd9d8d3623420e016d243fb",
+0,
+null,
+null,
+null,
+"",
+0,
+0,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:3e51fad98572aa4399fd9b6e040d1a176342b2273b27979cd712dbc573145c0f",
+0,
+null,
+null,
+null,
+"",
+0,
+0,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:f41b42ee77b41fb2762de23c795db85537754ace08085040ec97f9bd0a276e5d",
+0,
+null,
+null,
+null,
+"",
+0,
+0,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:ff726c16446080a9b1e8833650560ad221bc15f6452fd19a155f19151ca56cd1",
+0,
+null,
+null,
+null,
+"",
+0,
+0,
+"mutation",
+"test",
+"<ts>"
+]
+],
+"reviews": [],
+"schedules": [],
+"schema_version": [
+[
+3,
+"<ts>"
+],
+[
+4,
+"<ts>"
+],
+[
+5,
+"<ts>"
+],
+[
+6,
+"<ts>"
+],
+[
+7,
+"<ts>"
+],
+[
+8,
+"<ts>"
+]
+],
+"share_audit": [],
+"shares": [],
+"show_artwork": [],
+"source_content_policy": [],
+"source_files": [
+[
+1,
+"episodes_json",
+"<root>/data/episodes.json",
+"3a2fa6beedb30641a39f7631b6ddfc3532735c00dae462cb2c509fbd1938ab84",
+855,
+"<ts>"
+],
+[
+2,
+"transcript",
+"<root>/transcripts/ep_c.json",
+"ecbf34c6991d324a8e254cf96cab0fb2fb1e3dc0e9515772e489b08368c78c8a",
+680,
+"<ts>"
+],
+[
+3,
+"transcript",
+"<root>/transcripts/ep_h.json",
+"32fdfa37245c65466cbcca3cbc5e5cc819170ff75d7460d5198e2b492226477e",
+543,
+"<ts>"
+],
+[
+4,
+"transcript",
+"<root>/transcripts/ep_p.json",
+"5dc36d2d68933c6ad22b49e0eb5639cb839f06857c9e19aafc61b8f819226b06",
+448,
+"<ts>"
+],
+[
+5,
+"transcript",
+"<root>/transcripts/ep_u.json",
+"4e532ceb2f9cecc983e226922db43ed11bb3c8d5ad2c6e424eab37912fbe5d9c",
+527,
+"<ts>"
+],
+[
+6,
+"transcript",
+"<root>/transcripts/ep_x.json",
+"bb4dad7a74425a3a5cff571f95dafc6d2b5d6b5e8c16a9389c75c8dc70e62c40",
+387,
+"<ts>"
+],
+[
+7,
+"detector_output",
+"<root>/experiments/next-validation-detector/output/candidates_normalized.json",
+"4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+2,
+"<ts>"
+],
+[
+8,
+"named_reads_output",
+"<root>/experiments/named-reads/output/candidates_normalized.json",
+"b83aaaa5034968f5e92cc1afb3b7f0affcda324cf768454b9bba56bd005185d1",
+2701,
+"<ts>"
+]
+],
+"source_states": [
+[
+"<sr>",
+"local",
+"episode",
+"ep_c",
+1,
+"{\"episode_id\": \"ep_c\", \"episode_revision\": 1, \"recording\": null, \"source_payload_digest\": null, \"transcript_payload_digest\": \"ecbf34c6991d324a8e254cf96cab0fb2fb1e3dc0e9515772e489b08368c78c8a\", \"transcript_version_id\": 2}",
+"{\"basis\": \"original\", \"effective\": [0.0, 600.0], \"original\": [0.0, 600.0]}",
+"8f94a58dc00359734d31bf105b8efd1d4d55bc3c3722c86def5702b13fc8416f",
+"<ts>"
+],
+[
+"<sr>",
+"local",
+"episode",
+"ep_h",
+1,
+"{\"episode_id\": \"ep_h\", \"episode_revision\": 1, \"recording\": null, \"source_payload_digest\": null, \"transcript_payload_digest\": \"32fdfa37245c65466cbcca3cbc5e5cc819170ff75d7460d5198e2b492226477e\", \"transcript_version_id\": 3}",
+"{\"basis\": \"original\", \"effective\": [0.0, 90.0], \"original\": [0.0, 90.0]}",
+"57a23eab88365c0ec2133c8709c6d8dfd37860460be29f6ca45d2b247861bd81",
+"<ts>"
+],
+[
+"<sr>",
+"local",
+"episode",
+"ep_p",
+1,
+"{\"episode_id\": \"ep_p\", \"episode_revision\": 1, \"recording\": null, \"source_payload_digest\": null, \"transcript_payload_digest\": \"5dc36d2d68933c6ad22b49e0eb5639cb839f06857c9e19aafc61b8f819226b06\", \"transcript_version_id\": 4}",
+"{\"basis\": \"original\", \"effective\": [0.0, 60.0], \"original\": [0.0, 60.0]}",
+"1ccadda01c3d1eeebbee908b28903ef148569ffddb9a398e908f4c09afadda38",
+"<ts>"
+],
+[
+"<sr>",
+"local",
+"episode",
+"ep_u",
+1,
+"{\"episode_id\": \"ep_u\", \"episode_revision\": 1, \"recording\": null, \"source_payload_digest\": null, \"transcript_payload_digest\": \"4e532ceb2f9cecc983e226922db43ed11bb3c8d5ad2c6e424eab37912fbe5d9c\", \"transcript_version_id\": 5}",
+"{\"basis\": \"original\", \"effective\": [0.0, 80.0], \"original\": [0.0, 80.0]}",
+"5e0bfb8e24764d90dae80941415a1fd26c87f267daca0798e9de99e84e1a4d10",
+"<ts>"
+],
+[
+"<sr>",
+"local",
+"episode",
+"ep_x",
+1,
+"{\"episode_id\": \"ep_x\", \"episode_revision\": 1, \"recording\": null, \"source_payload_digest\": null, \"transcript_payload_digest\": \"bb4dad7a74425a3a5cff571f95dafc6d2b5d6b5e8c16a9389c75c8dc70e62c40\", \"transcript_version_id\": 6}",
+"{\"basis\": \"original\", \"effective\": [0.0, 60.0], \"original\": [0.0, 60.0]}",
+"202b6788bfb11e2449d15027a83b6d8bb300d95172066c77259cf22a60c6a7bd",
+"<ts>"
+],
+[
+"<sr>",
+"local",
+"evidence",
+"named:2481c9dee7012090368ce24e5381e9085d0e40ddacd9d8d3623420e016d243fb",
+1,
+"{\"assoc_revision\": 0, \"episode_id\": \"ep_p\", \"episode_revision\": 1, \"evidence_revision\": 1, \"recording\": null, \"review_revision\": 0, \"source_payload_digest\": \"b83aaaa5034968f5e92cc1afb3b7f0affcda324cf768454b9bba56bd005185d1\", \"source_version_id\": 8, \"transcript_payload_digest\": \"5dc36d2d68933c6ad22b49e0eb5639cb839f06857c9e19aafc61b8f819226b06\", \"transcript_version_id\": 4}",
+"{\"basis\": \"original\", \"effective\": [0.0, 40.0], \"original\": [0.0, 40.0]}",
+"4eb70b8d537dae46c21458e7654ace0fb71e93b40e6ea9a489a5e74f6a90e372",
+"<ts>"
+],
+[
+"<sr>",
+"local",
+"evidence",
+"named:3e51fad98572aa4399fd9b6e040d1a176342b2273b27979cd712dbc573145c0f",
+1,
+"{\"assoc_revision\": 0, \"episode_id\": \"ep_h\", \"episode_revision\": 1, \"evidence_revision\": 1, \"recording\": null, \"review_revision\": 0, \"source_payload_digest\": \"b83aaaa5034968f5e92cc1afb3b7f0affcda324cf768454b9bba56bd005185d1\", \"source_version_id\": 8, \"transcript_payload_digest\": \"32fdfa37245c65466cbcca3cbc5e5cc819170ff75d7460d5198e2b492226477e\", \"transcript_version_id\": 3}",
+"{\"basis\": \"original\", \"effective\": [10.0, 60.0], \"original\": [10.0, 60.0]}",
+"9a25115b411441be623331b56f365394f97a0d8fcc326313df9f71bb78eeecdf",
+"<ts>"
+],
+[
+"<sr>",
+"local",
+"evidence",
+"named:f41b42ee77b41fb2762de23c795db85537754ace08085040ec97f9bd0a276e5d",
+1,
+"{\"assoc_revision\": 0, \"episode_id\": \"ep_x\", \"episode_revision\": 1, \"evidence_revision\": 1, \"recording\": null, \"review_revision\": 0, \"source_payload_digest\": \"b83aaaa5034968f5e92cc1afb3b7f0affcda324cf768454b9bba56bd005185d1\", \"source_version_id\": 8, \"transcript_payload_digest\": \"bb4dad7a74425a3a5cff571f95dafc6d2b5d6b5e8c16a9389c75c8dc70e62c40\", \"transcript_version_id\": 6}",
+"{\"basis\": \"original\", \"effective\": [10.0, 40.0], \"original\": [10.0, 40.0]}",
+"0848d47047b3ce713f7a62df90a17b0b9b39595579ad65862b395a1be2504857",
+"<ts>"
+],
+[
+"<sr>",
+"local",
+"evidence",
+"named:ff726c16446080a9b1e8833650560ad221bc15f6452fd19a155f19151ca56cd1",
+1,
+"{\"assoc_revision\": 0, \"episode_id\": \"ep_u\", \"episode_revision\": 1, \"evidence_revision\": 1, \"recording\": null, \"review_revision\": 0, \"source_payload_digest\": \"b83aaaa5034968f5e92cc1afb3b7f0affcda324cf768454b9bba56bd005185d1\", \"source_version_id\": 8, \"transcript_payload_digest\": \"4e532ceb2f9cecc983e226922db43ed11bb3c8d5ad2c6e424eab37912fbe5d9c\", \"transcript_version_id\": 5}",
+"{\"basis\": \"original\", \"effective\": [10.0, 50.0], \"original\": [10.0, 50.0]}",
+"70e5b0b59ebb3991882af314d14d35ae3efc08656589ace8699a8b6c212e8189",
+"<ts>"
+]
+],
+"source_versions": [
+[
+1,
+"episodes.json",
+1,
+"3a2fa6beedb30641a39f7631b6ddfc3532735c00dae462cb2c509fbd1938ab84",
+"[{\"ep_id\": \"ep_c\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_c title\", \"category\": \"News\", \"pub_date\": \"2026-10-01\", \"duration_min\": 10.0, \"fetch_date\": \"2026-10-13\"}, {\"ep_id\": \"ep_h\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_h title\", \"category\": \"News\", \"pub_date\": \"2026-10-01\", \"duration_min\": 10.0, \"fetch_date\": \"2026-10-11\"}, {\"ep_id\": \"ep_p\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_p title\", \"category\": \"News\", \"pub_date\": \"2026-10-01\", \"duration_min\": 10.0, \"fetch_date\": \"2026-10-14\"}, {\"ep_id\": \"ep_u\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_u title\", \"category\": \"News\", \"pub_date\": \"2026-10-01\", \"duration_min\": 10.0, \"fetch_date\": \"2026-10-12\"}, {\"ep_id\": \"ep_x\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_x title\", \"category\": \"News\", \"pub_date\": \"2026-10-01\", \"duration_min\": 10.0, \"fetch_date\": \"2026-10-15\"}]",
+1,
+"<ts>"
+],
+[
+2,
+"transcript:ep_c",
+1,
+"ecbf34c6991d324a8e254cf96cab0fb2fb1e3dc0e9515772e489b08368c78c8a",
+"{\"ep_id\": \"ep_c\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_c title\", \"fetch_date\": \"2026-10-13\", \"fetch_date_source\": {\"basis\": \"fetch_observation\", \"snapshot\": \"fixture\"}, \"segments\": [{\"start\": 0.0, \"end\": 100.0, \"text\": \"we talked about the weather for a long time\"}, {\"start\": 100.0, \"end\": 200.0, \"text\": \"then we talked about the game last night\"}, {\"start\": 300.0, \"end\": 305.0, \"text\": \"this part of the show is brought to you by Quince\"}, {\"start\": 305.0, \"end\": 320.0, \"text\": \"go to quince.com/morning for ten percent off\"}, {\"start\": 420.0, \"end\": 500.0, \"text\": \"anyway that was the week in sports\"}, {\"start\": 500.0, \"end\": 600.0, \"text\": \"see you next time\"}]}",
+1,
+"<ts>"
+],
+[
+3,
+"transcript:ep_h",
+1,
+"32fdfa37245c65466cbcca3cbc5e5cc819170ff75d7460d5198e2b492226477e",
+"{\"ep_id\": \"ep_h\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_h title\", \"fetch_date\": \"2026-10-11\", \"fetch_date_source\": {\"basis\": \"fetch_observation\", \"snapshot\": \"fixture\"}, \"segments\": [{\"start\": 0.0, \"end\": 10.0, \"text\": \"welcome to the morning show\"}, {\"start\": 10.0, \"end\": 40.0, \"text\": \"this episode is brought to you by Quince. Quince makes the softest cashmere sweaters\"}, {\"start\": 40.0, \"end\": 60.0, \"text\": \"head to quince dot com slash morning for free shipping\"}, {\"start\": 60.0, \"end\": 90.0, \"text\": \"now back to the show\"}]}",
+1,
+"<ts>"
+],
+[
+4,
+"transcript:ep_p",
+1,
+"5dc36d2d68933c6ad22b49e0eb5639cb839f06857c9e19aafc61b8f819226b06",
+"{\"ep_id\": \"ep_p\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_p title\", \"fetch_date\": \"2026-10-14\", \"fetch_date_source\": {\"basis\": \"fetch_observation\", \"snapshot\": \"fixture\"}, \"segments\": [{\"start\": 0.0, \"end\": 20.0, \"text\": \"if you like the morning show please rate and review us wherever you listen\"}, {\"start\": 20.0, \"end\": 40.0, \"text\": \"and follow us on instagram for bonus episodes\"}, {\"start\": 40.0, \"end\": 60.0, \"text\": \"ok back to it\"}]}",
+1,
+"<ts>"
+],
+[
+5,
+"transcript:ep_u",
+1,
+"4e532ceb2f9cecc983e226922db43ed11bb3c8d5ad2c6e424eab37912fbe5d9c",
+"{\"ep_id\": \"ep_u\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_u title\", \"fetch_date\": \"2026-10-12\", \"fetch_date_source\": {\"basis\": \"fetch_observation\", \"snapshot\": \"fixture\"}, \"segments\": [{\"start\": 0.0, \"end\": 10.0, \"text\": \"welcome back everybody\"}, {\"start\": 10.0, \"end\": 30.0, \"text\": \"today's show is supported by kwince co, the place for linen sheets\"}, {\"start\": 30.0, \"end\": 50.0, \"text\": \"go to quince dot com slash morning to save on your order\"}, {\"start\": 50.0, \"end\": 80.0, \"text\": \"and back to the interview\"}]}",
+1,
+"<ts>"
+],
+[
+6,
+"transcript:ep_x",
+1,
+"bb4dad7a74425a3a5cff571f95dafc6d2b5d6b5e8c16a9389c75c8dc70e62c40",
+"{\"ep_id\": \"ep_x\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_x title\", \"fetch_date\": \"2026-10-15\", \"fetch_date_source\": {\"basis\": \"fetch_observation\", \"snapshot\": \"fixture\"}, \"segments\": [{\"start\": 0.0, \"end\": 10.0, \"text\": \"hello there\"}, {\"start\": 10.0, \"end\": 40.0, \"text\": \"Zorblax is great and Zorblax is here for you\"}, {\"start\": 40.0, \"end\": 60.0, \"text\": \"back to the chat\"}]}",
+1,
+"<ts>"
+],
+[
+7,
+"detector-output",
+1,
+"4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"[]",
+1,
+"<ts>"
+],
+[
+8,
+"named-reads-output",
+1,
+"b83aaaa5034968f5e92cc1afb3b7f0affcda324cf768454b9bba56bd005185d1",
+"[{\"candidate_id\": \"ep_h.named.10000-60000\", \"ep_id\": \"ep_h\", \"start_s\": 10.0, \"end_s\": 60.0, \"brand\": \"quince\", \"brand_spoken\": \"quince\", \"brand_raw\": \"quince\", \"brand_url\": null, \"brand_code\": null, \"anchor\": \"namer:gliner\", \"confidence\": \"low\", \"confidence_score\": 0.5, \"needs_review\": true, \"offer_codes\": [], \"urls\": [], \"excerpt\": \"this episode is brought to you by Quince. Quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping\", \"source\": \"jev+namer\", \"fetch_date\": \"2026-10-11\", \"ep_title\": \"ep_h title\", \"show_title\": \"Morning Show\", \"pub_date\": \"2026-10-01\", \"provenance\": {\"candidates\": [{\"brand\": \"quince\", \"evidence\": [\"gliner:company\"]}]}}, {\"candidate_id\": \"ep_u.named.10000-50000\", \"ep_id\": \"ep_u\", \"start_s\": 10.0, \"end_s\": 50.0, \"brand\": \"kwince co\", \"brand_spoken\": \"kwince co\", \"brand_raw\": \"kwince co\", \"brand_url\": null, \"brand_code\": null, \"anchor\": \"namer:gliner\", \"confidence\": \"medium\", \"confidence_score\": 0.5, \"needs_review\": false, \"offer_codes\": [], \"urls\": [], \"excerpt\": \"today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order\", \"source\": \"jev+namer\", \"fetch_date\": \"2026-10-12\", \"ep_title\": \"ep_u title\", \"show_title\": \"Morning Show\", \"pub_date\": \"2026-10-01\", \"provenance\": {\"candidates\": [{\"brand\": \"kwince co\", \"evidence\": [\"gliner:company\"]}]}}, {\"candidate_id\": \"ep_p.named.0-40000\", \"ep_id\": \"ep_p\", \"start_s\": 0.0, \"end_s\": 40.0, \"brand\": \"morning show\", \"brand_spoken\": \"morning show\", \"brand_raw\": \"morning show\", \"brand_url\": null, \"brand_code\": null, \"anchor\": \"namer:gliner\", \"confidence\": \"medium\", \"confidence_score\": 0.5, \"needs_review\": false, \"offer_codes\": [], \"urls\": [], \"excerpt\": \"if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes\", \"source\": \"jev+namer\", \"fetch_date\": \"2026-10-14\", \"ep_title\": \"ep_p title\", \"show_title\": \"Morning Show\", \"pub_date\": \"2026-10-01\", \"provenance\": {\"candidates\": [{\"brand\": \"morning show\", \"evidence\": [\"gliner:company\"]}]}}, {\"candidate_id\": \"ep_x.named.10000-40000\", \"ep_id\": \"ep_x\", \"start_s\": 10.0, \"end_s\": 40.0, \"brand\": \"zorblax\", \"brand_spoken\": \"zorblax\", \"brand_raw\": \"zorblax\", \"brand_url\": null, \"brand_code\": null, \"anchor\": \"namer:gliner\", \"confidence\": \"low\", \"confidence_score\": 0.5, \"needs_review\": true, \"offer_codes\": [], \"urls\": [], \"excerpt\": \"Zorblax is great and Zorblax is here for you\", \"source\": \"jev+namer\", \"fetch_date\": \"2026-10-15\", \"ep_title\": \"ep_x title\", \"show_title\": \"Morning Show\", \"pub_date\": \"2026-10-01\", \"provenance\": {\"candidates\": [{\"brand\": \"zorblax\", \"evidence\": [\"gliner:company\"]}]}}]",
+1,
+"<ts>"
+]
+],
+"target_evidence": [],
+"transcript_index_versions": [
+[
+2,
+6
+],
+[
+3,
+4
+],
+[
+4,
+3
+],
+[
+5,
+4
+],
+[
+6,
+3
+]
+],
+"transcript_segment_docs": [],
+"transcript_segments": [
+[
+1,
+2,
+0,
+0.0,
+100.0,
+":w:0.0:100.0",
+"we talked about the weather for a long time"
+],
+[
+10,
+3,
+3,
+60.0,
+90.0,
+":w:60.0:90.0",
+"now back to the show"
+],
+[
+11,
+4,
+0,
+0.0,
+20.0,
+":w:0.0:20.0",
+"if you like the morning show please rate and review us wherever you listen"
+],
+[
+12,
+4,
+1,
+20.0,
+40.0,
+":w:20.0:40.0",
+"and follow us on instagram for bonus episodes"
+],
+[
+13,
+4,
+2,
+40.0,
+60.0,
+":w:40.0:60.0",
+"ok back to it"
+],
+[
+14,
+5,
+0,
+0.0,
+10.0,
+":w:0.0:10.0",
+"welcome back everybody"
+],
+[
+15,
+5,
+1,
+10.0,
+30.0,
+":w:10.0:30.0",
+"today's show is supported by kwince co, the place for linen sheets"
+],
+[
+16,
+5,
+2,
+30.0,
+50.0,
+":w:30.0:50.0",
+"go to quince dot com slash morning to save on your order"
+],
+[
+17,
+5,
+3,
+50.0,
+80.0,
+":w:50.0:80.0",
+"and back to the interview"
+],
+[
+18,
+6,
+0,
+0.0,
+10.0,
+":w:0.0:10.0",
+"hello there"
+],
+[
+19,
+6,
+1,
+10.0,
+40.0,
+":w:10.0:40.0",
+"zorblax is great and zorblax is here for you"
+],
+[
+2,
+2,
+1,
+100.0,
+200.0,
+":w:100.0:200.0",
+"then we talked about the game last night"
+],
+[
+20,
+6,
+2,
+40.0,
+60.0,
+":w:40.0:60.0",
+"back to the chat"
+],
+[
+3,
+2,
+2,
+300.0,
+305.0,
+":w:300.0:305.0",
+"this part of the show is brought to you by quince"
+],
+[
+4,
+2,
+3,
+305.0,
+320.0,
+":w:305.0:320.0",
+"go to quince.com/morning for ten percent off"
+],
+[
+5,
+2,
+4,
+420.0,
+500.0,
+":w:420.0:500.0",
+"anyway that was the week in sports"
+],
+[
+6,
+2,
+5,
+500.0,
+600.0,
+":w:500.0:600.0",
+"see you next time"
+],
+[
+7,
+3,
+0,
+0.0,
+10.0,
+":w:0.0:10.0",
+"welcome to the morning show"
+],
+[
+8,
+3,
+1,
+10.0,
+40.0,
+":w:10.0:40.0",
+"this episode is brought to you by quince. quince makes the softest cashmere sweaters"
+],
+[
+9,
+3,
+2,
+40.0,
+60.0,
+":w:40.0:60.0",
+"head to quince dot com slash morning for free shipping"
+]
+],
+"transcript_segments_fts": [
+[
+"and back to the interview"
+],
+[
+"and follow us on instagram for bonus episodes"
+],
+[
+"anyway that was the week in sports"
+],
+[
+"back to the chat"
+],
+[
+"go to quince dot com slash morning to save on your order"
+],
+[
+"go to quince.com/morning for ten percent off"
+],
+[
+"head to quince dot com slash morning for free shipping"
+],
+[
+"hello there"
+],
+[
+"if you like the morning show please rate and review us wherever you listen"
+],
+[
+"now back to the show"
+],
+[
+"ok back to it"
+],
+[
+"see you next time"
+],
+[
+"then we talked about the game last night"
+],
+[
+"this episode is brought to you by quince. quince makes the softest cashmere sweaters"
+],
+[
+"this part of the show is brought to you by quince"
+],
+[
+"today's show is supported by kwince co, the place for linen sheets"
+],
+[
+"we talked about the weather for a long time"
+],
+[
+"welcome back everybody"
+],
+[
+"welcome to the morning show"
+],
+[
+"zorblax is great and zorblax is here for you"
+]
+],
+"transcript_versions": [],
+"watchlists": [],
+"workspaces": []
+}
+},
+"first": {
+"report": {
+"ad_reads": {
+"aliases": 4,
+"clips": 0,
+"links": 0,
+"reads": 4,
+"screened_no_ads": 0
+},
+"created": 25,
+"detector_candidates": 0,
+"episodes": 5,
+"human_work": {
+"carried_over": 0,
+"merged": 0,
+"orphaned": 0,
+"overlap_taken": 0
+},
+"jev_skipped": {
+"existing_jev_evidence": 0
+},
+"jev_windows": 0,
+"named_reads": 4,
+"rejected": 0,
+"reused": 0,
+"source_files": 8,
+"transcript_index": {
+"dropped": 0,
+"indexed": 5,
+"segments": 20
+},
+"unresolved": []
+},
+"tables": {
+"ad_brand_aliases": [
+[
+"kwince co",
+"kwince co",
+null,
+"none"
+],
+[
+"morning show",
+"morning show",
+null,
+"none"
+],
+[
+"quince",
+"quince",
+null,
+"none"
+],
+[
+"zorblax",
+"zorblax",
+null,
+"none"
+]
+],
+"ad_clips": [],
+"ad_fallthrough": [],
+"ad_label_undo": [],
+"ad_labels": [],
+"ad_observations": [],
+"ad_read_links": [],
+"ad_reads": [
+[
+1,
+"named:3e51fad98572aa4399fd9b6e040d1a176342b2273b27979cd712dbc573145c0f",
+"named:ep_h.named.10000-60000",
+"ep_h",
+"named",
+0,
+1,
+10.0,
+60.0,
+10.0,
+60.0,
+0,
+1,
+0.5,
+null,
+"low",
+"quince",
+null,
+null,
+"[{\"brand\": \"quince\", \"evidence\": [\"gliner:company\"]}]",
+"this episode is brought to you by Quince. Quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping",
+"this episode is brought to you by quince. quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping this episode is brought to you by quince. quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping"
+],
+[
+2,
+"named:ff726c16446080a9b1e8833650560ad221bc15f6452fd19a155f19151ca56cd1",
+"named:ep_u.named.10000-50000",
+"ep_u",
+"named",
+0,
+1,
+10.0,
+50.0,
+10.0,
+50.0,
+0,
+0,
+0.5,
+null,
+"medium",
+"kwince co",
+null,
+null,
+"[{\"brand\": \"kwince co\", \"evidence\": [\"gliner:company\"]}]",
+"today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order",
+"today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order"
+],
+[
+3,
+"named:2481c9dee7012090368ce24e5381e9085d0e40ddacd9d8d3623420e016d243fb",
+"named:ep_p.named.0-40000",
+"ep_p",
+"named",
+0,
+1,
+0.0,
+40.0,
+0.0,
+40.0,
+0,
+0,
+0.5,
+null,
+"medium",
+"morning show",
+null,
+null,
+"[{\"brand\": \"morning show\", \"evidence\": [\"gliner:company\"]}]",
+"if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes",
+"if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes"
+],
+[
+4,
+"named:f41b42ee77b41fb2762de23c795db85537754ace08085040ec97f9bd0a276e5d",
+"named:ep_x.named.10000-40000",
+"ep_x",
+"named",
+0,
+1,
+10.0,
+40.0,
+10.0,
+40.0,
+0,
+1,
+0.5,
+null,
+"low",
+"zorblax",
+null,
+null,
+"[{\"brand\": \"zorblax\", \"evidence\": [\"gliner:company\"]}]",
+"Zorblax is great and Zorblax is here for you",
+"zorblax is great and zorblax is here for you zorblax is great and zorblax is here for you"
+]
+],
+"ad_reads_fts": [
+[
+"if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes"
+],
+[
+"this episode is brought to you by quince. quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping this episode is brought to you by quince. quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping"
+],
+[
+"today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order"
+],
+[
+"zorblax is great and zorblax is here for you zorblax is great and zorblax is here for you"
+]
+],
+"ad_reads_meta": [
+[
+"built",
+"1"
+],
+[
+"fts_populated",
+"1"
+]
+],
+"ad_reports": [],
+"ad_rules": [],
+"ad_rules_removed": [],
+"ad_show_ranks": [],
+"assignments": [],
+"association_history": [
+[
+"local",
+"named:2481c9dee7012090368ce24e5381e9085d0e40ddacd9d8d3623420e016d243fb",
+0,
+"[{\"brand\": \"morning show\", \"basis\": \"suggested\", \"origin\": \"detector\", \"channel\": \"spoken\", \"revision\": 1}]",
+0,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:3e51fad98572aa4399fd9b6e040d1a176342b2273b27979cd712dbc573145c0f",
+0,
+"[{\"brand\": \"quince\", \"basis\": \"suggested\", \"origin\": \"detector\", \"channel\": \"spoken\", \"revision\": 1}]",
+0,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:f41b42ee77b41fb2762de23c795db85537754ace08085040ec97f9bd0a276e5d",
+0,
+"[{\"brand\": \"zorblax\", \"basis\": \"suggested\", \"origin\": \"detector\", \"channel\": \"spoken\", \"revision\": 1}]",
+0,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:ff726c16446080a9b1e8833650560ad221bc15f6452fd19a155f19151ca56cd1",
+0,
+"[{\"brand\": \"kwince co\", \"basis\": \"suggested\", \"origin\": \"detector\", \"channel\": \"spoken\", \"revision\": 1}]",
+0,
+"mutation",
+"test",
+"<ts>"
+]
+],
+"audit": [
+[
+1,
+"<ts>",
+"test",
+"seed",
+"workspace",
+"seed",
+"{\"created\": 25, \"reused\": 0, \"rejected\": 0, \"unresolved\": [], \"episodes\": 5, \"source_files\": 8, \"jev_windows\": 0, \"detector_candidates\": 0, \"named_reads\": 4, \"jev_skipped\": {\"existing_jev_evidence\": 0}, \"human_work\": {\"merged\": 0, \"carried_over\": 0, \"overlap_taken\": 0, \"orphaned\": 0}, \"ad_reads\": {\"aliases\": 4, \"links\": 0, \"reads\": 4, \"clips\": 0, \"screened_no_ads\": 0}, \"transcript_index\": {\"indexed\": 5, \"segments\": 20, \"dropped\": 0}}",
+1
+]
+],
+"billing_bindings": [],
+"billing_entitlement": [],
+"billing_events": [],
+"billing_subscriptions": [],
+"billing_trials": [],
+"brand_assocs": [
+[
+1,
+"named:3e51fad98572aa4399fd9b6e040d1a176342b2273b27979cd712dbc573145c0f",
+"quince",
+"suggested",
+"detector",
+1,
+"<ts>",
+"spoken"
+],
+[
+2,
+"named:ff726c16446080a9b1e8833650560ad221bc15f6452fd19a155f19151ca56cd1",
+"kwince co",
+"suggested",
+"detector",
+1,
+"<ts>",
+"spoken"
+],
+[
+3,
+"named:2481c9dee7012090368ce24e5381e9085d0e40ddacd9d8d3623420e016d243fb",
+"morning show",
+"suggested",
+"detector",
+1,
+"<ts>",
+"spoken"
+],
+[
+4,
+"named:f41b42ee77b41fb2762de23c795db85537754ace08085040ec97f9bd0a276e5d",
+"zorblax",
+"suggested",
+"detector",
+1,
+"<ts>",
+"spoken"
+]
+],
+"campaign_checks": [],
+"campaign_evidence": [],
+"campaign_history": [],
+"campaign_reports": [],
+"campaign_targets": [],
+"campaigns": [],
+"check_evaluations": [],
+"comment_revisions": [],
+"comments": [],
+"coverage_attestations": [
+[
+1,
+"local",
+"ep_c",
+"source-version:2",
+"transcribe",
+0.0,
+600.0,
+0.0,
+600.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+2
+],
+[
+2,
+"local",
+"ep_h",
+"source-version:3",
+"transcribe",
+0.0,
+600.0,
+0.0,
+90.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+3
+],
+[
+3,
+"local",
+"ep_p",
+"source-version:4",
+"transcribe",
+0.0,
+600.0,
+0.0,
+60.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+4
+],
+[
+4,
+"local",
+"ep_u",
+"source-version:5",
+"transcribe",
+0.0,
+600.0,
+0.0,
+80.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+5
+],
+[
+5,
+"local",
+"ep_x",
+"source-version:6",
+"transcribe",
+0.0,
+600.0,
+0.0,
+60.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+6
+],
+[
+6,
+"local",
+"ep_h",
+"source-version:8",
+"screen",
+0.0,
+600.0,
+0.0,
+90.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+3
+],
+[
+7,
+"local",
+"ep_u",
+"source-version:8",
+"screen",
+0.0,
+600.0,
+0.0,
+80.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+5
+],
+[
+8,
+"local",
+"ep_p",
+"source-version:8",
+"screen",
+0.0,
+600.0,
+0.0,
+60.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+4
+],
+[
+9,
+"local",
+"ep_x",
+"source-version:8",
+"screen",
+0.0,
+600.0,
+0.0,
+60.0,
+"success",
+"seed-import",
+0,
+"test",
+"<ts>",
+6
+]
+],
+"coverage_records": [],
+"creative_fingerprints": [],
+"creative_match_configs": [
+[
+"8ee75cab32cd4ed9",
+"{\"duration_band\": 0.2, \"min_shingle_overlap\": 0.05}",
+"<ts>"
+]
+],
+"creative_memberships": [],
+"creatives": [],
+"customer_alert_events": [],
+"customer_alerts": [],
+"customer_conversion_lineage": [],
+"customer_episode_shows": [
+[
+"local",
+"ep_c",
+"cs-24415f020721",
+"unresolved",
+1,
+"<ts>"
+],
+[
+"local",
+"ep_h",
+"cs-274169ba4e2f",
+"unresolved",
+1,
+"<ts>"
+],
+[
+"local",
+"ep_p",
+"cs-e69ebd9fa32b",
+"unresolved",
+1,
+"<ts>"
+],
+[
+"local",
+"ep_u",
+"cs-b333180e4e59",
+"unresolved",
+1,
+"<ts>"
+],
+[
+"local",
+"ep_x",
+"cs-7d7702c5e890",
+"unresolved",
+1,
+"<ts>"
+]
+],
+"customer_mistake_reports": [],
+"customer_saved_items": [],
+"customer_saved_searches": [],
+"customer_show_identities": [
+[
+"cs-24415f020721",
+"local",
+"Morning Show",
+"ep_c",
+"unresolved",
+null,
+1,
+"<ts>"
+],
+[
+"cs-274169ba4e2f",
+"local",
+"Morning Show",
+"ep_h",
+"unresolved",
+null,
+1,
+"<ts>"
+],
+[
+"cs-7d7702c5e890",
+"local",
+"Morning Show",
+"ep_x",
+"unresolved",
+null,
+1,
+"<ts>"
+],
+[
+"cs-b333180e4e59",
+"local",
+"Morning Show",
+"ep_u",
+"unresolved",
+null,
+1,
+"<ts>"
+],
+[
+"cs-e69ebd9fa32b",
+"local",
+"Morning Show",
+"ep_p",
+"unresolved",
+null,
+1,
+"<ts>"
+]
+],
+"delivery_attempts": [],
+"episode_history": [
+[
+"local",
+"ep_c",
+1,
+"Morning Show",
+"ep_c title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-13",
+null,
+null,
+2,
+"unknown",
+0,
+1,
+"mutation",
+"test",
+"<ts>",
+"supplied",
+null,
+null
+],
+[
+"local",
+"ep_h",
+1,
+"Morning Show",
+"ep_h title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-11",
+null,
+null,
+3,
+"unknown",
+0,
+1,
+"mutation",
+"test",
+"<ts>",
+"supplied",
+null,
+null
+],
+[
+"local",
+"ep_p",
+1,
+"Morning Show",
+"ep_p title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-14",
+null,
+null,
+4,
+"unknown",
+0,
+1,
+"mutation",
+"test",
+"<ts>",
+"supplied",
+null,
+null
+],
+[
+"local",
+"ep_u",
+1,
+"Morning Show",
+"ep_u title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-12",
+null,
+null,
+5,
+"unknown",
+0,
+1,
+"mutation",
+"test",
+"<ts>",
+"supplied",
+null,
+null
+],
+[
+"local",
+"ep_x",
+1,
+"Morning Show",
+"ep_x title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-15",
+null,
+null,
+6,
+"unknown",
+0,
+1,
+"mutation",
+"test",
+"<ts>",
+"supplied",
+null,
+null
+]
+],
+"episode_screening": [
+[
+"ep_c",
+null,
+null,
+null,
+null,
+null,
+0,
+0,
+0,
+0,
+0,
+0,
+"full"
+],
+[
+"ep_h",
+null,
+null,
+null,
+null,
+null,
+0,
+0,
+1,
+0,
+0,
+0,
+"full"
+],
+[
+"ep_p",
+null,
+null,
+null,
+null,
+null,
+0,
+0,
+1,
+0,
+0,
+0,
+"full"
+],
+[
+"ep_u",
+null,
+null,
+null,
+null,
+null,
+0,
+0,
+1,
+0,
+0,
+0,
+"full"
+],
+[
+"ep_x",
+null,
+null,
+null,
+null,
+null,
+0,
+0,
+1,
+0,
+0,
+0,
+"full"
+]
+],
+"episodes": [
+[
+"ep_c",
+"supplied",
+null,
+"Morning Show",
+"ep_c title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-13",
+null,
+null,
+2,
+1,
+"<ts>",
+"unknown",
+0,
+null
+],
+[
+"ep_h",
+"supplied",
+null,
+"Morning Show",
+"ep_h title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-11",
+null,
+null,
+3,
+1,
+"<ts>",
+"unknown",
+0,
+null
+],
+[
+"ep_p",
+"supplied",
+null,
+"Morning Show",
+"ep_p title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-14",
+null,
+null,
+4,
+1,
+"<ts>",
+"unknown",
+0,
+null
+],
+[
+"ep_u",
+"supplied",
+null,
+"Morning Show",
+"ep_u title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-12",
+null,
+null,
+5,
+1,
+"<ts>",
+"unknown",
+0,
+null
+],
+[
+"ep_x",
+"supplied",
+null,
+"Morning Show",
+"ep_x title",
+"News",
+"2026-10-01",
+10.0,
+"2026-10-15",
+null,
+null,
+6,
+1,
+"<ts>",
+"unknown",
+0,
+null
+]
+],
+"evidence": [
+[
+"named:2481c9dee7012090368ce24e5381e9085d0e40ddacd9d8d3623420e016d243fb",
+"detector",
+8,
+"ep_p",
+0.0,
+40.0,
+"if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes",
+"{\"candidate_id\": \"ep_p.named.0-40000\", \"brand_spoken\": \"morning show\", \"brand_url\": null, \"brand_code\": null, \"offer_codes\": [], \"urls\": [], \"anchor\": \"namer:gliner\", \"confidence\": \"medium\", \"fetch_date\": \"2026-10-14\", \"provenance\": {\"candidates\": [{\"brand\": \"morning show\", \"evidence\": [\"gliner:company\"]}]}, \"source\": \"jev+namer\", \"needs_review\": false, \"confidence_score\": 0.5}",
+1,
+"<ts>",
+4,
+"named:ep_p.named.0-40000",
+0,
+"candidate",
+null
+],
+[
+"named:3e51fad98572aa4399fd9b6e040d1a176342b2273b27979cd712dbc573145c0f",
+"detector",
+8,
+"ep_h",
+10.0,
+60.0,
+"this episode is brought to you by Quince. Quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping",
+"{\"candidate_id\": \"ep_h.named.10000-60000\", \"brand_spoken\": \"quince\", \"brand_url\": null, \"brand_code\": null, \"offer_codes\": [], \"urls\": [], \"anchor\": \"namer:gliner\", \"confidence\": \"low\", \"fetch_date\": \"2026-10-11\", \"provenance\": {\"candidates\": [{\"brand\": \"quince\", \"evidence\": [\"gliner:company\"]}]}, \"source\": \"jev+namer\", \"needs_review\": true, \"confidence_score\": 0.5}",
+1,
+"<ts>",
+3,
+"named:ep_h.named.10000-60000",
+0,
+"candidate",
+null
+],
+[
+"named:f41b42ee77b41fb2762de23c795db85537754ace08085040ec97f9bd0a276e5d",
+"detector",
+8,
+"ep_x",
+10.0,
+40.0,
+"Zorblax is great and Zorblax is here for you",
+"{\"candidate_id\": \"ep_x.named.10000-40000\", \"brand_spoken\": \"zorblax\", \"brand_url\": null, \"brand_code\": null, \"offer_codes\": [], \"urls\": [], \"anchor\": \"namer:gliner\", \"confidence\": \"low\", \"fetch_date\": \"2026-10-15\", \"provenance\": {\"candidates\": [{\"brand\": \"zorblax\", \"evidence\": [\"gliner:company\"]}]}, \"source\": \"jev+namer\", \"needs_review\": true, \"confidence_score\": 0.5}",
+1,
+"<ts>",
+6,
+"named:ep_x.named.10000-40000",
+0,
+"candidate",
+null
+],
+[
+"named:ff726c16446080a9b1e8833650560ad221bc15f6452fd19a155f19151ca56cd1",
+"detector",
+8,
+"ep_u",
+10.0,
+50.0,
+"today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order",
+"{\"candidate_id\": \"ep_u.named.10000-50000\", \"brand_spoken\": \"kwince co\", \"brand_url\": null, \"brand_code\": null, \"offer_codes\": [], \"urls\": [], \"anchor\": \"namer:gliner\", \"confidence\": \"medium\", \"fetch_date\": \"2026-10-12\", \"provenance\": {\"candidates\": [{\"brand\": \"kwince co\", \"evidence\": [\"gliner:company\"]}]}, \"source\": \"jev+namer\", \"needs_review\": false, \"confidence_score\": 0.5}",
+1,
+"<ts>",
+5,
+"named:ep_u.named.10000-50000",
+0,
+"candidate",
+null
+]
+],
+"evidence_fts": [
+[
+"named:2481c9dee7012090368ce24e5381e9085d0e40ddacd9d8d3623420e016d243fb",
+"if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes Morning Show ep_p title morning show"
+],
+[
+"named:3e51fad98572aa4399fd9b6e040d1a176342b2273b27979cd712dbc573145c0f",
+"this episode is brought to you by Quince. Quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping Morning Show ep_h title quince"
+],
+[
+"named:f41b42ee77b41fb2762de23c795db85537754ace08085040ec97f9bd0a276e5d",
+"Zorblax is great and Zorblax is here for you Morning Show ep_x title zorblax"
+],
+[
+"named:ff726c16446080a9b1e8833650560ad221bc15f6452fd19a155f19151ca56cd1",
+"today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order Morning Show ep_u title kwince co"
+]
+],
+"evidence_history": [
+[
+"local",
+"named:2481c9dee7012090368ce24e5381e9085d0e40ddacd9d8d3623420e016d243fb",
+1,
+"detector",
+"ep_p",
+0.0,
+40.0,
+"if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes",
+"{\"candidate_id\": \"ep_p.named.0-40000\", \"brand_spoken\": \"morning show\", \"brand_url\": null, \"brand_code\": null, \"offer_codes\": [], \"urls\": [], \"anchor\": \"namer:gliner\", \"confidence\": \"medium\", \"fetch_date\": \"2026-10-14\", \"provenance\": {\"candidates\": [{\"brand\": \"morning show\", \"evidence\": [\"gliner:company\"]}]}, \"source\": \"jev+namer\", \"needs_review\": false, \"confidence_score\": 0.5}",
+8,
+4,
+"candidate",
+0,
+1,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:3e51fad98572aa4399fd9b6e040d1a176342b2273b27979cd712dbc573145c0f",
+1,
+"detector",
+"ep_h",
+10.0,
+60.0,
+"this episode is brought to you by Quince. Quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping",
+"{\"candidate_id\": \"ep_h.named.10000-60000\", \"brand_spoken\": \"quince\", \"brand_url\": null, \"brand_code\": null, \"offer_codes\": [], \"urls\": [], \"anchor\": \"namer:gliner\", \"confidence\": \"low\", \"fetch_date\": \"2026-10-11\", \"provenance\": {\"candidates\": [{\"brand\": \"quince\", \"evidence\": [\"gliner:company\"]}]}, \"source\": \"jev+namer\", \"needs_review\": true, \"confidence_score\": 0.5}",
+8,
+3,
+"candidate",
+0,
+1,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:f41b42ee77b41fb2762de23c795db85537754ace08085040ec97f9bd0a276e5d",
+1,
+"detector",
+"ep_x",
+10.0,
+40.0,
+"Zorblax is great and Zorblax is here for you",
+"{\"candidate_id\": \"ep_x.named.10000-40000\", \"brand_spoken\": \"zorblax\", \"brand_url\": null, \"brand_code\": null, \"offer_codes\": [], \"urls\": [], \"anchor\": \"namer:gliner\", \"confidence\": \"low\", \"fetch_date\": \"2026-10-15\", \"provenance\": {\"candidates\": [{\"brand\": \"zorblax\", \"evidence\": [\"gliner:company\"]}]}, \"source\": \"jev+namer\", \"needs_review\": true, \"confidence_score\": 0.5}",
+8,
+6,
+"candidate",
+0,
+1,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:ff726c16446080a9b1e8833650560ad221bc15f6452fd19a155f19151ca56cd1",
+1,
+"detector",
+"ep_u",
+10.0,
+50.0,
+"today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order",
+"{\"candidate_id\": \"ep_u.named.10000-50000\", \"brand_spoken\": \"kwince co\", \"brand_url\": null, \"brand_code\": null, \"offer_codes\": [], \"urls\": [], \"anchor\": \"namer:gliner\", \"confidence\": \"medium\", \"fetch_date\": \"2026-10-12\", \"provenance\": {\"candidates\": [{\"brand\": \"kwince co\", \"evidence\": [\"gliner:company\"]}]}, \"source\": \"jev+namer\", \"needs_review\": false, \"confidence_score\": 0.5}",
+8,
+5,
+"candidate",
+0,
+1,
+"mutation",
+"test",
+"<ts>"
+]
+],
+"evidence_lineage": [],
+"evidence_review_order": [],
+"evidence_search_docs": [],
+"evidence_source_membership": [],
+"expected_placements": [],
+"exports": [],
+"field_confirmations": [],
+"index_state": [],
+"invites": [],
+"job_attempts": [],
+"media_artifacts": [],
+"memberships": [],
+"meta": [
+[
+"aggregate_rev",
+"1"
+],
+[
+"data_revision",
+"17"
+],
+[
+"fts_available",
+"1"
+],
+[
+"research_view_state",
+"<tok>"
+],
+[
+"workspace_id",
+"<tok>"
+]
+],
+"monitor_baselines": [],
+"monitor_events": [],
+"monitor_preferences": [],
+"monitor_schedule_state": [],
+"notification_outbox": [],
+"observation_attributions": [],
+"observation_revisions": [],
+"occurrence_observations": [],
+"occurrences": [],
+"p01_idempotency": [],
+"p01_job_deps": [],
+"p01_job_profiles": [],
+"p01_reconcile_log": [],
+"p01p04_holds": [],
+"p01p04_retention": [],
+"p09_feed_sources": [],
+"p09_run_episodes": [],
+"paid_operations": [],
+"placement_evaluations": [],
+"placement_evidence": [],
+"processing_grants": [],
+"processing_jobs": [],
+"processing_runs": [],
+"proposals": [],
+"provided_brief_versions": [],
+"provided_briefs": [],
+"rejected_pairs": [],
+"research_state": [
+[
+1,
+"<tok>"
+]
+],
+"review_history": [
+[
+"local",
+"named:2481c9dee7012090368ce24e5381e9085d0e40ddacd9d8d3623420e016d243fb",
+0,
+null,
+null,
+null,
+"",
+0,
+0,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:3e51fad98572aa4399fd9b6e040d1a176342b2273b27979cd712dbc573145c0f",
+0,
+null,
+null,
+null,
+"",
+0,
+0,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:f41b42ee77b41fb2762de23c795db85537754ace08085040ec97f9bd0a276e5d",
+0,
+null,
+null,
+null,
+"",
+0,
+0,
+"mutation",
+"test",
+"<ts>"
+],
+[
+"local",
+"named:ff726c16446080a9b1e8833650560ad221bc15f6452fd19a155f19151ca56cd1",
+0,
+null,
+null,
+null,
+"",
+0,
+0,
+"mutation",
+"test",
+"<ts>"
+]
+],
+"reviews": [],
+"schedules": [],
+"schema_version": [
+[
+3,
+"<ts>"
+],
+[
+4,
+"<ts>"
+],
+[
+5,
+"<ts>"
+],
+[
+6,
+"<ts>"
+],
+[
+7,
+"<ts>"
+],
+[
+8,
+"<ts>"
+]
+],
+"share_audit": [],
+"shares": [],
+"show_artwork": [],
+"source_content_policy": [],
+"source_files": [
+[
+1,
+"episodes_json",
+"<root>/data/episodes.json",
+"3a2fa6beedb30641a39f7631b6ddfc3532735c00dae462cb2c509fbd1938ab84",
+855,
+"<ts>"
+],
+[
+2,
+"transcript",
+"<root>/transcripts/ep_c.json",
+"ecbf34c6991d324a8e254cf96cab0fb2fb1e3dc0e9515772e489b08368c78c8a",
+680,
+"<ts>"
+],
+[
+3,
+"transcript",
+"<root>/transcripts/ep_h.json",
+"32fdfa37245c65466cbcca3cbc5e5cc819170ff75d7460d5198e2b492226477e",
+543,
+"<ts>"
+],
+[
+4,
+"transcript",
+"<root>/transcripts/ep_p.json",
+"5dc36d2d68933c6ad22b49e0eb5639cb839f06857c9e19aafc61b8f819226b06",
+448,
+"<ts>"
+],
+[
+5,
+"transcript",
+"<root>/transcripts/ep_u.json",
+"4e532ceb2f9cecc983e226922db43ed11bb3c8d5ad2c6e424eab37912fbe5d9c",
+527,
+"<ts>"
+],
+[
+6,
+"transcript",
+"<root>/transcripts/ep_x.json",
+"bb4dad7a74425a3a5cff571f95dafc6d2b5d6b5e8c16a9389c75c8dc70e62c40",
+387,
+"<ts>"
+],
+[
+7,
+"detector_output",
+"<root>/experiments/next-validation-detector/output/candidates_normalized.json",
+"4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+2,
+"<ts>"
+],
+[
+8,
+"named_reads_output",
+"<root>/experiments/named-reads/output/candidates_normalized.json",
+"b83aaaa5034968f5e92cc1afb3b7f0affcda324cf768454b9bba56bd005185d1",
+2701,
+"<ts>"
+]
+],
+"source_states": [
+[
+"<sr>",
+"local",
+"episode",
+"ep_c",
+1,
+"{\"episode_id\": \"ep_c\", \"episode_revision\": 1, \"recording\": null, \"source_payload_digest\": null, \"transcript_payload_digest\": \"ecbf34c6991d324a8e254cf96cab0fb2fb1e3dc0e9515772e489b08368c78c8a\", \"transcript_version_id\": 2}",
+"{\"basis\": \"original\", \"effective\": [0.0, 600.0], \"original\": [0.0, 600.0]}",
+"8f94a58dc00359734d31bf105b8efd1d4d55bc3c3722c86def5702b13fc8416f",
+"<ts>"
+],
+[
+"<sr>",
+"local",
+"episode",
+"ep_h",
+1,
+"{\"episode_id\": \"ep_h\", \"episode_revision\": 1, \"recording\": null, \"source_payload_digest\": null, \"transcript_payload_digest\": \"32fdfa37245c65466cbcca3cbc5e5cc819170ff75d7460d5198e2b492226477e\", \"transcript_version_id\": 3}",
+"{\"basis\": \"original\", \"effective\": [0.0, 90.0], \"original\": [0.0, 90.0]}",
+"57a23eab88365c0ec2133c8709c6d8dfd37860460be29f6ca45d2b247861bd81",
+"<ts>"
+],
+[
+"<sr>",
+"local",
+"episode",
+"ep_p",
+1,
+"{\"episode_id\": \"ep_p\", \"episode_revision\": 1, \"recording\": null, \"source_payload_digest\": null, \"transcript_payload_digest\": \"5dc36d2d68933c6ad22b49e0eb5639cb839f06857c9e19aafc61b8f819226b06\", \"transcript_version_id\": 4}",
+"{\"basis\": \"original\", \"effective\": [0.0, 60.0], \"original\": [0.0, 60.0]}",
+"1ccadda01c3d1eeebbee908b28903ef148569ffddb9a398e908f4c09afadda38",
+"<ts>"
+],
+[
+"<sr>",
+"local",
+"episode",
+"ep_u",
+1,
+"{\"episode_id\": \"ep_u\", \"episode_revision\": 1, \"recording\": null, \"source_payload_digest\": null, \"transcript_payload_digest\": \"4e532ceb2f9cecc983e226922db43ed11bb3c8d5ad2c6e424eab37912fbe5d9c\", \"transcript_version_id\": 5}",
+"{\"basis\": \"original\", \"effective\": [0.0, 80.0], \"original\": [0.0, 80.0]}",
+"5e0bfb8e24764d90dae80941415a1fd26c87f267daca0798e9de99e84e1a4d10",
+"<ts>"
+],
+[
+"<sr>",
+"local",
+"episode",
+"ep_x",
+1,
+"{\"episode_id\": \"ep_x\", \"episode_revision\": 1, \"recording\": null, \"source_payload_digest\": null, \"transcript_payload_digest\": \"bb4dad7a74425a3a5cff571f95dafc6d2b5d6b5e8c16a9389c75c8dc70e62c40\", \"transcript_version_id\": 6}",
+"{\"basis\": \"original\", \"effective\": [0.0, 60.0], \"original\": [0.0, 60.0]}",
+"202b6788bfb11e2449d15027a83b6d8bb300d95172066c77259cf22a60c6a7bd",
+"<ts>"
+],
+[
+"<sr>",
+"local",
+"evidence",
+"named:2481c9dee7012090368ce24e5381e9085d0e40ddacd9d8d3623420e016d243fb",
+1,
+"{\"assoc_revision\": 0, \"episode_id\": \"ep_p\", \"episode_revision\": 1, \"evidence_revision\": 1, \"recording\": null, \"review_revision\": 0, \"source_payload_digest\": \"b83aaaa5034968f5e92cc1afb3b7f0affcda324cf768454b9bba56bd005185d1\", \"source_version_id\": 8, \"transcript_payload_digest\": \"5dc36d2d68933c6ad22b49e0eb5639cb839f06857c9e19aafc61b8f819226b06\", \"transcript_version_id\": 4}",
+"{\"basis\": \"original\", \"effective\": [0.0, 40.0], \"original\": [0.0, 40.0]}",
+"4eb70b8d537dae46c21458e7654ace0fb71e93b40e6ea9a489a5e74f6a90e372",
+"<ts>"
+],
+[
+"<sr>",
+"local",
+"evidence",
+"named:3e51fad98572aa4399fd9b6e040d1a176342b2273b27979cd712dbc573145c0f",
+1,
+"{\"assoc_revision\": 0, \"episode_id\": \"ep_h\", \"episode_revision\": 1, \"evidence_revision\": 1, \"recording\": null, \"review_revision\": 0, \"source_payload_digest\": \"b83aaaa5034968f5e92cc1afb3b7f0affcda324cf768454b9bba56bd005185d1\", \"source_version_id\": 8, \"transcript_payload_digest\": \"32fdfa37245c65466cbcca3cbc5e5cc819170ff75d7460d5198e2b492226477e\", \"transcript_version_id\": 3}",
+"{\"basis\": \"original\", \"effective\": [10.0, 60.0], \"original\": [10.0, 60.0]}",
+"9a25115b411441be623331b56f365394f97a0d8fcc326313df9f71bb78eeecdf",
+"<ts>"
+],
+[
+"<sr>",
+"local",
+"evidence",
+"named:f41b42ee77b41fb2762de23c795db85537754ace08085040ec97f9bd0a276e5d",
+1,
+"{\"assoc_revision\": 0, \"episode_id\": \"ep_x\", \"episode_revision\": 1, \"evidence_revision\": 1, \"recording\": null, \"review_revision\": 0, \"source_payload_digest\": \"b83aaaa5034968f5e92cc1afb3b7f0affcda324cf768454b9bba56bd005185d1\", \"source_version_id\": 8, \"transcript_payload_digest\": \"bb4dad7a74425a3a5cff571f95dafc6d2b5d6b5e8c16a9389c75c8dc70e62c40\", \"transcript_version_id\": 6}",
+"{\"basis\": \"original\", \"effective\": [10.0, 40.0], \"original\": [10.0, 40.0]}",
+"0848d47047b3ce713f7a62df90a17b0b9b39595579ad65862b395a1be2504857",
+"<ts>"
+],
+[
+"<sr>",
+"local",
+"evidence",
+"named:ff726c16446080a9b1e8833650560ad221bc15f6452fd19a155f19151ca56cd1",
+1,
+"{\"assoc_revision\": 0, \"episode_id\": \"ep_u\", \"episode_revision\": 1, \"evidence_revision\": 1, \"recording\": null, \"review_revision\": 0, \"source_payload_digest\": \"b83aaaa5034968f5e92cc1afb3b7f0affcda324cf768454b9bba56bd005185d1\", \"source_version_id\": 8, \"transcript_payload_digest\": \"4e532ceb2f9cecc983e226922db43ed11bb3c8d5ad2c6e424eab37912fbe5d9c\", \"transcript_version_id\": 5}",
+"{\"basis\": \"original\", \"effective\": [10.0, 50.0], \"original\": [10.0, 50.0]}",
+"70e5b0b59ebb3991882af314d14d35ae3efc08656589ace8699a8b6c212e8189",
+"<ts>"
+]
+],
+"source_versions": [
+[
+1,
+"episodes.json",
+1,
+"3a2fa6beedb30641a39f7631b6ddfc3532735c00dae462cb2c509fbd1938ab84",
+"[{\"ep_id\": \"ep_c\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_c title\", \"category\": \"News\", \"pub_date\": \"2026-10-01\", \"duration_min\": 10.0, \"fetch_date\": \"2026-10-13\"}, {\"ep_id\": \"ep_h\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_h title\", \"category\": \"News\", \"pub_date\": \"2026-10-01\", \"duration_min\": 10.0, \"fetch_date\": \"2026-10-11\"}, {\"ep_id\": \"ep_p\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_p title\", \"category\": \"News\", \"pub_date\": \"2026-10-01\", \"duration_min\": 10.0, \"fetch_date\": \"2026-10-14\"}, {\"ep_id\": \"ep_u\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_u title\", \"category\": \"News\", \"pub_date\": \"2026-10-01\", \"duration_min\": 10.0, \"fetch_date\": \"2026-10-12\"}, {\"ep_id\": \"ep_x\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_x title\", \"category\": \"News\", \"pub_date\": \"2026-10-01\", \"duration_min\": 10.0, \"fetch_date\": \"2026-10-15\"}]",
+1,
+"<ts>"
+],
+[
+2,
+"transcript:ep_c",
+1,
+"ecbf34c6991d324a8e254cf96cab0fb2fb1e3dc0e9515772e489b08368c78c8a",
+"{\"ep_id\": \"ep_c\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_c title\", \"fetch_date\": \"2026-10-13\", \"fetch_date_source\": {\"basis\": \"fetch_observation\", \"snapshot\": \"fixture\"}, \"segments\": [{\"start\": 0.0, \"end\": 100.0, \"text\": \"we talked about the weather for a long time\"}, {\"start\": 100.0, \"end\": 200.0, \"text\": \"then we talked about the game last night\"}, {\"start\": 300.0, \"end\": 305.0, \"text\": \"this part of the show is brought to you by Quince\"}, {\"start\": 305.0, \"end\": 320.0, \"text\": \"go to quince.com/morning for ten percent off\"}, {\"start\": 420.0, \"end\": 500.0, \"text\": \"anyway that was the week in sports\"}, {\"start\": 500.0, \"end\": 600.0, \"text\": \"see you next time\"}]}",
+1,
+"<ts>"
+],
+[
+3,
+"transcript:ep_h",
+1,
+"32fdfa37245c65466cbcca3cbc5e5cc819170ff75d7460d5198e2b492226477e",
+"{\"ep_id\": \"ep_h\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_h title\", \"fetch_date\": \"2026-10-11\", \"fetch_date_source\": {\"basis\": \"fetch_observation\", \"snapshot\": \"fixture\"}, \"segments\": [{\"start\": 0.0, \"end\": 10.0, \"text\": \"welcome to the morning show\"}, {\"start\": 10.0, \"end\": 40.0, \"text\": \"this episode is brought to you by Quince. Quince makes the softest cashmere sweaters\"}, {\"start\": 40.0, \"end\": 60.0, \"text\": \"head to quince dot com slash morning for free shipping\"}, {\"start\": 60.0, \"end\": 90.0, \"text\": \"now back to the show\"}]}",
+1,
+"<ts>"
+],
+[
+4,
+"transcript:ep_p",
+1,
+"5dc36d2d68933c6ad22b49e0eb5639cb839f06857c9e19aafc61b8f819226b06",
+"{\"ep_id\": \"ep_p\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_p title\", \"fetch_date\": \"2026-10-14\", \"fetch_date_source\": {\"basis\": \"fetch_observation\", \"snapshot\": \"fixture\"}, \"segments\": [{\"start\": 0.0, \"end\": 20.0, \"text\": \"if you like the morning show please rate and review us wherever you listen\"}, {\"start\": 20.0, \"end\": 40.0, \"text\": \"and follow us on instagram for bonus episodes\"}, {\"start\": 40.0, \"end\": 60.0, \"text\": \"ok back to it\"}]}",
+1,
+"<ts>"
+],
+[
+5,
+"transcript:ep_u",
+1,
+"4e532ceb2f9cecc983e226922db43ed11bb3c8d5ad2c6e424eab37912fbe5d9c",
+"{\"ep_id\": \"ep_u\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_u title\", \"fetch_date\": \"2026-10-12\", \"fetch_date_source\": {\"basis\": \"fetch_observation\", \"snapshot\": \"fixture\"}, \"segments\": [{\"start\": 0.0, \"end\": 10.0, \"text\": \"welcome back everybody\"}, {\"start\": 10.0, \"end\": 30.0, \"text\": \"today's show is supported by kwince co, the place for linen sheets\"}, {\"start\": 30.0, \"end\": 50.0, \"text\": \"go to quince dot com slash morning to save on your order\"}, {\"start\": 50.0, \"end\": 80.0, \"text\": \"and back to the interview\"}]}",
+1,
+"<ts>"
+],
+[
+6,
+"transcript:ep_x",
+1,
+"bb4dad7a74425a3a5cff571f95dafc6d2b5d6b5e8c16a9389c75c8dc70e62c40",
+"{\"ep_id\": \"ep_x\", \"show_title\": \"Morning Show\", \"ep_title\": \"ep_x title\", \"fetch_date\": \"2026-10-15\", \"fetch_date_source\": {\"basis\": \"fetch_observation\", \"snapshot\": \"fixture\"}, \"segments\": [{\"start\": 0.0, \"end\": 10.0, \"text\": \"hello there\"}, {\"start\": 10.0, \"end\": 40.0, \"text\": \"Zorblax is great and Zorblax is here for you\"}, {\"start\": 40.0, \"end\": 60.0, \"text\": \"back to the chat\"}]}",
+1,
+"<ts>"
+],
+[
+7,
+"detector-output",
+1,
+"4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+"[]",
+1,
+"<ts>"
+],
+[
+8,
+"named-reads-output",
+1,
+"b83aaaa5034968f5e92cc1afb3b7f0affcda324cf768454b9bba56bd005185d1",
+"[{\"candidate_id\": \"ep_h.named.10000-60000\", \"ep_id\": \"ep_h\", \"start_s\": 10.0, \"end_s\": 60.0, \"brand\": \"quince\", \"brand_spoken\": \"quince\", \"brand_raw\": \"quince\", \"brand_url\": null, \"brand_code\": null, \"anchor\": \"namer:gliner\", \"confidence\": \"low\", \"confidence_score\": 0.5, \"needs_review\": true, \"offer_codes\": [], \"urls\": [], \"excerpt\": \"this episode is brought to you by Quince. Quince makes the softest cashmere sweaters head to quince dot com slash morning for free shipping\", \"source\": \"jev+namer\", \"fetch_date\": \"2026-10-11\", \"ep_title\": \"ep_h title\", \"show_title\": \"Morning Show\", \"pub_date\": \"2026-10-01\", \"provenance\": {\"candidates\": [{\"brand\": \"quince\", \"evidence\": [\"gliner:company\"]}]}}, {\"candidate_id\": \"ep_u.named.10000-50000\", \"ep_id\": \"ep_u\", \"start_s\": 10.0, \"end_s\": 50.0, \"brand\": \"kwince co\", \"brand_spoken\": \"kwince co\", \"brand_raw\": \"kwince co\", \"brand_url\": null, \"brand_code\": null, \"anchor\": \"namer:gliner\", \"confidence\": \"medium\", \"confidence_score\": 0.5, \"needs_review\": false, \"offer_codes\": [], \"urls\": [], \"excerpt\": \"today's show is supported by kwince co, the place for linen sheets go to quince dot com slash morning to save on your order\", \"source\": \"jev+namer\", \"fetch_date\": \"2026-10-12\", \"ep_title\": \"ep_u title\", \"show_title\": \"Morning Show\", \"pub_date\": \"2026-10-01\", \"provenance\": {\"candidates\": [{\"brand\": \"kwince co\", \"evidence\": [\"gliner:company\"]}]}}, {\"candidate_id\": \"ep_p.named.0-40000\", \"ep_id\": \"ep_p\", \"start_s\": 0.0, \"end_s\": 40.0, \"brand\": \"morning show\", \"brand_spoken\": \"morning show\", \"brand_raw\": \"morning show\", \"brand_url\": null, \"brand_code\": null, \"anchor\": \"namer:gliner\", \"confidence\": \"medium\", \"confidence_score\": 0.5, \"needs_review\": false, \"offer_codes\": [], \"urls\": [], \"excerpt\": \"if you like the morning show please rate and review us wherever you listen and follow us on instagram for bonus episodes\", \"source\": \"jev+namer\", \"fetch_date\": \"2026-10-14\", \"ep_title\": \"ep_p title\", \"show_title\": \"Morning Show\", \"pub_date\": \"2026-10-01\", \"provenance\": {\"candidates\": [{\"brand\": \"morning show\", \"evidence\": [\"gliner:company\"]}]}}, {\"candidate_id\": \"ep_x.named.10000-40000\", \"ep_id\": \"ep_x\", \"start_s\": 10.0, \"end_s\": 40.0, \"brand\": \"zorblax\", \"brand_spoken\": \"zorblax\", \"brand_raw\": \"zorblax\", \"brand_url\": null, \"brand_code\": null, \"anchor\": \"namer:gliner\", \"confidence\": \"low\", \"confidence_score\": 0.5, \"needs_review\": true, \"offer_codes\": [], \"urls\": [], \"excerpt\": \"Zorblax is great and Zorblax is here for you\", \"source\": \"jev+namer\", \"fetch_date\": \"2026-10-15\", \"ep_title\": \"ep_x title\", \"show_title\": \"Morning Show\", \"pub_date\": \"2026-10-01\", \"provenance\": {\"candidates\": [{\"brand\": \"zorblax\", \"evidence\": [\"gliner:company\"]}]}}]",
+1,
+"<ts>"
+]
+],
+"target_evidence": [],
+"transcript_index_versions": [
+[
+2,
+6
+],
+[
+3,
+4
+],
+[
+4,
+3
+],
+[
+5,
+4
+],
+[
+6,
+3
+]
+],
+"transcript_segment_docs": [],
+"transcript_segments": [
+[
+1,
+2,
+0,
+0.0,
+100.0,
+":w:0.0:100.0",
+"we talked about the weather for a long time"
+],
+[
+10,
+3,
+3,
+60.0,
+90.0,
+":w:60.0:90.0",
+"now back to the show"
+],
+[
+11,
+4,
+0,
+0.0,
+20.0,
+":w:0.0:20.0",
+"if you like the morning show please rate and review us wherever you listen"
+],
+[
+12,
+4,
+1,
+20.0,
+40.0,
+":w:20.0:40.0",
+"and follow us on instagram for bonus episodes"
+],
+[
+13,
+4,
+2,
+40.0,
+60.0,
+":w:40.0:60.0",
+"ok back to it"
+],
+[
+14,
+5,
+0,
+0.0,
+10.0,
+":w:0.0:10.0",
+"welcome back everybody"
+],
+[
+15,
+5,
+1,
+10.0,
+30.0,
+":w:10.0:30.0",
+"today's show is supported by kwince co, the place for linen sheets"
+],
+[
+16,
+5,
+2,
+30.0,
+50.0,
+":w:30.0:50.0",
+"go to quince dot com slash morning to save on your order"
+],
+[
+17,
+5,
+3,
+50.0,
+80.0,
+":w:50.0:80.0",
+"and back to the interview"
+],
+[
+18,
+6,
+0,
+0.0,
+10.0,
+":w:0.0:10.0",
+"hello there"
+],
+[
+19,
+6,
+1,
+10.0,
+40.0,
+":w:10.0:40.0",
+"zorblax is great and zorblax is here for you"
+],
+[
+2,
+2,
+1,
+100.0,
+200.0,
+":w:100.0:200.0",
+"then we talked about the game last night"
+],
+[
+20,
+6,
+2,
+40.0,
+60.0,
+":w:40.0:60.0",
+"back to the chat"
+],
+[
+3,
+2,
+2,
+300.0,
+305.0,
+":w:300.0:305.0",
+"this part of the show is brought to you by quince"
+],
+[
+4,
+2,
+3,
+305.0,
+320.0,
+":w:305.0:320.0",
+"go to quince.com/morning for ten percent off"
+],
+[
+5,
+2,
+4,
+420.0,
+500.0,
+":w:420.0:500.0",
+"anyway that was the week in sports"
+],
+[
+6,
+2,
+5,
+500.0,
+600.0,
+":w:500.0:600.0",
+"see you next time"
+],
+[
+7,
+3,
+0,
+0.0,
+10.0,
+":w:0.0:10.0",
+"welcome to the morning show"
+],
+[
+8,
+3,
+1,
+10.0,
+40.0,
+":w:10.0:40.0",
+"this episode is brought to you by quince. quince makes the softest cashmere sweaters"
+],
+[
+9,
+3,
+2,
+40.0,
+60.0,
+":w:40.0:60.0",
+"head to quince dot com slash morning for free shipping"
+]
+],
+"transcript_segments_fts": [
+[
+"and back to the interview"
+],
+[
+"and follow us on instagram for bonus episodes"
+],
+[
+"anyway that was the week in sports"
+],
+[
+"back to the chat"
+],
+[
+"go to quince dot com slash morning to save on your order"
+],
+[
+"go to quince.com/morning for ten percent off"
+],
+[
+"head to quince dot com slash morning for free shipping"
+],
+[
+"hello there"
+],
+[
+"if you like the morning show please rate and review us wherever you listen"
+],
+[
+"now back to the show"
+],
+[
+"ok back to it"
+],
+[
+"see you next time"
+],
+[
+"then we talked about the game last night"
+],
+[
+"this episode is brought to you by quince. quince makes the softest cashmere sweaters"
+],
+[
+"this part of the show is brought to you by quince"
+],
+[
+"today's show is supported by kwince co, the place for linen sheets"
+],
+[
+"we talked about the weather for a long time"
+],
+[
+"welcome back everybody"
+],
+[
+"welcome to the morning show"
+],
+[
+"zorblax is great and zorblax is here for you"
+]
+],
+"transcript_versions": [],
+"watchlists": [],
+"workspaces": []
+}
+}
+}

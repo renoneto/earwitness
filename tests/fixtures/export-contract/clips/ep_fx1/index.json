@@ -1,0 +1,28 @@
+{
+ "episode_id": "ep_fx1",
+ "status": "ok",
+ "clips": [
+  {
+   "file": "45000-135000.mp3",
+   "start_s": 45.0,
+   "end_s": 135.0,
+   "start_ms": 45000,
+   "end_ms": 135000,
+   "bytes": 280,
+   "sha256": "7883e1cd655359dfad4554489ef4b149710ed93d78c3cbaf09f10cdbf5634d73",
+   "sources": [
+    "jev",
+    "rule"
+   ],
+   "jev_window_ids": [
+    "window_001"
+   ],
+   "candidate_ids": [
+    "ep_fx1.c0"
+   ],
+   "named_span_ids": [
+    "ep_fx1.named.60000-120000"
+   ]
+  }
+ ]
+}

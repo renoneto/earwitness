@@ -1,0 +1,198 @@
+/* EarWitness design v3 (Exhibit) · account.css
+   Saved, notes, Settings, Connections, invite, shared and guest pages.
+   Page workers own this file. Use the --ew-* tokens (tokens.css) and the
+   shared components in styles.css; no inline styles (CSP style-src 'self'). */
+
+/* -- Settings + Connections: one 880 px column (Settings Screen). -- */
+.ew-settings { max-width: 880px; margin: 0 auto; }
+.ew-settings-form { display: flex; flex-direction: column; gap: var(--ew-s5); }
+.ew-settings-card { display: flex; flex-direction: column; gap: var(--ew-s4); padding: var(--ew-s6); }
+.ew-settings-card > h2 { font: var(--ew-t-section); }
+.ew-settings-card select { max-width: 360px; }
+.ew-settings-card .ew-settings-name input { max-width: 420px; }
+.ew-settings-card .check-label { align-self: flex-start; }
+.ew-settings-field-error:empty { display: none; }
+.ew-settings-field-error { display: flex; gap: 6px; font: var(--ew-t-meta); color: var(--ew-gap); }
+.ew-settings-field-error::before { content: "!"; font-weight: 700; }
+.ew-settings-save { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ew-s3) var(--ew-s4); }
+.ew-settings-save .ew-save-state:empty { display: none; }
+.ew-settings-save .ew-save-state[data-state=saved], .ew-settings-save .ew-save-state[data-state=failed] { font: 600 14px/20px var(--ew-sans); }
+.ew-settings-save .ew-save-state[data-state=failed]::before { content: "! "; }
+#settings-display-errors:empty { display: none; }
+
+/* Existing workspace and access sections, grouped below the design's. */
+.ew-settings-group { margin: var(--ew-s10) 0 var(--ew-s4); display: flex; flex-direction: column; gap: var(--ew-s1); }
+.ew-settings-group > h2 { font: var(--ew-t-section); }
+.settings-grid > section.pad { padding: var(--ew-s6); }
+.ew-settings-proposals > section.pad { padding: var(--ew-s6); }
+.settings-grid { display: flex; flex-direction: column; gap: var(--ew-s4); }
+.settings-grid > section > form { display: flex; flex-direction: column; gap: var(--ew-s3); align-items: flex-start; }
+.settings-grid > section > form > .od-field, .settings-grid > section > form > .check-group,
+.settings-grid #workspace-choice .od-field { width: 100%; max-width: 420px; }
+.settings-grid .section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: var(--ew-s2); flex-wrap: wrap; margin-bottom: var(--ew-s2); }
+.settings-grid .section-heading > h2 { font: var(--ew-t-section); }
+.settings-grid h3 { margin-top: var(--ew-s4); }
+.proposal-pill { display: inline-flex; align-items: center; min-height: 22px; padding: 0 var(--ew-s2); border: 1px dashed var(--ew-control);
+  border-radius: var(--ew-r-tag); font: var(--ew-t-meta); color: var(--ew-text-2); }
+/* UX-14d / R2-10a: stored proposals, read-only, collapsed and labelled not active. */
+.ew-settings-proposals { display: flex; flex-direction: column; gap: var(--ew-s4); }
+.ew-settings-proposals[open] > summary { margin-bottom: var(--ew-s1); }
+.ew-settings-proposals > .section-note { margin: 0; }
+.corpus-definitions dl, .ew-stored-proposals dl { display: grid; grid-template-columns: max-content 1fr; gap: var(--ew-s2) var(--ew-s4); margin: 0; }
+.corpus-definitions dt, .ew-stored-proposals dt { font: 600 14px/20px var(--ew-sans); }
+.corpus-definitions dd, .ew-stored-proposals dd { margin: 0; color: var(--ew-text-2); }
+.settings-grid .lined-list > li { padding: var(--ew-s3) 0; }
+.settings-grid .scope-line { padding: 0; align-items: center; justify-content: space-between; color: var(--ew-text); }
+
+/* Connections: channel cards (Settings Screen, view=connections). */
+.ew-channels { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--ew-s3); }
+.ew-channel { display: flex; align-items: center; justify-content: space-between; gap: var(--ew-s3) var(--ew-s6); flex-wrap: wrap; padding: var(--ew-s5); }
+.ew-channel-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1 1 260px; }
+.ew-channel-text > h3 { font: var(--ew-t-card); }
+.ew-channel-text > p { font: var(--ew-t-ui); color: var(--ew-text-2); }
+.ew-channel-state { display: flex; align-items: center; gap: var(--ew-s4); flex-wrap: wrap; }
+.ew-channel-legend { margin-top: var(--ew-s6); padding: var(--ew-s5); gap: var(--ew-s3); }
+.ew-channel-legend strong { font-weight: 600; color: var(--ew-text); }
+
+/* -- Saved hub (Saved Screen): 1200 px column, tabs with counts, rows. -- */
+.ew-saved { max-width: 1200px; margin: 0 auto; }
+.ew-saved .saved-tabs { display: flex; flex-wrap: nowrap; gap: var(--ew-s6); position: relative; overflow-x: auto; scrollbar-width: none; }
+/* The strip scrolls on a phone: a fade at each hidden edge (set from saved.js). */
+.saved-tabs-wrap { position: relative; margin: 0 0 var(--ew-s4); }
+.saved-tabs-wrap::before, .saved-tabs-wrap::after { content: ""; position: absolute; top: 0; bottom: 1px; width: 32px; pointer-events: none; opacity: 0; }
+.saved-tabs-wrap::after { right: 0; background: linear-gradient(to right, transparent, var(--ew-page)); }
+.saved-tabs-wrap::before { left: 0; background: linear-gradient(to left, transparent, var(--ew-page)); }
+.saved-tabs-wrap.is-more-end::after, .saved-tabs-wrap.is-more-start::before { opacity: 1; }
+.ew-saved .saved-tabs a { gap: var(--ew-s2); white-space: nowrap; color: var(--ew-text-2); }
+.ew-saved .saved-tabs a[aria-current] { color: var(--ew-text); }
+.ew-saved .saved-tabs a:focus-visible { outline-offset: -2px; }
+.saved-tabs a[aria-current] > .ew-tab-count { background: var(--ew-inverse); color: var(--ew-text-inverse); }
+.saved-filter { display: flex; align-items: center; gap: var(--ew-s2) var(--ew-s3); flex-wrap: wrap; margin-bottom: var(--ew-s4); }
+.saved-filter > label { font: var(--ew-t-meta); color: var(--ew-text-2); font-weight: 400; }
+.saved-filter-row { display: flex; gap: var(--ew-s2); flex: 0 1 420px; min-width: 0; }
+.saved-filter-row input { flex: 1; min-width: 0; }
+.saved-count { font: var(--ew-t-meta); color: var(--ew-text-2); margin-bottom: var(--ew-s3); }
+.ew-saved .saved-list { list-style: none; margin: 0; padding: 0; display: block; gap: 0; }
+.saved-row { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: var(--ew-s2) var(--ew-s4); align-items: start; padding: var(--ew-s3) var(--ew-s5);
+  border-bottom: 1px solid var(--ew-rule); }
+.saved-row:last-child { border-bottom: 0; }
+.saved-mark { width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; font: 600 11px/16px var(--ew-mono);
+  color: var(--ew-text-2); letter-spacing: 0.04em; }
+.saved-main { display: flex; flex-direction: column; gap: 0; min-width: 0; padding-top: var(--ew-s1); }
+.saved-title { font: var(--ew-t-card); overflow-wrap: anywhere; }
+.saved-title a { color: var(--ew-text); text-decoration: underline; text-underline-offset: 3px; }
+.saved-title a:hover { color: var(--ew-action); }
+.saved-meta { font: var(--ew-t-meta); color: var(--ew-text-2); overflow-wrap: anywhere; }
+.saved-meta .ew-time { font: 500 13px/18px var(--ew-mono); }
+.saved-why, .saved-note { font: var(--ew-t-meta); color: var(--ew-text-2); max-width: 75ch; overflow-wrap: anywhere; }
+.saved-main > .notice { margin-top: var(--ew-s1); }
+.saved-passage > summary { min-height: var(--ew-target); font: var(--ew-t-meta); }
+.saved-passage .ew-quote { font: var(--ew-t-quote-s); max-width: 70ch; padding: var(--ew-s2) 0 var(--ew-s2) var(--ew-s4); border-left: 2px solid var(--ew-border-strong); }
+.saved-main .tech-details > summary { min-height: var(--ew-target); font: var(--ew-t-meta); }
+.saved-side { display: flex; align-items: center; justify-content: flex-end; gap: var(--ew-s2) var(--ew-s4); flex-wrap: wrap; max-width: 640px; }
+.saved-side > .actions { gap: 0 var(--ew-s2); flex-wrap: wrap; justify-content: flex-end; }
+.saved-side .button.quiet { color: var(--ew-text-2); font-weight: 400; }
+.saved-side .button.quiet:hover { color: var(--ew-text); }
+/* UX-14c: one row menu for the secondary Saved actions. */
+.ew-row-menu { position: relative; }
+.ew-row-menu > summary { min-height: var(--ew-target); }
+.ew-row-menu > summary::before, .ew-row-menu[open] > summary::before { content: none; }
+.ew-row-menu-panel { position: absolute; right: 0; top: calc(100% + var(--ew-s1)); z-index: 2; min-width: 220px; display: flex; flex-direction: column;
+  padding: var(--ew-s1); background: var(--ew-sheet); border: 1px solid var(--ew-border); border-radius: var(--ew-r-card); box-shadow: var(--ew-e1); }
+.ew-row-menu-panel > .button, .saved-side .ew-row-menu-panel > .button.quiet { justify-content: flex-start; min-height: var(--ew-target); color: var(--ew-text); font-weight: 400; }
+.saved-side .ew-row-menu-panel > .button.ew-row-menu-danger, .ew-row-menu-panel > .button.ew-row-menu-danger:hover { color: var(--ew-gap); }
+.saved-more { margin-top: var(--ew-s4); }
+.saved-foot { margin-top: var(--ew-s5); font: var(--ew-t-meta); color: var(--ew-text-2); }
+@media (max-width: 1023px) {
+  .ew-row-menu-panel { position: static; box-shadow: none; margin-top: var(--ew-s1); }
+  .saved-side .text-link, .saved-side .button, .ew-row-menu > summary, .ew-row-menu-panel > * { min-height: 44px; }
+  .saved-side .text-link { display: inline-flex; align-items: center; }
+  .saved-row { grid-template-columns: 32px minmax(0, 1fr); }
+  .saved-mark { width: 32px; }
+  .saved-side { grid-column: 2; justify-content: flex-start; max-width: none; }
+  .saved-side > .actions { justify-content: flex-start; }
+}
+@media (max-width: 599px) {
+  /* DEMO-SOL-R1-13: on a phone every Saved tab stays visible (wrapped). */
+  .ew-saved .saved-tabs { flex-wrap: wrap; overflow-x: visible; column-gap: var(--ew-s5); }
+  .saved-row { padding: var(--ew-s4); }
+  .saved-side { flex-direction: column; align-items: flex-start; }
+}
+
+/* -- Note receipt (Saved Screen, view=receipt). -- */
+.ew-receipt-page { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; }
+.ew-receipt-page > .ew-back { margin-bottom: var(--ew-s5); }
+.ew-receipt-page > .eyebrow { margin-bottom: var(--ew-s2); }
+.ew-receipt { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: var(--ew-s6); align-items: start; }
+.ew-receipt-main { display: flex; flex-direction: column; gap: var(--ew-s4); min-width: 0; }
+.ew-receipt .ew-card-body { display: flex; flex-direction: column; gap: var(--ew-s3); }
+.ew-receipt h2 { font: 600 19px/26px var(--ew-serif); }
+.ew-receipt .ew-facts { display: grid; grid-template-columns: 156px minmax(0, 1fr); gap: var(--ew-s2) var(--ew-s4); margin: 0; font: var(--ew-t-ui); }
+.ew-receipt .ew-facts dt { color: var(--ew-text-2); }
+.ew-receipt .ew-facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.ew-receipt .ew-facts dd .text-link { min-height: var(--ew-target); padding: 0; margin-block: calc((22px - var(--ew-target)) / 2); }
+.ew-receipt-quote { font: var(--ew-t-quote); }
+.ew-receipt .ew-quote { font: var(--ew-t-quote-s); }
+.ew-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--ew-s2); font: var(--ew-t-ui); }
+.ew-steps li::before { content: "○"; display: inline-block; width: 1.4em; color: var(--ew-text-2); }
+.ew-steps li.is-done::before { content: "✓"; color: var(--ew-confirmed); }
+.ew-steps li.is-current { font-weight: 600; }
+.ew-steps li.is-current::before { content: "◔"; color: var(--ew-text); }
+@media (max-width: 1023px) {
+  .ew-receipt { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 599px) {
+  .ew-receipt .ew-facts { grid-template-columns: minmax(0, 1fr); gap: var(--ew-s1); }
+  .ew-receipt .ew-facts dd + dt { margin-top: var(--ew-s2); }
+}
+
+/* -- Invite, shared, workspace-required and refusal pages. -- */
+#workspace-choice, #invite-accept { display: flex; flex-direction: column; gap: var(--ew-s3); align-items: flex-start; }
+#workspace-choice .od-field { width: 100%; max-width: 420px; }
+/* Credential forms (sign-in, change password): a readable measure on wide screens (Sol POLISH-1). */
+#signin-password, #password-change { width: 100%; max-width: 480px; }
+/* Signed-out sign-in (design pass): the public site's Exhibit look. Styling
+   only: a centred sheet under the public hero's light rays, a serif title
+   and a full-width primary button. Fields and flow are unchanged. */
+#main:has(> .signin-card) { position: relative; isolation: isolate; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: var(--ew-s4); max-width: none; min-height: calc(100vh - 140px); padding: 72px var(--ew-s4); }
+#main:has(> .signin-card)::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: repeating-conic-gradient(from 200deg at 50% -10%, color-mix(in srgb, var(--ew-action) 7%, transparent) 0deg 3deg, transparent 3deg 11deg);
+  -webkit-mask-image: linear-gradient(#000 0%, transparent 85%); mask-image: linear-gradient(#000 0%, transparent 85%); }
+.signin-card { width: 100%; max-width: 440px; padding: var(--ew-s8); display: flex; flex-direction: column; gap: var(--ew-s4); }
+.signin-card .section-heading { margin: 0; }
+.signin-card h1, .signin-card h2 { font: 600 32px/38px var(--ew-serif); letter-spacing: -0.01em; }
+.signin-card .section-note { margin: 0; font: var(--ew-t-body); }
+.signin-card #signin-password { max-width: none; display: flex; flex-direction: column; gap: var(--ew-s4); }
+.signin-card .od-field label { font: 600 14px/20px var(--ew-sans); }
+.signin-card .od-field input { width: 100%; min-height: 44px; }
+.signin-card .actions { margin: 0; }
+.signin-card .actions .button { width: 100%; justify-content: center; min-height: 48px; font-size: 16px; }
+.signin-card .small, .signin-noaccount { margin: 0; }
+.signin-noaccount { font: var(--ew-t-ui); color: var(--ew-text-2); }
+/* The shown error reads as a message, not an empty field (WRONGPW-MUSE-R1-01..03):
+   a filled box with the "!" inset, 12 px above the button, and a focus ring
+   that hugs the rounded box. role=alert and wording are unchanged. */
+.signin-card #signin-errors:not(:empty) { padding: var(--ew-s2) var(--ew-s3); margin-bottom: calc(var(--ew-s3) - var(--ew-s4));
+  background: var(--ew-gap-bg); border: 1px solid var(--ew-gap-border); border-radius: var(--ew-r-control); }
+.signin-card #signin-errors .field-error { margin: 0; }
+.signin-card #signin-errors:focus { outline: var(--ew-focus-ring); outline-offset: var(--ew-focus-offset); }
+/* Busy: "Signing in…" stays readable on the action fill (DPM-R1-12). */
+.signin-card .button.primary[aria-busy=true]:disabled { background: var(--ew-action); border-color: var(--ew-action); color: var(--ew-text-inverse); cursor: progress; }
+/* The way back to the public site, Privacy and Terms (DPM-R1-06). */
+.signin-exits { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 var(--ew-s5); }
+.signin-exits a { display: inline-flex; align-items: center; min-height: 44px; font: var(--ew-t-ui); }
+@media (max-width: 599px) {
+  #main:has(> .signin-card) { min-height: 0; justify-content: flex-start; padding: 40px var(--ew-s4) 56px; }
+  .signin-card { padding: var(--ew-s5); }
+  .signin-card h1, .signin-card h2 { font: 600 26px/32px var(--ew-serif); }
+}
+/* Guest gate, refusal, outcome and sign-in error cards: 12 px above the action group (L25, Sol FIX-2). */
+#main .guest-actions { margin-top: var(--ew-s3); }
+.surface .excerpt { font: var(--ew-t-quote); margin: var(--ew-s3) 0; padding-left: var(--ew-s4); border-left: 2px solid var(--ew-border-strong); max-width: 70ch; }
+
+/* Saved tabs (moved from styles.css section 5). */
+.saved-tabs { display: flex; gap: var(--ew-s6); border-bottom: 1px solid var(--ew-border); }
+.saved-tabs a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 2px; text-decoration: none; color: var(--ew-text-2); font: 400 15px/22px var(--ew-sans); }
+.saved-tabs a:hover { color: var(--ew-text); box-shadow: inset 0 -3px 0 var(--ew-border-strong); }
+.saved-tabs a[aria-current] { color: var(--ew-text); box-shadow: inset 0 -3px 0 var(--ew-text); font-weight: 600; }
